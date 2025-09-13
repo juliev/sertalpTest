@@ -1,0 +1,309 @@
+{
+  "nav": {
+    "home": "Home",
+    "windows": "Windows",
+    "doors": "Doors",
+    "other_products": "Other Products",
+    "projects": "Projects",
+    "about": "About Us",
+    "contact": "Contact",
+    "get_quote": "Get a Quote"
+  },
+  "hero": {
+    "headline": "High-Performance PVC Windows & Doors for a More Comfortable Home",
+    "subheading": "Certified quality, custom design, nationwide installation, guaranteed durability",
+    "primary_cta": "Request a Free Quote",
+    "secondary_cta": "Explore Our Products"
+  },
+  "benefits": {
+    "title": "Why Choose Our PVC Solutions",
+    "premium_materials": {
+      "title": "Premium Materials",
+      "description": "10-year guarantee with premium Cortizo profiles and German hardware"
+    },
+    "energy_efficiency": {
+      "title": "Energy Efficiency",
+      "description": "Up to 40% reduction in heating & cooling costs with triple glazing options"
+    },
+    "sound_insulation": {
+      "title": "Sound Insulation",
+      "description": "Reduce external noise by up to 32dB for peaceful living spaces"
+    },
+    "expert_installation": {
+      "title": "Expert Installation",
+      "description": "Certified technicians with 10+ years of industry experience"
+    },
+    "nationwide_coverage": {
+      "title": "Nationwide Coverage",
+      "description": "Fast production and professional installation across the country"
+    },
+    "after_sales": {
+      "title": "After-Sales Support",
+      "description": "Dedicated maintenance team with quick response times"
+    },
+    "custom_solutions": {
+      "title": "Custom Solutions",
+      "description": "Tailor-made products to fit any architectural style or requirement"
+    },
+    "security": {
+      "title": "Security Features",
+      "description": "Multi-point locking systems and reinforced frames for maximum protection"
+    }
+  },
+  "products": {
+    "title": "Our Product Range",
+    "windows": {
+      "title": "Windows",
+      "description": "Premium PVC windows with superior insulation and design"
+    },
+    "doors": {
+      "title": "Doors",
+      "description": "Secure and stylish entrance solutions"
+    },
+    "blinds": {
+      "title": "Blinds & Shutters",
+      "description": "Complete privacy and light control systems"
+    },
+    "accessories": {
+      "title": "Accessories",
+      "description": "Premium handles and finishing touches"
+    },
+    "learn_more": "Learn More"
+  },
+  "estimate": {
+    "title": "Get your personalized quote in 24 hours",
+    "product_type": "Product Type",
+    "dimensions": "Approximate Dimensions",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "submit": "Get My Quote",
+    "success": "Thank you! We'll contact you within 24 hours.",
+    "error": "Something went wrong. Please try again."
+  },
+  "testimonials": {
+    "title": "What Our Customers Say"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "address": "Address",
+    "hours": "Business Hours",
+    "cta": {
+      "ready_transform": "Ready to transform your home? Get in touch with our experts for a free consultation and personalized quote.",
+      "call_directly": "Call us directly",
+      "email_us": "Email us",
+      "visit_showroom": "Visit our showroom",
+      "view_projects": "View Our Projects",
+      "call_assistance": "Or call us now for immediate assistance",
+      "free_consultation": "Consultation & Quote",
+      "response_time": "Response Time",
+      "product_guarantee": "Product Guarantee"
+    }
+  },
+  "footer": {
+    "company_description": "Premium PVC windows and doors with nationwide installation and 10-year guarantee.",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Information",
+    "follow_us": "Follow Us",
+    "newsletter": "Subscribe to Newsletter",
+    "copyright": "© 2025 Sertalp. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "windows_page": {
+    "hero": {
+      "headline": "PVC Windows Built for Comfort, Efficiency, and Security",
+      "subheading": "Premium quality windows customized for your home's unique style"
+    },
+    "types": {
+      "tilt_turn": {
+        "title": "Tilt & Turn",
+        "description": "Multi-functional opening, enhanced ventilation"
+      },
+      "casement": {
+        "title": "Casement",
+        "description": "Maximum ventilation, clean aesthetic"
+      },
+      "pivot": {
+        "title": "Pivot",
+        "description": "Space-saving, modern design"
+      },
+      "sliding": {
+        "title": "Sliding",
+        "description": "Space-efficient, panoramic views"
+      }
+    }
+  },
+  "doors_page": {
+    "hero": {
+      "headline": "PVC Doors: Elegant Design, Lasting Protection",
+      "subheading": "Security, style, and energy efficiency for your entryways"
+    }
+  },
+  "about_page": {
+    "hero": {
+      "headline": "About Sertalp",
+      "subheading": "Leaders in PVC windows and doors solutions"
+    },
+    "our_story": {
+      "title": "Our Story",
+      "paragraph1": "Founded with a vision to provide premium PVC windows and doors solutions, Sertalp has become a trusted name in the industry. Our commitment to quality, innovation, and customer satisfaction has made us leaders in energy-efficient building solutions.",
+      "paragraph2": "With over a decade of experience, we've helped thousands of homeowners transform their living spaces with our high-performance PVC systems that combine German engineering with Portuguese craftsmanship."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide energy-efficient, durable, and beautiful PVC window and door solutions that enhance comfort and reduce environmental impact while delivering exceptional value to our customers."
+    },
+    "values": {
+      "title": "Our Values",
+      "list": [
+        "Quality craftsmanship",
+        "Customer satisfaction",
+        "Environmental responsibility",
+        "Innovation in design"
+      ]
+    },
+    "why_choose": {
+      "title": "Why Choose Sertalp",
+      "stats": {
+        "years_experience": "Years Experience",
+        "projects_completed": "Projects Completed",
+        "customer_satisfaction": "Customer Satisfaction"
+      }
+    }
+  },
+  "projects_page": {
+    "hero": {
+      "headline": "Our Work Speaks for Itself",
+      "subheading": "Browse our completed installations across the country"
+    }
+  },
+  "common": {
+    "redirecting": "Redirecting to English version...",
+    "company_name": "Sertalp",
+    "meta": {
+      "title": "Sertalp - Premium PVC Windows & Doors",
+      "description": "High-performance PVC windows and doors with 10-year guarantee. Energy efficient solutions with nationwide installation."
+    },
+    "stats": {
+      "happy_customers": "Happy Customers",
+      "year_guarantee": "Year Guarantee",
+      "energy_savings": "Energy Savings",
+      "quote_response": "Quote Response",
+      "years_experience": "Years Experience",
+      "average_rating": "Average Rating",
+      "satisfaction_rate": "Satisfaction Rate"
+    },
+    "aria_labels": {
+      "previous_testimonial": "Previous testimonial",
+      "next_testimonial": "Next testimonial",
+      "go_to_testimonial": "Go to testimonial"
+    }
+  },
+  "testimonials_data": [
+    {
+      "id": 1,
+      "name": "Maria Silva",
+      "location": "Lisbon, Portugal",
+      "rating": 5,
+      "text": "Excellent service from start to finish. The windows have made our home much quieter and more energy efficient. Highly recommended!",
+      "product": "PVC Windows"
+    },
+    {
+      "id": 2,
+      "name": "João Santos",
+      "location": "Porto, Portugal",
+      "rating": 5,
+      "text": "Professional installation and beautiful doors. The quality is outstanding and the team was very professional.",
+      "product": "PVC Doors"
+    },
+    {
+      "id": 3,
+      "name": "Ana Costa",
+      "location": "Faro, Portugal",
+      "rating": 5,
+      "text": "Amazing transformation! Our home is now much warmer in winter and cooler in summer. Great investment.",
+      "product": "Complete Solution"
+    },
+    {
+      "id": 4,
+      "name": "Carlos Ferreira",
+      "location": "Coimbra, Portugal",
+      "rating": 5,
+      "text": "The blinds and shutters are perfect. Great quality materials and flawless installation. Very satisfied!",
+      "product": "Blinds & Shutters"
+    }
+  ],
+  "recent_projects": {
+    "title": "Recent Projects",
+    "subtitle": "Explore our latest installations and see the quality of our workmanship.",
+    "categories": {
+      "all": "All",
+      "windows": "Windows", 
+      "doors": "Doors",
+      "complete": "Complete"
+    },
+    "products_used": "Products Used:",
+    "projects_data": [
+      {
+        "id": 1,
+        "title": "Modern Villa Installation",
+        "location": "Lisbon",
+        "category": "Windows",
+        "image": "/window.svg",
+        "description": "Complete window replacement with energy-efficient triple glazing.",
+        "products": ["Tilt & Turn Windows", "Fixed Windows", "Triple Glazing"]
+      },
+      {
+        "id": 2,
+        "title": "Traditional House Renovation",
+        "location": "Porto",
+        "category": "Doors",
+        "image": "/window.svg",
+        "description": "Entrance and patio door installation with security features.",
+        "products": ["Entrance Door", "Patio Door", "Security Hardware"]
+      },
+      {
+        "id": 3,
+        "title": "Apartment Complex",
+        "location": "Coimbra",
+        "category": "Complete",
+        "image": "/window.svg",
+        "description": "Full building renovation with windows, doors, and blinds.",
+        "products": ["Windows", "Doors", "External Blinds", "Security Systems"]
+      },
+      {
+        "id": 4,
+        "title": "Coastal Home",
+        "location": "Faro",
+        "category": "Windows",
+        "image": "/window.svg",
+        "description": "Weather-resistant windows for coastal conditions.",
+        "products": ["Sliding Windows", "Weather Sealing", "UV Protection"]
+      },
+      {
+        "id": 5,
+        "title": "Office Building",
+        "location": "Braga",
+        "category": "Complete",
+        "image": "/window.svg",
+        "description": "Commercial installation with automated blinds.",
+        "products": ["Commercial Windows", "Automatic Blinds", "Energy Systems"]
+      },
+      {
+        "id": 6,
+        "title": "Heritage Restoration",
+        "location": "Évora",
+        "category": "Doors",
+        "image": "/window.svg",
+        "description": "Custom doors for historical building restoration.",
+        "products": ["Custom Doors", "Heritage Hardware", "Special Finishes"]
+      }
+    ]
+  }
+}

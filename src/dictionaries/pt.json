@@ -1,0 +1,309 @@
+{
+  "nav": {
+    "home": "Início",
+    "windows": "Janelas",
+    "doors": "Portas",
+    "other_products": "Outros Produtos",
+    "projects": "Projetos",
+    "about": "Sobre Nós",
+    "contact": "Contacto",
+    "get_quote": "Pedir Orçamento"
+  },
+  "hero": {
+    "headline": "Janelas e Portas PVC de Alto Desempenho para uma Casa Mais Confortável",
+    "subheading": "Qualidade certificada, design personalizado, instalação nacional, durabilidade garantida",
+    "primary_cta": "Pedir Orçamento Gratuito",
+    "secondary_cta": "Explorar Produtos"
+  },
+  "benefits": {
+    "title": "Porquê Escolher as Nossas Soluções PVC",
+    "premium_materials": {
+      "title": "Materiais Premium",
+      "description": "Garantia de 10 anos com perfis Cortizo premium e ferragens alemãs"
+    },
+    "energy_efficiency": {
+      "title": "Eficiência Energética",
+      "description": "Até 40% de redução nos custos de aquecimento e refrigeração com vidros triplos"
+    },
+    "sound_insulation": {
+      "title": "Isolamento Acústico",
+      "description": "Redução do ruído exterior até 32dB para espaços de vida tranquilos"
+    },
+    "expert_installation": {
+      "title": "Instalação Especializada",
+      "description": "Técnicos certificados com mais de 10 anos de experiência"
+    },
+    "nationwide_coverage": {
+      "title": "Cobertura Nacional",
+      "description": "Produção rápida e instalação profissional em todo o país"
+    },
+    "after_sales": {
+      "title": "Apoio Pós-Venda",
+      "description": "Equipa de manutenção dedicada com tempos de resposta rápidos"
+    },
+    "custom_solutions": {
+      "title": "Soluções Personalizadas",
+      "description": "Produtos feitos à medida para qualquer estilo arquitetónico"
+    },
+    "security": {
+      "title": "Características de Segurança",
+      "description": "Sistemas de fecho multiponto e estruturas reforçadas"
+    }
+  },
+  "products": {
+    "title": "A Nossa Gama de Produtos",
+    "windows": {
+      "title": "Janelas",
+      "description": "Janelas PVC premium com isolamento e design superiores"
+    },
+    "doors": {
+      "title": "Portas",
+      "description": "Soluções de entrada seguras e elegantes"
+    },
+    "blinds": {
+      "title": "Estores e Portadas",
+      "description": "Sistemas completos de privacidade e controlo de luz"
+    },
+    "accessories": {
+      "title": "Acessórios",
+      "description": "Puxadores premium e acabamentos"
+    },
+    "learn_more": "Saber Mais"
+  },
+  "estimate": {
+    "title": "Receba o seu orçamento personalizado em 24 horas",
+    "product_type": "Tipo de Produto",
+    "dimensions": "Dimensões Aproximadas",
+    "name": "Nome",
+    "phone": "Telefone",
+    "email": "Email",
+    "submit": "Pedir Orçamento",
+    "success": "Obrigado! Entraremos em contacto em 24 horas.",
+    "error": "Algo correu mal. Tente novamente."
+  },
+  "testimonials": {
+    "title": "O Que Dizem os Nossos Clientes"
+  },
+  "contact": {
+    "title": "Contacte-nos",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefone",
+    "message": "Mensagem",
+    "submit": "Enviar Mensagem",
+    "address": "Morada",
+    "hours": "Horário de Funcionamento",
+    "cta": {
+      "ready_transform": "Pronto para transformar a sua casa? Entre em contacto com os nossos especialistas para uma consulta gratuita e orçamento personalizado.",
+      "call_directly": "Ligue-nos diretamente",
+      "email_us": "Envie-nos um email",
+      "visit_showroom": "Visite o nosso showroom",
+      "view_projects": "Ver os Nossos Projetos",
+      "call_assistance": "Ou ligue-nos agora para assistência imediata",
+      "free_consultation": "Consulta e Orçamento",
+      "response_time": "Tempo de Resposta",
+      "product_guarantee": "Garantia do Produto"
+    }
+  },
+  "footer": {
+    "company_description": "Janelas e portas PVC premium com instalação nacional e garantia de 10 anos.",
+    "quick_links": "Links Rápidos",
+    "contact_info": "Informações de Contacto",
+    "follow_us": "Siga-nos",
+    "newsletter": "Subscrever Newsletter",
+    "copyright": "© 2025 Sertalp. Todos os direitos reservados.",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço"
+  },
+  "windows_page": {
+    "hero": {
+      "headline": "Janelas PVC Construídas para Conforto, Eficiência e Segurança",
+      "subheading": "Janelas de qualidade premium personalizadas para o estilo único da sua casa"
+    },
+    "types": {
+      "tilt_turn": {
+        "title": "Oscilo-batente",
+        "description": "Abertura multifuncional, ventilação melhorada"
+      },
+      "casement": {
+        "title": "De Batente",
+        "description": "Ventilação máxima, estética limpa"
+      },
+      "pivot": {
+        "title": "Pivotante",
+        "description": "Poupança de espaço, design moderno"
+      },
+      "sliding": {
+        "title": "De Correr",
+        "description": "Eficiência espacial, vistas panorâmicas"
+      }
+    }
+  },
+  "doors_page": {
+    "hero": {
+      "headline": "Portas PVC: Design Elegante, Proteção Duradoura",
+      "subheading": "Segurança, estilo e eficiência energética para as suas entradas"
+    }
+  },
+  "about_page": {
+    "hero": {
+      "headline": "Sobre a Sertalp",
+      "subheading": "Líderes em soluções de janelas e portas PVC"
+    },
+    "our_story": {
+      "title": "A Nossa História",
+      "paragraph1": "Fundada com a visão de fornecer soluções premium em janelas e portas PVC, a Sertalp tornou-se um nome de confiança na indústria. O nosso compromisso com a qualidade, inovação e satisfação do cliente fez-nos líderes em soluções de construção energeticamente eficientes.",
+      "paragraph2": "Com mais de uma década de experiência, ajudámos milhares de proprietários a transformar os seus espaços habitacionais com os nossos sistemas PVC de alto desempenho que combinam engenharia alemã com artesanato português."
+    },
+    "mission": {
+      "title": "A Nossa Missão",
+      "description": "Fornecer soluções de janelas e portas PVC energeticamente eficientes, duráveis e bonitas que melhorem o conforto e reduzam o impacto ambiental, proporcionando valor excecional aos nossos clientes."
+    },
+    "values": {
+      "title": "Os Nossos Valores",
+      "list": [
+        "Artesanato de qualidade",
+        "Satisfação do cliente",
+        "Responsabilidade ambiental",
+        "Inovação no design"
+      ]
+    },
+    "why_choose": {
+      "title": "Porquê Escolher a Sertalp",
+      "stats": {
+        "years_experience": "Anos de Experiência",
+        "projects_completed": "Projetos Concluídos",
+        "customer_satisfaction": "Satisfação do Cliente"
+      }
+    }
+  },
+  "projects_page": {
+    "hero": {
+      "headline": "O Nosso Trabalho Fala Por Si",
+      "subheading": "Veja as nossas instalações realizadas por todo o país"
+    }
+  },
+  "common": {
+    "redirecting": "Redirecionando para a versão em português...",
+    "company_name": "Sertalp",
+    "meta": {
+      "title": "Sertalp - Janelas e Portas PVC Premium",
+      "description": "Janelas e portas PVC de alto desempenho com garantia de 10 anos. Soluções eficientes energeticamente com instalação nacional."
+    },
+    "stats": {
+      "happy_customers": "Clientes Satisfeitos",
+      "year_guarantee": "Anos de Garantia",
+      "energy_savings": "Poupança Energética",
+      "quote_response": "Resposta ao Orçamento",
+      "years_experience": "Anos de Experiência",
+      "average_rating": "Classificação Média",
+      "satisfaction_rate": "Taxa de Satisfação"
+    },
+    "aria_labels": {
+      "previous_testimonial": "Testemunho anterior",
+      "next_testimonial": "Próximo testemunho",
+      "go_to_testimonial": "Ir para testemunho"
+    }
+  },
+  "testimonials_data": [
+    {
+      "id": 1,
+      "name": "Maria Silva",
+      "location": "Lisboa, Portugal",
+      "rating": 5,
+      "text": "Excelente serviço do início ao fim. As janelas tornaram a nossa casa muito mais silenciosa e eficiente energeticamente. Altamente recomendado!",
+      "product": "Janelas PVC"
+    },
+    {
+      "id": 2,
+      "name": "João Santos",
+      "location": "Porto, Portugal",
+      "rating": 5,
+      "text": "Instalação profissional e portas lindas. A qualidade é excepcional e a equipa foi muito profissional.",
+      "product": "Portas PVC"
+    },
+    {
+      "id": 3,
+      "name": "Ana Costa",
+      "location": "Faro, Portugal",
+      "rating": 5,
+      "text": "Transformação incrível! A nossa casa está agora muito mais quente no inverno e mais fresca no verão. Excelente investimento.",
+      "product": "Solução Completa"
+    },
+    {
+      "id": 4,
+      "name": "Carlos Ferreira",
+      "location": "Coimbra, Portugal",
+      "rating": 5,
+      "text": "As persianas e estores são perfeitos. Materiais de grande qualidade e instalação impecável. Muito satisfeito!",
+      "product": "Persianas e Estores"
+    }
+  ],
+  "recent_projects": {
+    "title": "Projetos Recentes",
+    "subtitle": "Explore as nossas instalações mais recentes e veja a qualidade do nosso trabalho.",
+    "categories": {
+      "all": "Todos",
+      "windows": "Janelas",
+      "doors": "Portas", 
+      "complete": "Completo"
+    },
+    "products_used": "Produtos Utilizados:",
+    "projects_data": [
+      {
+        "id": 1,
+        "title": "Instalação Villa Moderna",
+        "location": "Lisboa",
+        "category": "Janelas",
+        "image": "/window.svg",
+        "description": "Substituição completa de janelas com vidro triplo energeticamente eficiente.",
+        "products": ["Janelas Oscilobatentes", "Janelas Fixas", "Vidro Triplo"]
+      },
+      {
+        "id": 2,
+        "title": "Renovação Casa Tradicional",
+        "location": "Porto",
+        "category": "Portas",
+        "image": "/window.svg",
+        "description": "Instalação de portas de entrada e pátio com características de segurança.",
+        "products": ["Porta de Entrada", "Porta de Pátio", "Ferragens de Segurança"]
+      },
+      {
+        "id": 3,
+        "title": "Complexo de Apartamentos",
+        "location": "Coimbra", 
+        "category": "Completo",
+        "image": "/window.svg",
+        "description": "Renovação completa do edifício com janelas, portas e persianas.",
+        "products": ["Janelas", "Portas", "Persianas Exteriores", "Sistemas de Segurança"]
+      },
+      {
+        "id": 4,
+        "title": "Casa Costeira",
+        "location": "Faro",
+        "category": "Janelas",
+        "image": "/window.svg",
+        "description": "Janelas resistentes às intempéries para condições costeiras.",
+        "products": ["Janelas de Correr", "Vedação Climática", "Proteção UV"]
+      },
+      {
+        "id": 5,
+        "title": "Edifício de Escritórios",
+        "location": "Braga",
+        "category": "Completo",
+        "image": "/window.svg",
+        "description": "Instalação comercial com persianas automatizadas.",
+        "products": ["Janelas Comerciais", "Persianas Automáticas", "Sistemas Energéticos"]
+      },
+      {
+        "id": 6,
+        "title": "Restauração Patrimonial",
+        "location": "Évora",
+        "category": "Portas",
+        "image": "/window.svg",
+        "description": "Portas personalizadas para restauração de edifício histórico.",
+        "products": ["Portas Personalizadas", "Ferragens Patrimoniais", "Acabamentos Especiais"]
+      }
+    ]
+  }
+}
