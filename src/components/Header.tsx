@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
-import { Locale, localeFlags, localeNames, locales, type } from '@/lib/i18n';
+import { Locale, localeFlags, localeNames, locales } from '@/lib/i18n';
 
 interface HeaderProps {
     locale: Locale;
