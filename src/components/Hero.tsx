@@ -1,11 +1,11 @@
 'use client';
 
-import {ArrowRight, Play} from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import {useState} from 'react';
+import { useState } from 'react';
 
-import {Locale, type} from '@/lib/i18n';
+import { Locale } from '@/lib/i18n';
 
 interface HeroProps {
     locale: Locale;
