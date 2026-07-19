@@ -7,6 +7,7 @@ export type WorkImage = {
   width: number;
   height: number;
   objectPosition: string;
+  installationPhoto?: true;
 };
 
 export const workImages = {
@@ -98,6 +99,96 @@ export const workImages = {
     src: "/images/works/windows/santa-rita-envidracado-aluminio.webp",
     width: 1456,
     height: 2592,
+    objectPosition: "center",
+  },
+  fernandoFerreira: {
+    src: "/images/works/projects/fernando-ferreira-janelas-portas-pvc.webp",
+    width: 1600,
+    height: 1067,
+    objectPosition: "center",
+  },
+  lindaAVelha: {
+    src: "/images/works/projects/linda-a-velha-portas-correr-aluminio.webp",
+    width: 1600,
+    height: 1066,
+    objectPosition: "center",
+  },
+  bernardimRibeiro: {
+    src: "/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp",
+    width: 1374,
+    height: 916,
+    objectPosition: "center",
+  },
+  lisboaFacade: {
+    src: "/images/works/projects/lisboa-fachada-janelas-pvc.webp",
+    width: 1536,
+    height: 1024,
+    objectPosition: "center",
+  },
+  duqueDoCadaval: {
+    src: "/images/works/projects/duque-do-cadaval-varanda-aluminio.webp",
+    width: 1374,
+    height: 916,
+    objectPosition: "center",
+  },
+  ulgueir: {
+    src: "/images/works/projects/ulgueir-caixilharia-aluminio.webp",
+    width: 1600,
+    height: 898,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  ribaFria: {
+    src: "/images/works/projects/riba-fria-vao-panoramico-pvc.webp",
+    width: 1600,
+    height: 1200,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  pascoalDeMelo: {
+    src: "/images/works/projects/pascoal-de-melo-caixilharia-aluminio-pvc.webp",
+    width: 1600,
+    height: 898,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  faias: {
+    src: "/images/works/projects/faias-envidracado-canto-pvc.webp",
+    width: 1600,
+    height: 1200,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  barril: {
+    src: "/images/works/projects/barril-caixilharia-aluminio.webp",
+    width: 1280,
+    height: 720,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  alcoutins: {
+    src: "/images/works/projects/alcoutins-fachada-envidracada-aluminio.webp",
+    width: 1600,
+    height: 1200,
+    objectPosition: "center",
+  },
+  castanheiros: {
+    src: "/images/works/projects/castanheiros-porta-envidracada-pvc.webp",
+    width: 1600,
+    height: 898,
+    objectPosition: "center",
+  },
+  almoinhasPanoramic: {
+    src: "/images/works/projects/almoinhas-velhas-vao-panoramico-pvc.webp",
+    width: 1600,
+    height: 1200,
+    objectPosition: "center",
+    installationPhoto: true,
+  },
+  almoinhasFacade: {
+    src: "/images/works/projects/almoinhas-velhas-fachada-aluminio.webp",
+    width: 1600,
+    height: 1200,
     objectPosition: "center",
   },
 } as const satisfies Record<string, WorkImage>;

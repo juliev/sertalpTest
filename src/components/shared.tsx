@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import { company } from "@/content/company";
+import type { WorkImage } from "@/content/images";
 import { warranties } from "@/content/warranties";
 import type { Dictionary } from "@/i18n/types";
 
@@ -39,7 +40,6 @@ export function PageHero({
   cta,
   image,
   imageAlt,
-  imagePosition = "center",
   priority = false,
 }: {
   eyebrow: string;
@@ -47,9 +47,8 @@ export function PageHero({
   description: string;
   points?: readonly string[];
   cta?: string;
-  image: string;
+  image: WorkImage;
   imageAlt: string;
-  imagePosition?: string;
   priority?: boolean;
 }) {
   return (
@@ -92,13 +91,14 @@ export function PageHero({
         </div>
         <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl">
           <Image
-            src={image}
+            src={image.src}
             alt={imageAlt}
-            fill
+            width={image.width}
+            height={image.height}
             priority={priority}
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-            style={{ objectPosition: imagePosition }}
+            className="h-full w-full object-cover"
+            style={{ objectPosition: image.objectPosition }}
           />
         </div>
       </div>

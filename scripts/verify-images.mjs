@@ -45,7 +45,11 @@ for (const sourceRoot of sourceRoots) {
     const fileStat = await stat(file);
     if (!fileStat.isFile()) continue;
     const contents = await readFile(file, "utf8");
-    if (contents.includes("tmp/door/") || contents.includes("tmp/window/")) {
+    if (
+      contents.includes("tmp/door/") ||
+      contents.includes("tmp/window/") ||
+      contents.includes("tmp/project/")
+    ) {
       failures.push(`Temporary source referenced by application: ${file}`);
     }
   }

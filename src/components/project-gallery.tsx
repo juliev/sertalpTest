@@ -125,9 +125,10 @@ export function ProjectGallery({ projects, labels, compact = false }: Props) {
               <Image
                 src={item.images[0].src}
                 alt={item.images[0].alt}
-                fill
+                width={item.images[0].width}
+                height={item.images[0].height}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
+                className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
                 style={{ objectPosition: item.images[0].objectPosition }}
               />
             </span>
@@ -178,9 +179,10 @@ export function ProjectGallery({ projects, labels, compact = false }: Props) {
               <Image
                 src={image.src}
                 alt={image.alt}
-                fill
+                width={image.width}
+                height={image.height}
                 sizes="100vw"
-                className="object-contain"
+                className="h-full w-full object-contain"
               />
             </div>
 

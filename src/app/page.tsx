@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { ProjectGallery } from "@/components/project-gallery";
 import { ContactCta, SectionHeading } from "@/components/shared";
-import { siteImages, workImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 import { getHomeDisplayProjects } from "@/lib/project-display";
@@ -65,12 +65,16 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl">
             <Image
-              src={siteImages.hero}
+              src={workImages.fernandoFerreira.src}
               alt={copy.hero.imageAlt}
-              fill
+              width={workImages.fernandoFerreira.width}
+              height={workImages.fernandoFerreira.height}
               priority
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
+              className="h-full w-full object-cover"
+              style={{
+                objectPosition: workImages.fernandoFerreira.objectPosition,
+              }}
             />
           </div>
         </div>
@@ -135,9 +139,10 @@ export default function HomePage() {
                   <Image
                     src={image.src}
                     alt={alt}
-                    fill
+                    width={image.width}
+                    height={image.height}
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="h-full w-full object-cover"
                     style={{ objectPosition: image.objectPosition }}
                   />
                 </div>
@@ -231,9 +236,10 @@ export default function HomePage() {
             <Image
               src={workImages.casalGlazing.src}
               alt={dictionary.projects.items["casal-do-paul"].alts[0]}
-              fill
+              width={workImages.casalGlazing.width}
+              height={workImages.casalGlazing.height}
               sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
+              className="h-full w-full object-cover"
               style={{ objectPosition: workImages.casalGlazing.objectPosition }}
             />
           </div>

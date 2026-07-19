@@ -1,5 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { workImages } from "../../src/content/images";
 import { productGalleryItems, projects } from "../../src/content/projects";
+import { en } from "../../src/i18n/dictionaries/en";
+import { pt } from "../../src/i18n/dictionaries/pt";
 
 const publicRoutes = [
   "/",
@@ -20,34 +23,24 @@ test("home and every public route load", async ({ page }) => {
   }
 });
 
-test("Home and non-product pages keep the shared hero banner", async ({
-  page,
-}) => {
-  for (const route of [
-    "/",
-    "/sobre-nos/",
-    "/contactos/",
-    "/politica-de-privacidade/",
-    "/politica-de-cookies/",
-  ]) {
-    await page.goto(route);
-    await expect(
-      page.locator(
-        'main > section:first-child img[src="/images/hero/hero-banner.webp"]',
-      ),
-    ).toBeVisible();
-  }
-});
-
-test("real-work hero assignments retain compact priority image cards", async ({
+test("page hero assignments retain compact priority image cards", async ({
   page,
 }) => {
   const assignments = [
+    ["/", "/images/works/projects/fernando-ferreira-janelas-portas-pvc.webp"],
     ["/janelas/", "/images/works/windows/diogo-velasques-janelas-pvc.webp"],
-    ["/portas/", "/images/works/doors/porta-correr-aluminio-terraco.webp"],
+    [
+      "/portas/",
+      "/images/works/projects/linda-a-velha-portas-correr-aluminio.webp",
+    ],
     [
       "/projetos/",
-      "/images/works/windows/casal-do-paul-envidracado-aluminio.webp",
+      "/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp",
+    ],
+    ["/sobre-nos/", "/images/works/projects/lisboa-fachada-janelas-pvc.webp"],
+    [
+      "/contactos/",
+      "/images/works/projects/duque-do-cadaval-varanda-aluminio.webp",
     ],
   ] as const;
 
@@ -67,19 +60,36 @@ test("real-work hero assignments retain compact priority image cards", async ({
   }
 });
 
+test("legal pages use a text-only header with no image column", async ({
+  page,
+}) => {
+  for (const route of ["/politica-de-privacidade/", "/politica-de-cookies/"]) {
+    await page.goto(route);
+    const header = page.locator("main > header:first-child");
+    await expect(header).toBeVisible();
+    await expect(header.locator("img")).toHaveCount(0);
+    await expect(page.locator("main > section:first-child")).toHaveCount(0);
+    await expect(header.locator(":scope > div")).not.toHaveClass(/grid-cols-2/);
+  }
+});
+
 test("Home shows exactly the three approved real-work previews", async ({
   page,
 }) => {
   await page.goto("/");
   const cards = page.getByTestId("project-grid").getByRole("button");
   await expect(cards).toHaveCount(3);
-  await expect(cards.nth(0)).toContainText("Alegria");
-  await expect(cards.nth(0)).toContainText("Porta de entrada em alumínio");
-  await expect(cards.nth(1)).toContainText("Diogo Velasques");
-  await expect(cards.nth(1)).toContainText("Janelas em PVC com portadas");
-  await expect(cards.nth(2)).toContainText("Almoinhas Velhas");
-  await expect(cards.nth(2)).toContainText("Sistema de correr em alumínio");
-  await expect(page.getByText("Macieiras", { exact: true })).toHaveCount(0);
+  await expect(cards.nth(0)).toContainText("Almoinhas Velhas");
+  await expect(cards.nth(0)).toContainText("Soluções em alumínio e PVC");
+  await expect(cards.nth(1)).toContainText("Alegria");
+  await expect(cards.nth(1)).toContainText("Porta de entrada em alumínio");
+  await expect(cards.nth(2)).toContainText("Bernardim Ribeiro");
+  await expect(cards.nth(2)).toContainText(
+    "Portas arqueadas em alumínio por medida",
+  );
+  await expect(
+    page.getByText("Fernando Ferreira", { exact: true }),
+  ).toHaveCount(0);
 });
 
 test("navigation and primary contact actions work", async ({
@@ -130,7 +140,7 @@ test("project gallery opens and closes accessibly", async ({ page }) => {
   const cards = page
     .getByTestId("project-grid")
     .getByRole("button", { name: /Ampliar imagem/ });
-  await expect(cards).toHaveCount(11);
+  await expect(cards).toHaveCount(23);
   await expect
     .poll(() =>
       cards.first().evaluate((element) => getComputedStyle(element).cursor),
@@ -164,16 +174,28 @@ test("Projects render in the approved order and multi-image records navigate", a
   await page.goto("/projetos/");
   const cards = page.getByTestId("project-grid").getByRole("button");
   const locations = [
-    "Casal do Paúl",
     "Almoinhas Velhas",
-    "Diogo Velasques",
+    "Linda-a-Velha",
+    "Bernardim Ribeiro",
+    "Fernando Ferreira",
+    "Casal do Paúl",
     "Alegria",
-    "Misericórdia",
+    "Castanheiros",
+    "Diogo Velasques",
     "Santa Rita",
+    "Duque do Cadaval",
+    "Lisboa",
     "Sobreda",
+    "Alcoutins",
     "Egas Moniz",
     "Infante Santo",
     "Adema do Meio",
+    "Faias",
+    "Barril",
+    "Ulgueir",
+    "Pascoal de Melo",
+    "Misericórdia",
+    "Riba Fria",
     "Macieiras",
   ];
   await expect(cards).toHaveCount(locations.length);
@@ -181,15 +203,18 @@ test("Projects render in the approved order and multi-image records navigate", a
     await expect(cards.nth(index)).toContainText(location);
   }
 
-  for (const location of ["Almoinhas Velhas", "Diogo Velasques"]) {
+  for (const [location, total] of [
+    ["Almoinhas Velhas", 4],
+    ["Diogo Velasques", 2],
+  ] as const) {
     const card = cards.filter({ hasText: location });
     await card.click();
-    await expect(page.getByText("Imagem 1 de 2")).toBeVisible();
+    await expect(page.getByText(`Imagem 1 de ${total}`)).toBeVisible();
     await page
       .getByRole("dialog")
       .getByRole("button", { name: "Imagem seguinte" })
       .click();
-    await expect(page.getByText("Imagem 2 de 2")).toBeVisible();
+    await expect(page.getByText(`Imagem 2 de ${total}`)).toBeVisible();
     await page.keyboard.press("Escape");
   }
 
@@ -208,11 +233,17 @@ test("product galleries use the approved entries and order", async ({
   const windows = page.getByTestId("project-grid").getByRole("button");
   for (const [index, location] of [
     "Diogo Velasques",
+    "Fernando Ferreira",
     "Sobreda",
     "Santa Rita",
-    "Egas Moniz",
     "Almoinhas Velhas",
     "Casal do Paúl",
+    "Duque do Cadaval",
+    "Faias",
+    "Lisboa",
+    "Ulgueir",
+    "Alcoutins",
+    "Egas Moniz",
   ].entries()) {
     await expect(windows.nth(index)).toContainText(location);
   }
@@ -220,35 +251,150 @@ test("product galleries use the approved entries and order", async ({
   await page.goto("/portas/");
   const doors = page.getByTestId("project-grid").getByRole("button");
   for (const [index, title] of [
+    "Linda-a-Velha",
     "Alegria",
+    "Bernardim Ribeiro",
+    "Castanheiros",
     "Adema do Meio",
     "Misericórdia",
     "Infante Santo",
+    "Almoinhas Velhas",
+    "Barril",
+    "Pascoal de Melo",
     "Macieiras",
     "Sistema de correr em alumínio de grande dimensão",
     "Porta envidraçada em PVC por medida",
   ].entries()) {
     await expect(doors.nth(index)).toContainText(title);
   }
-  await expect(doors.nth(5)).not.toContainText(" · ");
-  await expect(doors.nth(6)).not.toContainText(" · ");
+  await expect(doors.nth(11)).not.toContainText(" · ");
+  await expect(doors.nth(12)).not.toContainText(" · ");
 });
 
 test("project assumptions and unnamed examples remain centralized", () => {
-  expect(projects).toHaveLength(11);
+  const previousIds = [
+    "casal-do-paul",
+    "almoinhas-velhas",
+    "diogo-velasques",
+    "alegria",
+    "misericordia",
+    "santa-rita",
+    "sobreda",
+    "egas-moniz",
+    "infante-santo",
+    "adema-do-meio",
+    "macieiras",
+  ];
+  const newIds = [
+    "lisboa",
+    "ulgueir",
+    "riba-fria",
+    "pascoal-de-melo",
+    "linda-a-velha",
+    "fernando-ferreira",
+    "faias",
+    "duque-do-cadaval",
+    "bernardim-ribeiro",
+    "barril",
+    "alcoutins",
+    "castanheiros",
+  ];
+
+  expect(projects).toHaveLength(23);
+  expect(new Set(projects.map(({ id }) => id)).size).toBe(23);
+  expect(projects.map(({ id }) => id)).toEqual(
+    expect.arrayContaining(previousIds),
+  );
+  expect(projects.map(({ id }) => id)).toEqual(expect.arrayContaining(newIds));
+  expect(
+    projects
+      .filter(({ id }) => newIds.includes(id))
+      .every(({ materialNeedsClientConfirmation }) =>
+        Boolean(materialNeedsClientConfirmation),
+      ),
+  ).toBe(true);
   expect(
     projects.every(
       (project) =>
         project.materialNeedsClientConfirmation &&
-        ["PVC", "Alumínio"].includes(project.material),
+        ["PVC", "Alumínio", "Alumínio e PVC"].includes(project.material),
     ),
   ).toBe(true);
+  expect(projects.filter(({ id }) => id === "almoinhas-velhas")).toHaveLength(
+    1,
+  );
+  expect(
+    projects.find(({ id }) => id === "almoinhas-velhas")?.additionalImages,
+  ).toHaveLength(3);
+  expect(projects.find(({ id }) => id === "ulgueir")).toMatchObject({
+    location: "Ulgueir",
+    locationNeedsClientConfirmation: true,
+    installationPhoto: true,
+  });
   expect(projects.map(({ id }) => id)).not.toContain("unnamed-sliding-door");
   expect(projects.map(({ id }) => id)).not.toContain("unnamed-arched-door");
   expect(productGalleryItems.map(({ id }) => id)).toEqual([
     "unnamed-sliding-door",
     "unnamed-arched-door",
   ]);
+});
+
+test("Portuguese and English project dictionaries remain synchronized", () => {
+  expect(Object.keys(en.projects.categories)).toEqual(
+    Object.keys(pt.projects.categories),
+  );
+  expect(Object.keys(en.projects.materials)).toEqual(
+    Object.keys(pt.projects.materials),
+  );
+  expect(Object.keys(en.projects.items)).toEqual(
+    Object.keys(pt.projects.items),
+  );
+  expect(Object.keys(en.home.projects.items)).toEqual(
+    Object.keys(pt.home.projects.items),
+  );
+});
+
+test("new project images use safe shared WebP records with explicit dimensions", () => {
+  const newImages = [
+    workImages.fernandoFerreira,
+    workImages.lindaAVelha,
+    workImages.bernardimRibeiro,
+    workImages.lisboaFacade,
+    workImages.duqueDoCadaval,
+    workImages.ulgueir,
+    workImages.ribaFria,
+    workImages.pascoalDeMelo,
+    workImages.faias,
+    workImages.barril,
+    workImages.alcoutins,
+    workImages.castanheiros,
+    workImages.almoinhasPanoramic,
+    workImages.almoinhasFacade,
+  ];
+
+  expect(new Set(newImages.map(({ src }) => src)).size).toBe(14);
+  expect(
+    newImages.every(
+      ({ src, width, height }) =>
+        /^\/images\/works\/projects\/[a-z0-9-]+\.webp$/.test(src) &&
+        width > 0 &&
+        height > 0,
+    ),
+  ).toBe(true);
+  expect(workImages.lisboaFacade).toMatchObject({
+    width: 1536,
+    height: 1024,
+  });
+  expect(workImages.barril).toMatchObject({ width: 1280, height: 720 });
+  expect(workImages.alcoutins).toMatchObject({ width: 1600, height: 1200 });
+
+  const almoinhas = projects.find(({ id }) => id === "almoinhas-velhas");
+  expect(almoinhas?.coverImage).toBe(workImages.almoinhasFacade);
+  expect(
+    almoinhas?.additionalImages?.filter(
+      ({ installationPhoto }) => installationPhoto,
+    ),
+  ).toEqual([workImages.almoinhasPanoramic]);
 });
 
 test("non-hero images are lazy and all image URLs resolve", async ({
@@ -452,14 +598,7 @@ test("both confirmed email addresses are published correctly", async ({
 test("site has no removed UI and no horizontal mobile overflow", async ({
   page,
 }) => {
-  for (const route of [
-    "/",
-    "/janelas/",
-    "/portas/",
-    "/projetos/",
-    "/sobre-nos/",
-    "/contactos/",
-  ]) {
+  for (const route of publicRoutes) {
     await page.goto(route);
     await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
     await expect(

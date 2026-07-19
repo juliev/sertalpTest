@@ -1,6 +1,4 @@
-import { PageHero } from "@/components/shared";
 import { company } from "@/content/company";
-import { siteImages } from "@/content/images";
 
 type LegalSection = {
   kind: string;
@@ -46,14 +44,21 @@ export function LegalPage({
 }) {
   return (
     <>
-      <PageHero
-        eyebrow={updated}
-        title={title}
-        description={intro ?? ""}
-        image={siteImages.hero}
-        imageAlt=""
-        priority
-      />
+      <header className="bg-blue-50">
+        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-700">
+            {updated}
+          </p>
+          <h1 className="mt-4 text-4xl font-black tracking-tight text-gray-950 sm:text-5xl">
+            {title}
+          </h1>
+          {intro ? (
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-gray-600">
+              {intro}
+            </p>
+          ) : null}
+        </div>
+      </header>
       <article className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
         <div className="space-y-10">
           {sections.map((section) => {

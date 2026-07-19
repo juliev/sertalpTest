@@ -80,8 +80,7 @@ export const en = {
       primaryCta: "Request a quote",
       secondaryCta: "Explore solutions",
       trustLine: "Experience in the sector since February 1978",
-      imageAlt:
-        "Modern house with dark aluminium windows, door and sliding system",
+      imageAlt: "House with white PVC windows and doors with exterior shutters",
     },
     benefits: {
       title: "Solutions designed for your project",
@@ -161,17 +160,15 @@ export const en = {
             "A contemporary entrance door with an anthracite finish, vertical handle and glazed side panel.",
           alt: "Anthracite aluminium entrance door with side glazing",
         },
-        "diogo-velasques": {
-          title: "PVC windows with shutters",
-          description:
-            "A set of PVC windows with exterior shutters integrated into the existing facade.",
-          alt: "White PVC windows with exterior shutters",
-        },
         "almoinhas-velhas": {
-          title: "Aluminium sliding system",
-          description:
-            "A large glazed sliding system designed to increase natural light and strengthen the connection to the terrace.",
-          alt: "Aluminium sliding system beside a terrace",
+          title: "Aluminium and PVC solutions",
+          description: "Different frame solutions for a contemporary house.",
+          alt: "Contemporary house with dark aluminium windows and doors",
+        },
+        "bernardim-ribeiro": {
+          title: "Made-to-measure arched aluminium doors",
+          description: "Glazed doors made to measure for the arched openings.",
+          alt: "Glazed aluminium doors made for arched interior openings",
         },
       },
     },
@@ -287,7 +284,8 @@ export const en = {
         "Custom dimensions",
       ],
       cta: "Request a quote",
-      imageAlt: "Aluminium sliding door opening onto a terrace",
+      imageAlt:
+        "Aluminium sliding doors opening onto a balcony with a sea view",
     },
     solutions: {
       title: "Solutions for different uses",
@@ -364,7 +362,7 @@ export const en = {
       title: "Solutions adapted to different spaces",
       description:
         "A selection of PVC and aluminium windows, doors and systems.",
-      imageAlt: "Large aluminium glazing overlooking the landscape",
+      imageAlt: "Glazed aluminium doors made for arched interior openings",
     },
     gallery: {
       title: "Featured projects",
@@ -378,6 +376,7 @@ export const en = {
     materials: {
       PVC: "PVC",
       Alumínio: "Aluminium",
+      "Alumínio e PVC": "Aluminium and PVC",
     },
     items: {
       "casal-do-paul": {
@@ -387,13 +386,35 @@ export const en = {
         alts: ["Large aluminium glazing overlooking the landscape"],
       },
       "almoinhas-velhas": {
-        title: "Aluminium sliding system and glazed opening",
+        title: "Aluminium and PVC solutions for a contemporary house",
         description:
-          "A project combining a sliding system with a large glazed opening to enhance natural light and views outside.",
+          "A project with different aluminium and PVC solutions, including panoramic openings, sliding systems and dark-finished frame assemblies.",
         alts: [
+          "Contemporary house with dark aluminium windows and doors",
+          "Panoramic PVC opening during installation",
           "Aluminium sliding system beside a terrace",
           "Large aluminium glazed opening beside a staircase",
         ],
+      },
+      "linda-a-velha": {
+        title: "Aluminium sliding doors with a sea view",
+        description:
+          "A large glazed sliding system creating a broad connection between the interior, balcony and seascape.",
+        alts: [
+          "Aluminium sliding doors opening onto a balcony with a sea view",
+        ],
+      },
+      "bernardim-ribeiro": {
+        title: "Made-to-measure arched aluminium doors",
+        description:
+          "A set of glazed aluminium doors made to measure for the arched openings in the interior.",
+        alts: ["Glazed aluminium doors made for arched interior openings"],
+      },
+      "fernando-ferreira": {
+        title: "PVC windows and doors with shutters",
+        description:
+          "A set of white PVC openings with exterior shutters, integrated into a traditionally styled house.",
+        alts: ["House with white PVC windows and doors with exterior shutters"],
       },
       "diogo-velasques": {
         title: "PVC openings with exterior shutters",
@@ -410,6 +431,12 @@ export const en = {
           "A contemporary entrance door with an anthracite finish, vertical handle and glazed side panel.",
         alts: ["Anthracite aluminium entrance door with side glazing"],
       },
+      castanheiros: {
+        title: "Made-to-measure PVC door and glazing",
+        description:
+          "A glazed PVC composition with a geometric design and curved details, made to measure for the architecture of the space.",
+        alts: ["White PVC door and glazed composition with curved details"],
+      },
       misericordia: {
         title: "PVC glazed door with an ogival top",
         description:
@@ -421,6 +448,20 @@ export const en = {
         description:
           "A large glazed opening that increases natural light and the visual connection with the exterior.",
         alts: ["Large aluminium glazing"],
+      },
+      "duque-do-cadaval": {
+        title: "Aluminium balcony enclosure",
+        description:
+          "A dark-finished aluminium framing system that creates a protected space while retaining the breadth of the exterior view.",
+        alts: [
+          "Enclosed balcony with aluminium frames overlooking the landscape",
+        ],
+      },
+      lisboa: {
+        title: "PVC window renovation",
+        description:
+          "A set of white PVC windows integrated into a traditionally styled urban façade.",
+        alts: ["Traditional urban façade with multiple white PVC windows"],
       },
       sobreda: {
         title: "PVC window with exterior shutters",
@@ -434,6 +475,12 @@ export const en = {
           "A set of large PVC windows designed to increase natural light in the interior.",
         alts: ["Set of white PVC windows in a living room"],
       },
+      alcoutins: {
+        title: "Glazed aluminium façade",
+        description:
+          "A continuous set of glazed aluminium openings integrated into a contemporary façade.",
+        alts: ["Façade with multiple glazed aluminium openings"],
+      },
       "infante-santo": {
         title: "Aluminium sliding system",
         description:
@@ -446,11 +493,41 @@ export const en = {
           "An arched aluminium entrance door with traditional styling and a wood-effect finish.",
         alts: ["Arched aluminium door with a wood-effect finish"],
       },
+      faias: {
+        title: "Corner glazing solution in PVC",
+        description:
+          "A composition of large corner-glazed openings designed to increase natural light and the connection to the exterior.",
+        alts: ["Corner glazing solution with white PVC frames"],
+      },
+      barril: {
+        title: "Aluminium frames for a contemporary house",
+        description:
+          "A set of dark-finished aluminium doors and windows integrated into a contemporary house.",
+        alts: ["Contemporary house with dark aluminium doors and windows"],
+      },
+      ulgueir: {
+        title: "Aluminium frames for a house",
+        description:
+          "A set of dark-finished aluminium doors and windows installed in a traditionally styled house.",
+        alts: ["House with dark-finished aluminium doors and windows"],
+      },
+      "pascoal-de-melo": {
+        title: "Aluminium and PVC frame assembly",
+        description:
+          "A made-to-measure composition combining a dark-finished exterior structure with white glazed leaves.",
+        alts: ["Dark aluminium structure with white glazed windows"],
+      },
       macieiras: {
         title: "Aluminium entrance door with glazed panels",
         description:
           "An aluminium entrance door with a wood-effect finish, glazed side panel and fanlight.",
         alts: ["Aluminium entrance door with side glazing and fanlight"],
+      },
+      "riba-fria": {
+        title: "Panoramic PVC opening",
+        description:
+          "Installation of a large panoramic opening designed to connect the interior with the surrounding landscape.",
+        alts: ["Panoramic PVC opening during installation"],
       },
     },
     productExamples: {
@@ -474,8 +551,7 @@ export const en = {
       eyebrow: "About Sertalp",
       title: "Experience, in-house production and tailored solutions",
       description: "Experience in the sector since February 1978",
-      imageAlt:
-        "Modern house with dark aluminium windows, door and sliding system",
+      imageAlt: "Traditional urban façade with multiple white PVC windows",
     },
     story: {
       title: "An approach built on experience",
@@ -546,6 +622,8 @@ export const en = {
       title: "Talk to us about your project",
       description:
         "Contact us by telephone, WhatsApp or email to arrange an assessment or request information.",
+      imageAlt:
+        "Enclosed balcony with aluminium frames overlooking the landscape",
     },
     information: {
       title: "Contact information",

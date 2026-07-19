@@ -42,12 +42,7 @@ export default function DoorsPage() {
 
   return (
     <>
-      <PageHero
-        {...copy.hero}
-        image={workImages.unnamedSlidingDoor.src}
-        imagePosition={workImages.unnamedSlidingDoor.objectPosition}
-        priority
-      />
+      <PageHero {...copy.hero} image={workImages.lindaAVelha} priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -90,7 +85,7 @@ export default function DoorsPage() {
             {
               content: copy.materials.aluminium,
               image: workImages.almoinhasSliding,
-              alt: dictionary.projects.items["almoinhas-velhas"].alts[0],
+              alt: dictionary.projects.items["almoinhas-velhas"].alts[2],
             },
           ].map(({ content, image, alt }) => (
             <article
@@ -101,9 +96,10 @@ export default function DoorsPage() {
                 <Image
                   src={image.src}
                   alt={alt}
-                  fill
+                  width={image.width}
+                  height={image.height}
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
+                  className="h-full w-full object-cover"
                   style={{ objectPosition: image.objectPosition }}
                 />
               </div>

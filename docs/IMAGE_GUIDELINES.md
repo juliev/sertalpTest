@@ -8,12 +8,13 @@ files under:
 ```text
 public/images/works/windows/
 public/images/works/doors/
+public/images/works/projects/
 ```
 
-The temporary input folders `tmp/window/` and `tmp/door/` are ignored by Git.
-They are source input only: application code must never reference them, the
-original JPG files must not be committed or copied to `public/`, and the
-owner's files must not be deleted.
+The temporary input folders `tmp/window/`, `tmp/door/`, and `tmp/project/` are
+ignored by Git. They are source input only: application code must never
+reference them, the original JPG files must not be committed or copied to
+`public/`, and the owner's files must not be deleted.
 
 The earlier generated project sources remain preserved outside `public/` under
 `assets/source-images/projects/`. Their optimized WebP outputs may remain in
@@ -71,6 +72,33 @@ The owner-supplied filenames differed slightly from the originally described
 suffixes. Folder context and visual inspection were used to map the 15 actual
 files without duplicating outputs.
 
+### Second project batch
+
+| Temporary source                    | Public WebP                                                                     |
+| ----------------------------------- | ------------------------------------------------------------------------------- |
+| `tmp/project/Alcoutins.JPG`         | `public/images/works/projects/alcoutins-fachada-envidracada-aluminio.webp`      |
+| `tmp/project/Almoinhas Velhas.jpg`  | `public/images/works/projects/almoinhas-velhas-fachada-aluminio.webp`           |
+| `tmp/project/Almoinhas Velhas2.jpg` | `public/images/works/projects/almoinhas-velhas-vao-panoramico-pvc.webp`         |
+| `tmp/project/Barril .jpg`           | `public/images/works/projects/barril-caixilharia-aluminio.webp`                 |
+| `tmp/project/Bernardim Ribeiro.jpg` | `public/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp` |
+| `tmp/project/Castanheiros.jpg`      | `public/images/works/projects/castanheiros-porta-envidracada-pvc.webp`          |
+| `tmp/project/Duque do Cadaval.jpg`  | `public/images/works/projects/duque-do-cadaval-varanda-aluminio.webp`           |
+| `tmp/project/Faias.jpg`             | `public/images/works/projects/faias-envidracado-canto-pvc.webp`                 |
+| `tmp/project/Fernando Ferreira.jpg` | `public/images/works/projects/fernando-ferreira-janelas-portas-pvc.webp`        |
+| `tmp/project/Linda-a-Velha.jpg`     | `public/images/works/projects/linda-a-velha-portas-correr-aluminio.webp`        |
+| `tmp/project/Lisboa1.jpg`           | `public/images/works/projects/lisboa-fachada-janelas-pvc.webp`                  |
+| `tmp/project/Pascoal de Melo.jpg`   | `public/images/works/projects/pascoal-de-melo-caixilharia-aluminio-pvc.webp`    |
+| `tmp/project/Riba Fria.jpg`         | `public/images/works/projects/riba-fria-vao-panoramico-pvc.webp`                |
+| `tmp/project/Ulgueir.jpg`           | `public/images/works/projects/ulgueir-caixilharia-aluminio.webp`                |
+
+The second batch reused each output across its project card, galleries, and
+hero where applicable. The Lisboa crop excludes the complete property-sale
+sign and telephone number. The Barril crop excludes the partially visible
+person, and the Alcoutins crop excludes the embedded timestamp. The Fernando
+Ferreira, Linda-a-Velha, Bernardim Ribeiro, and Duque do Cadaval crops reduce
+irrelevant foreground or background while preserving their specified
+architectural features.
+
 ## Content and data rules
 
 Project image paths, intrinsic dimensions, and crop positions live in
@@ -79,11 +107,15 @@ gallery membership live in `src/content/projects.ts`. Localized titles,
 descriptions, and alt text remain synchronized in the Portuguese and English
 development dictionaries.
 
-Material values are limited to `PVC` and `Alumínio`. Every new location-based
-project carries the non-rendered flag
+Material values are limited to `PVC`, `Alumínio`, and `Alumínio e PVC`. Every
+new location-based project carries the non-rendered flag
 `materialNeedsClientConfirmation: true`. Unnamed `door1` and `door2` are
 product-gallery examples only and must never acquire locations or project
 records.
+
+Installation-stage status and location confirmation are also central,
+non-rendered flags. `Ulgueir` keeps
+`locationNeedsClientConfirmation: true` until the client confirms its spelling.
 
 Visible manufacturer or protective-film branding in an original photograph is
 acceptable. Do not remove, blur, name, promote, or infer anything from it.

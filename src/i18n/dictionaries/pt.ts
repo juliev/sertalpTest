@@ -79,7 +79,7 @@ export const pt = {
       secondaryCta: "Conhecer soluções",
       trustLine: "Experiência no setor desde fevereiro de 1978",
       imageAlt:
-        "Moradia moderna com janelas, porta e sistema de correr em alumínio escuro",
+        "Moradia com janelas e portas brancas em PVC e portadas exteriores",
     },
     benefits: {
       title: "Soluções pensadas para o seu projeto",
@@ -159,17 +159,17 @@ export const pt = {
             "Porta de entrada de linhas contemporâneas, com acabamento antracite, puxador vertical e painel lateral envidraçado.",
           alt: "Porta de entrada em alumínio antracite com vidro lateral",
         },
-        "diogo-velasques": {
-          title: "Janelas em PVC com portadas",
-          description:
-            "Conjunto de janelas em PVC com portadas exteriores, integrado na fachada existente.",
-          alt: "Janelas brancas em PVC com portadas exteriores",
-        },
         "almoinhas-velhas": {
-          title: "Sistema de correr em alumínio",
+          title: "Soluções em alumínio e PVC",
           description:
-            "Sistema envidraçado de correr de grande dimensão, concebido para reforçar a entrada de luz e a ligação ao terraço.",
-          alt: "Sistema de correr em alumínio junto a um terraço",
+            "Diferentes soluções de caixilharia para uma moradia contemporânea.",
+          alt: "Moradia contemporânea com janelas e portas em alumínio escuro",
+        },
+        "bernardim-ribeiro": {
+          title: "Portas arqueadas em alumínio por medida",
+          description:
+            "Portas envidraçadas desenvolvidas por medida para acompanhar os vãos arqueados.",
+          alt: "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
         },
       },
     },
@@ -280,7 +280,7 @@ export const pt = {
         "Dimensões personalizadas",
       ],
       cta: "Pedir orçamento",
-      imageAlt: "Porta de correr em alumínio com acesso ao terraço",
+      imageAlt: "Portas de correr em alumínio com varanda e vista para o mar",
     },
     solutions: {
       title: "Soluções para diferentes utilizações",
@@ -358,7 +358,7 @@ export const pt = {
       description:
         "Uma seleção de janelas, portas e sistemas em PVC e alumínio.",
       imageAlt:
-        "Envidraçado de grande dimensão em alumínio com vista para a paisagem",
+        "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
     },
     gallery: {
       title: "Projetos em destaque",
@@ -372,6 +372,7 @@ export const pt = {
     materials: {
       PVC: "PVC",
       Alumínio: "Alumínio",
+      "Alumínio e PVC": "Alumínio e PVC",
     },
     items: {
       "casal-do-paul": {
@@ -383,12 +384,36 @@ export const pt = {
         ],
       },
       "almoinhas-velhas": {
-        title: "Sistema de correr e vão envidraçado em alumínio",
+        title: "Soluções em alumínio e PVC para moradia contemporânea",
         description:
-          "Projeto que combina um sistema de correr com um vão envidraçado de grande dimensão, valorizando a luz natural e a vista para o exterior.",
+          "Projeto com diferentes soluções em alumínio e PVC, incluindo vãos panorâmicos, sistemas de correr e conjuntos de caixilharia de acabamento escuro.",
         alts: [
+          "Moradia contemporânea com janelas e portas em alumínio escuro",
+          "Vão panorâmico em PVC durante a instalação",
           "Sistema de correr em alumínio junto a um terraço",
           "Vão envidraçado de grande dimensão em alumínio junto a uma escada",
+        ],
+      },
+      "linda-a-velha": {
+        title: "Portas de correr em alumínio com vista para o mar",
+        description:
+          "Sistema envidraçado de correr de grande dimensão, criando uma ligação ampla entre o espaço interior, a varanda e a paisagem marítima.",
+        alts: ["Portas de correr em alumínio com varanda e vista para o mar"],
+      },
+      "bernardim-ribeiro": {
+        title: "Portas arqueadas em alumínio por medida",
+        description:
+          "Conjunto de portas envidraçadas em alumínio, desenvolvido por medida para acompanhar os vãos arqueados do espaço interior.",
+        alts: [
+          "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
+        ],
+      },
+      "fernando-ferreira": {
+        title: "Janelas e portas em PVC com portadas",
+        description:
+          "Conjunto de vãos brancos em PVC com portadas exteriores, integrado numa moradia de arquitetura tradicional.",
+        alts: [
+          "Moradia com janelas e portas brancas em PVC e portadas exteriores",
         ],
       },
       "diogo-velasques": {
@@ -406,6 +431,14 @@ export const pt = {
           "Porta de entrada de linhas contemporâneas, com acabamento antracite, puxador vertical e painel lateral envidraçado.",
         alts: ["Porta de entrada em alumínio antracite com vidro lateral"],
       },
+      castanheiros: {
+        title: "Porta e envidraçado em PVC por medida",
+        description:
+          "Composição envidraçada em PVC com desenho geométrico e remates curvos, executada por medida para acompanhar a arquitetura do espaço.",
+        alts: [
+          "Porta e composição envidraçada branca em PVC com remates curvos",
+        ],
+      },
       misericordia: {
         title: "Porta envidraçada em PVC com remate ogival",
         description:
@@ -420,6 +453,20 @@ export const pt = {
           "Vão envidraçado de grande dimensão que amplia a entrada de luz e a relação visual com o exterior.",
         alts: ["Envidraçado de grande dimensão em alumínio"],
       },
+      "duque-do-cadaval": {
+        title: "Fecho de varanda em alumínio",
+        description:
+          "Sistema de caixilharia em alumínio de acabamento escuro, criando um espaço protegido sem perder a amplitude da vista exterior.",
+        alts: [
+          "Varanda fechada com caixilharia de alumínio e vista para a paisagem",
+        ],
+      },
+      lisboa: {
+        title: "Renovação de janelas em PVC",
+        description:
+          "Conjunto de janelas brancas em PVC integrado numa fachada urbana de linguagem tradicional.",
+        alts: ["Fachada urbana tradicional com várias janelas brancas em PVC"],
+      },
       sobreda: {
         title: "Janela em PVC com portadas exteriores",
         description:
@@ -431,6 +478,12 @@ export const pt = {
         description:
           "Conjunto de janelas em PVC de grande dimensão, concebido para aumentar a entrada de luz natural no espaço interior.",
         alts: ["Conjunto de janelas brancas em PVC numa sala"],
+      },
+      alcoutins: {
+        title: "Fachada envidraçada em alumínio",
+        description:
+          "Conjunto contínuo de vãos envidraçados em alumínio, integrado numa fachada de linhas contemporâneas.",
+        alts: ["Fachada com vários vãos envidraçados em alumínio"],
       },
       "infante-santo": {
         title: "Sistema de correr em alumínio",
@@ -444,6 +497,30 @@ export const pt = {
           "Porta de entrada arqueada em alumínio, com linguagem tradicional e acabamento de efeito madeira.",
         alts: ["Porta arqueada em alumínio com acabamento de efeito madeira"],
       },
+      faias: {
+        title: "Solução envidraçada de canto em PVC",
+        description:
+          "Composição de grandes vãos envidraçados em canto, concebida para ampliar a luz natural e a ligação ao espaço exterior.",
+        alts: ["Solução envidraçada de canto com caixilharia branca em PVC"],
+      },
+      barril: {
+        title: "Caixilharia em alumínio numa moradia contemporânea",
+        description:
+          "Conjunto de portas e janelas em alumínio de acabamento escuro, integrado numa moradia de linhas contemporâneas.",
+        alts: ["Moradia contemporânea com portas e janelas em alumínio escuro"],
+      },
+      ulgueir: {
+        title: "Caixilharia em alumínio para moradia",
+        description:
+          "Conjunto de portas e janelas em alumínio de acabamento escuro, aplicado numa moradia de arquitetura tradicional.",
+        alts: ["Moradia com portas e janelas em alumínio de acabamento escuro"],
+      },
+      "pascoal-de-melo": {
+        title: "Conjunto de caixilharia em alumínio e PVC",
+        description:
+          "Composição por medida que combina uma estrutura exterior de acabamento escuro com folhas brancas envidraçadas.",
+        alts: ["Estrutura de alumínio escuro com janelas brancas envidraçadas"],
+      },
       macieiras: {
         title: "Porta de entrada em alumínio com painéis envidraçados",
         description:
@@ -451,6 +528,12 @@ export const pt = {
         alts: [
           "Porta de entrada em alumínio com vidro lateral e bandeira superior",
         ],
+      },
+      "riba-fria": {
+        title: "Vão panorâmico em PVC",
+        description:
+          "Instalação de um vão panorâmico de grandes dimensões, concebido para abrir o espaço interior à paisagem envolvente.",
+        alts: ["Vão panorâmico em PVC durante a instalação"],
       },
     },
     productExamples: {
@@ -474,8 +557,7 @@ export const pt = {
       eyebrow: "Sobre a Sertalp",
       title: "Experiência, produção própria e soluções à medida",
       description: "Experiência no setor desde fevereiro de 1978",
-      imageAlt:
-        "Moradia moderna com janelas, porta e sistema de correr em alumínio escuro",
+      imageAlt: "Fachada urbana tradicional com várias janelas brancas em PVC",
     },
     story: {
       title: "Uma abordagem construída com experiência",
@@ -546,6 +628,8 @@ export const pt = {
       title: "Fale connosco sobre o seu projeto",
       description:
         "Contacte-nos por telefone, WhatsApp ou email para marcar uma avaliação ou pedir informações.",
+      imageAlt:
+        "Varanda fechada com caixilharia de alumínio e vista para a paisagem",
     },
     information: {
       title: "Informações de contacto",

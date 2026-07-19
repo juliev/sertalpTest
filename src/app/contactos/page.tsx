@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { PageHero } from "@/components/shared";
 import { company } from "@/content/company";
-import { siteImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -26,7 +26,7 @@ export default function ContactsPage() {
 
   return (
     <>
-      <PageHero {...copy.hero} image={siteImages.hero} imageAlt="" priority />
+      <PageHero {...copy.hero} image={workImages.duqueDoCadaval} priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
