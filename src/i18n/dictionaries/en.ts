@@ -89,7 +89,8 @@ export const en = {
       primaryCta: "Request a quote",
       secondaryCta: "Explore solutions",
       trustLine: "More than 30 years of industry experience",
-      imageAlt: "Large white-framed windows in a bright interior",
+      imageAlt:
+        "Modern house with dark aluminium windows, door and sliding system",
     },
     benefits: {
       title: "Solutions designed for your project",

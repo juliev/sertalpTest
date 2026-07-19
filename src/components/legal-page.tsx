@@ -1,4 +1,6 @@
+import { PageHero } from "@/components/shared";
 import { company } from "@/content/company";
+import { siteImages } from "@/content/images";
 
 type LegalSection = {
   kind: string;
@@ -43,136 +45,140 @@ export function LegalPage({
   websiteLabel?: string;
 }) {
   return (
-    <article className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
-      <h1 className="text-4xl font-black tracking-tight text-gray-950 sm:text-5xl">
-        {title}
-      </h1>
-      <p className="mt-4 font-semibold text-gray-600">{updated}</p>
-      {intro ? <p className="mt-8 text-lg leading-8">{intro}</p> : null}
+    <>
+      <PageHero
+        eyebrow={updated}
+        title={title}
+        description={intro ?? ""}
+        image={siteImages.hero}
+        imageAlt=""
+        priority
+      />
+      <article className="mx-auto max-w-4xl px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="space-y-10">
+          {sections.map((section) => {
+            const splitAt = splitParagraphsAt(section);
+            const before = section.paragraphs.slice(0, splitAt);
+            const after = section.paragraphs.slice(splitAt);
+            const linksBeforeAfter = section.kind === "maps";
 
-      <div className="mt-12 space-y-10">
-        {sections.map((section) => {
-          const splitAt = splitParagraphsAt(section);
-          const before = section.paragraphs.slice(0, splitAt);
-          const after = section.paragraphs.slice(splitAt);
-          const linksBeforeAfter = section.kind === "maps";
-
-          const links =
-            section.kind === "external" || section.kind === "maps" ? (
-              <ul className="space-y-2">
-                <li>
-                  {section.linkLabels[0]}:{" "}
-                  <a
-                    className="font-semibold text-blue-700 underline"
-                    href={externalUrls.googlePrivacy}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {externalUrls.googlePrivacy}
-                  </a>
-                </li>
-                <li>
-                  {section.linkLabels[1]}:{" "}
-                  <a
-                    className="font-semibold text-blue-700 underline"
-                    href={externalUrls.mapsTerms}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {externalUrls.mapsTerms}
-                  </a>
-                </li>
-              </ul>
-            ) : null;
-
-          return (
-            <section key={section.kind}>
-              <h2 className="text-2xl font-bold text-gray-950">
-                {section.title}
-              </h2>
-              <div className="mt-4 space-y-4 leading-8 text-gray-700">
-                {before.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-
-                {section.kind === "controller" ? (
-                  <address className="not-italic">
-                    <strong className="text-gray-950">
-                      {company.legalName}
-                    </strong>
-                    <br />
-                    NIPC: {company.nipc}
-                    <br />
-                    {contactLabel}:{" "}
+            const links =
+              section.kind === "external" || section.kind === "maps" ? (
+                <ul className="space-y-2">
+                  <li>
+                    {section.linkLabels[0]}:{" "}
                     <a
                       className="font-semibold text-blue-700 underline"
-                      href={`mailto:${company.primaryEmail}`}
+                      href={externalUrls.googlePrivacy}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      {company.primaryEmail}
+                      {externalUrls.googlePrivacy}
                     </a>
-                  </address>
-                ) : null}
+                  </li>
+                  <li>
+                    {section.linkLabels[1]}:{" "}
+                    <a
+                      className="font-semibold text-blue-700 underline"
+                      href={externalUrls.mapsTerms}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {externalUrls.mapsTerms}
+                    </a>
+                  </li>
+                </ul>
+              ) : null;
 
-                {section.bullets.length > 0 ? (
-                  <ul className="list-disc space-y-2 pl-6">
-                    {section.bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                ) : null}
+            return (
+              <section key={section.kind}>
+                <h2 className="text-2xl font-bold text-gray-950">
+                  {section.title}
+                </h2>
+                <div className="mt-4 space-y-4 leading-8 text-gray-700">
+                  {before.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
 
-                {linksBeforeAfter ? links : null}
-
-                {after.map((paragraph, index) =>
-                  section.kind === "rights" && index === 0 ? (
-                    <p key={paragraph}>
-                      {paragraph}{" "}
+                  {section.kind === "controller" ? (
+                    <address className="not-italic">
+                      <strong className="text-gray-950">
+                        {company.legalName}
+                      </strong>
+                      <br />
+                      NIPC: {company.nipc}
+                      <br />
+                      {contactLabel}:{" "}
                       <a
                         className="font-semibold text-blue-700 underline"
                         href={`mailto:${company.primaryEmail}`}
                       >
                         {company.primaryEmail}
                       </a>
-                      .
+                    </address>
+                  ) : null}
+
+                  {section.bullets.length > 0 ? (
+                    <ul className="list-disc space-y-2 pl-6">
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+
+                  {linksBeforeAfter ? links : null}
+
+                  {after.map((paragraph, index) =>
+                    section.kind === "rights" && index === 0 ? (
+                      <p key={paragraph}>
+                        {paragraph}{" "}
+                        <a
+                          className="font-semibold text-blue-700 underline"
+                          href={`mailto:${company.primaryEmail}`}
+                        >
+                          {company.primaryEmail}
+                        </a>
+                        .
+                      </p>
+                    ) : (
+                      <p key={paragraph}>{paragraph}</p>
+                    ),
+                  )}
+
+                  {section.kind === "complaint" ? (
+                    <p>
+                      <strong>{section.linkLabels[0]}</strong>
+                      <br />
+                      {websiteLabel}:{" "}
+                      <a
+                        className="font-semibold text-blue-700 underline"
+                        href={externalUrls.cnpd}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {externalUrls.cnpd}
+                      </a>
                     </p>
-                  ) : (
-                    <p key={paragraph}>{paragraph}</p>
-                  ),
-                )}
+                  ) : null}
 
-                {section.kind === "complaint" ? (
-                  <p>
-                    <strong>{section.linkLabels[0]}</strong>
-                    <br />
-                    {websiteLabel}:{" "}
-                    <a
-                      className="font-semibold text-blue-700 underline"
-                      href={externalUrls.cnpd}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {externalUrls.cnpd}
-                    </a>
-                  </p>
-                ) : null}
+                  {!linksBeforeAfter ? links : null}
 
-                {!linksBeforeAfter ? links : null}
-
-                {section.kind === "contact" ? (
-                  <p>
-                    <a
-                      className="font-semibold text-blue-700 underline"
-                      href={`mailto:${company.primaryEmail}`}
-                    >
-                      {company.primaryEmail}
-                    </a>
-                  </p>
-                ) : null}
-              </div>
-            </section>
-          );
-        })}
-      </div>
-    </article>
+                  {section.kind === "contact" ? (
+                    <p>
+                      <a
+                        className="font-semibold text-blue-700 underline"
+                        href={`mailto:${company.primaryEmail}`}
+                      >
+                        {company.primaryEmail}
+                      </a>
+                    </p>
+                  ) : null}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </article>
+    </>
   );
 }

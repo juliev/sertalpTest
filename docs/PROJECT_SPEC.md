@@ -590,7 +590,7 @@ https://sertalp.com
 - page-specific Portuguese titles and descriptions from `docs/PAGE_COPY.md`;
 - canonical URL for every page;
 - Open Graph metadata;
-- existing `public/window_hero.jpg` as the initial Open Graph image;
+- optimized `public/images/hero/hero-banner.webp` as the Open Graph image;
 - `openGraph.locale = "pt_PT"` in production;
 - no English alternate URLs or `hreflang`;
 - `app/sitemap.ts`;

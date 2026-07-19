@@ -87,7 +87,8 @@ export const pt = {
       primaryCta: "Pedir orçamento",
       secondaryCta: "Conhecer soluções",
       trustLine: "Mais de 30 anos de experiência no setor",
-      imageAlt: "Janelas amplas com caixilharia branca num interior luminoso",
+      imageAlt:
+        "Moradia moderna com janelas, porta e sistema de correr em alumínio escuro",
     },
     benefits: {
       title: "Soluções pensadas para o seu projeto",

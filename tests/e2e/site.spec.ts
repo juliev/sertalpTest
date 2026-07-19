@@ -19,6 +19,26 @@ test("home and every public route load", async ({ page }) => {
   }
 });
 
+test("pages without product imagery display the shared hero banner", async ({
+  page,
+}) => {
+  for (const route of [
+    "/",
+    "/projetos/",
+    "/sobre-nos/",
+    "/contactos/",
+    "/politica-de-privacidade/",
+    "/politica-de-cookies/",
+  ]) {
+    await page.goto(route);
+    await expect(
+      page.locator(
+        'main > section:first-child img[src="/images/hero/hero-banner.webp"]',
+      ),
+    ).toBeVisible();
+  }
+});
+
 test("navigation and primary contact actions work", async ({
   page,
 }, testInfo) => {

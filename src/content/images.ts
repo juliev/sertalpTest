@@ -1,5 +1,5 @@
 export const siteImages = {
-  hero: "/window_hero.jpg",
+  hero: "/images/hero/hero-banner.webp",
   projects: {
     pvcWindows: "/images/projects/project-pvc-windows.webp",
     aluminiumWindows: "/images/projects/project-aluminium-windows.webp",

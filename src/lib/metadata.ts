@@ -27,8 +27,8 @@ export const createPageMetadata = (
     images: [
       {
         url: siteImages.hero,
-        width: 1024,
-        height: 682,
+        width: 1600,
+        height: 821,
         alt: company.commercialName,
       },
     ],

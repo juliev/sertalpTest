@@ -15,7 +15,7 @@ The original files are now preserved under:
 assets/source-images/projects/
 ```
 
-They are approved temporary project images for the current website version. Do not generate new images, do not use `public/window_hero.jpg` as a project fallback, and do not add mock flags, mock modes, preview-only content, or visible mock disclaimers.
+They are approved temporary project images for the current website version. Do not generate new images, do not use the hero banner as a project fallback, and do not add mock flags, mock modes, preview-only content, or visible mock disclaimers.
 
 The initial rebuild review verified:
 
@@ -106,7 +106,13 @@ The agent may first normalize the six source filenames in `assets/source-images/
 
 - Project cards: consistent 3:2 containers with `object-cover`.
 - Lightbox: `object-contain`, preserving the complete optimized image.
-- Main hero and initial Open Graph image: keep using the existing `public/window_hero.jpg` unless a better existing approved asset is already used by the current site.
+- The home, Projects, About, Contacts, Privacy and Cookies heroes, plus the
+  Open Graph image, use the optimized `public/images/hero/hero-banner.webp`.
+- Windows and Doors keep their product-specific project images in the hero.
+- Preserve its original source at
+  `assets/source-images/hero/hero-banner.png`.
+- Keep the wide source composition for Open Graph; the existing hero container
+  may crop it responsively with `object-cover`.
 - Use translated alt text from `docs/PAGE_COPY.md`.
 - Never use filenames as alt text.
 - Avoid loading all lightbox images eagerly.

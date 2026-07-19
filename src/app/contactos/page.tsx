@@ -8,7 +8,9 @@ import {
   MessageCircle,
   Phone,
 } from "lucide-react";
+import { PageHero } from "@/components/shared";
 import { company } from "@/content/company";
+import { siteImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -25,19 +27,7 @@ export default function ContactsPage() {
 
   return (
     <>
-      <section className="bg-blue-50 py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-700">
-            {copy.hero.eyebrow}
-          </p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-black tracking-tight text-gray-950 sm:text-5xl">
-            {copy.hero.title}
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-600">
-            {copy.hero.description}
-          </p>
-        </div>
-      </section>
+      <PageHero {...copy.hero} image={siteImages.hero} imageAlt="" priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
