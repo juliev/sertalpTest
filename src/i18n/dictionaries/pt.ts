@@ -152,6 +152,26 @@ export const pt = {
       intro:
         "Alguns exemplos de soluções em PVC e alumínio para diferentes espaços e tipos de utilização.",
       link: "Ver todos os projetos",
+      items: {
+        alegria: {
+          title: "Porta de entrada em alumínio",
+          description:
+            "Porta de entrada de linhas contemporâneas, com acabamento antracite, puxador vertical e painel lateral envidraçado.",
+          alt: "Porta de entrada em alumínio antracite com vidro lateral",
+        },
+        "diogo-velasques": {
+          title: "Janelas em PVC com portadas",
+          description:
+            "Conjunto de janelas em PVC com portadas exteriores, integrado na fachada existente.",
+          alt: "Janelas brancas em PVC com portadas exteriores",
+        },
+        "almoinhas-velhas": {
+          title: "Sistema de correr em alumínio",
+          description:
+            "Sistema envidraçado de correr de grande dimensão, concebido para reforçar a entrada de luz e a ligação ao terraço.",
+          alt: "Sistema de correr em alumínio junto a um terraço",
+        },
+      },
     },
     experience: {
       eyebrow: "Experiência e produção",
@@ -185,7 +205,7 @@ export const pt = {
         "Soluções para construção nova, renovação e substituição de vãos, definidas de acordo com as medidas, a utilização e as características do espaço.",
       points: ["PVC e alumínio", "Produção própria", "Entrega e montagem"],
       cta: "Pedir orçamento",
-      imageAlt: "Fachada contemporânea com janelas em alumínio",
+      imageAlt: "Janelas em PVC com portadas exteriores",
     },
     pvc: {
       title: "Janelas em PVC",
@@ -233,6 +253,9 @@ export const pt = {
         },
       ],
     },
+    workGallery: {
+      title: "Trabalhos realizados",
+    },
     cta: {
       title: "Procura janelas para uma obra ou renovação?",
       text: "Partilhe connosco o tipo de espaço e marcamos uma avaliação.",
@@ -257,7 +280,7 @@ export const pt = {
         "Dimensões personalizadas",
       ],
       cta: "Pedir orçamento",
-      imageAlt: "Porta de entrada em alumínio escuro",
+      imageAlt: "Porta de correr em alumínio com acesso ao terraço",
     },
     solutions: {
       title: "Soluções para diferentes utilizações",
@@ -313,6 +336,9 @@ export const pt = {
       supporting:
         "Depois da avaliação, apresentamos uma proposta e produzimos a solução de acordo com as especificações aprovadas.",
     },
+    workGallery: {
+      title: "Trabalhos realizados",
+    },
     cta: {
       title: "Vamos encontrar a porta adequada ao seu projeto",
       text: "Contacte-nos para avaliar medidas, utilização e opções de acabamento.",
@@ -331,47 +357,110 @@ export const pt = {
       title: "Soluções adaptadas a diferentes espaços",
       description:
         "Uma seleção de janelas, portas e sistemas em PVC e alumínio.",
+      imageAlt:
+        "Envidraçado de grande dimensão em alumínio com vista para a paisagem",
     },
     gallery: {
       title: "Projetos em destaque",
       text: "Explore diferentes tipos de solução e abra cada imagem para ver o projeto em maior detalhe.",
     },
+    categories: {
+      windows: "Janelas",
+      doors: "Portas",
+      "windows-and-doors": "Janelas e portas",
+    },
+    materials: {
+      PVC: "PVC",
+      Alumínio: "Alumínio",
+    },
     items: {
-      "pvc-windows": {
-        title: "Janelas em PVC para moradia",
+      "casal-do-paul": {
+        title: "Envidraçado de grande dimensão em alumínio",
         description:
-          "Substituição de vãos por janelas em PVC branco, com uma solução adaptada à fachada e à utilização diária da habitação.",
-        alt: "Moradia com janelas em PVC branco",
+          "Solução envidraçada de grande dimensão, concebida para criar uma ligação visual ampla entre o espaço interior e a paisagem.",
+        alts: [
+          "Envidraçado de grande dimensão em alumínio com vista para a paisagem",
+        ],
       },
-      "aluminium-windows": {
-        title: "Janelas em alumínio de linhas contemporâneas",
+      "almoinhas-velhas": {
+        title: "Sistema de correr e vão envidraçado em alumínio",
         description:
-          "Conjunto de janelas em alumínio antracite integrado numa fachada de linguagem atual.",
-        alt: "Fachada com janelas em alumínio antracite",
+          "Projeto que combina um sistema de correr com um vão envidraçado de grande dimensão, valorizando a luz natural e a vista para o exterior.",
+        alts: [
+          "Sistema de correr em alumínio junto a um terraço",
+          "Vão envidraçado de grande dimensão em alumínio junto a uma escada",
+        ],
       },
-      "entrance-door": {
+      "diogo-velasques": {
+        title: "Conjunto de vãos em PVC com portadas exteriores",
+        description:
+          "Conjunto de janelas e portas envidraçadas em PVC, integrado com portadas exteriores e com a linguagem da fachada existente.",
+        alts: [
+          "Janelas em PVC com portadas exteriores",
+          "Porta envidraçada em PVC com portadas exteriores",
+        ],
+      },
+      alegria: {
         title: "Porta de entrada em alumínio",
         description:
-          "Porta de entrada feita à medida, com acabamento escuro e painel lateral envidraçado.",
-        alt: "Porta de entrada em alumínio com painel lateral em vidro",
+          "Porta de entrada de linhas contemporâneas, com acabamento antracite, puxador vertical e painel lateral envidraçado.",
+        alts: ["Porta de entrada em alumínio antracite com vidro lateral"],
       },
-      "balcony-doors": {
-        title: "Portas de varanda em PVC",
+      misericordia: {
+        title: "Porta envidraçada em PVC com remate ogival",
         description:
-          "Portas envidraçadas em PVC branco para ligação entre o interior e a varanda.",
-        alt: "Portas de varanda em PVC branco",
+          "Solução por medida para um vão alto, combinando duas folhas envidraçadas com uma bandeira superior de forma ogival.",
+        alts: [
+          "Porta envidraçada em PVC com duas folhas e bandeira superior ogival",
+        ],
       },
-      "sliding-system": {
+      "santa-rita": {
+        title: "Envidraçado de grande dimensão em alumínio",
+        description:
+          "Vão envidraçado de grande dimensão que amplia a entrada de luz e a relação visual com o exterior.",
+        alts: ["Envidraçado de grande dimensão em alumínio"],
+      },
+      sobreda: {
+        title: "Janela em PVC com portadas exteriores",
+        description:
+          "Janela em PVC de duas folhas, integrada com portadas exteriores de lâminas orientáveis.",
+        alts: ["Janela branca em PVC com portadas exteriores"],
+      },
+      "egas-moniz": {
+        title: "Conjunto de janelas em PVC",
+        description:
+          "Conjunto de janelas em PVC de grande dimensão, concebido para aumentar a entrada de luz natural no espaço interior.",
+        alts: ["Conjunto de janelas brancas em PVC numa sala"],
+      },
+      "infante-santo": {
         title: "Sistema de correr em alumínio",
         description:
-          "Solução de correr com grandes áreas envidraçadas para criar uma ligação ampla entre a sala e o exterior.",
-        alt: "Sistema de correr em alumínio entre a sala e o terraço",
+          "Solução envidraçada de correr em alumínio, concebida para reforçar a entrada de luz e a ligação ao exterior.",
+        alts: ["Sistema de correr envidraçado em alumínio"],
       },
-      "custom-window": {
-        title: "Janela de formato especial",
+      "adema-do-meio": {
+        title: "Porta arqueada em alumínio",
         description:
-          "Caixilharia produzida para um vão de geometria não convencional, respeitando a forma da fachada.",
-        alt: "Janela de formato especial integrada na fachada",
+          "Porta de entrada arqueada em alumínio, com linguagem tradicional e acabamento de efeito madeira.",
+        alts: ["Porta arqueada em alumínio com acabamento de efeito madeira"],
+      },
+      macieiras: {
+        title: "Porta de entrada em alumínio com painéis envidraçados",
+        description:
+          "Porta de entrada em alumínio com acabamento de efeito madeira, painel lateral envidraçado e bandeira superior.",
+        alts: [
+          "Porta de entrada em alumínio com vidro lateral e bandeira superior",
+        ],
+      },
+    },
+    productExamples: {
+      "unnamed-sliding-door": {
+        title: "Sistema de correr em alumínio de grande dimensão",
+        alt: "Porta de correr em alumínio com acesso ao terraço",
+      },
+      "unnamed-arched-door": {
+        title: "Porta envidraçada em PVC por medida",
+        alt: "Porta envidraçada em PVC com duas folhas e remate superior em arco",
       },
     },
   },
@@ -385,6 +474,8 @@ export const pt = {
       eyebrow: "Sobre a Sertalp",
       title: "Experiência, produção própria e soluções à medida",
       description: "Experiência no setor desde fevereiro de 1978",
+      imageAlt:
+        "Moradia moderna com janelas, porta e sistema de correr em alumínio escuro",
     },
     story: {
       title: "Uma abordagem construída com experiência",

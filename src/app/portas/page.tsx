@@ -8,15 +8,17 @@ import {
   Ruler,
   Rows3,
 } from "lucide-react";
+import { ProjectGallery } from "@/components/project-gallery";
 import {
   ContactCta,
   PageHero,
   SectionHeading,
   WarrantySection,
 } from "@/components/shared";
-import { siteImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
+import { getDoorsDisplayProjects } from "@/lib/project-display";
 
 const dictionary = getDictionary();
 
@@ -36,12 +38,14 @@ const solutionIcons = [
 
 export default function DoorsPage() {
   const copy = dictionary.doors;
+  const common = dictionary.global.common;
 
   return (
     <>
       <PageHero
         {...copy.hero}
-        image={siteImages.projects.entranceDoor}
+        image={workImages.unnamedSlidingDoor.src}
+        imagePosition={workImages.unnamedSlidingDoor.objectPosition}
         priority
       />
 
@@ -80,24 +84,27 @@ export default function DoorsPage() {
           {[
             {
               content: copy.materials.pvc,
-              image: siteImages.projects.balconyDoors,
+              image: workImages.diogoDoor,
+              alt: dictionary.projects.items["diogo-velasques"].alts[1],
             },
             {
               content: copy.materials.aluminium,
-              image: siteImages.projects.slidingSystem,
+              image: workImages.almoinhasSliding,
+              alt: dictionary.projects.items["almoinhas-velhas"].alts[0],
             },
-          ].map(({ content, image }) => (
+          ].map(({ content, image, alt }) => (
             <article
               key={content.title}
               className="overflow-hidden rounded-2xl border border-gray-200 bg-white"
             >
               <div className="relative aspect-[3/2]">
                 <Image
-                  src={image}
-                  alt=""
+                  src={image.src}
+                  alt={alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
+                  style={{ objectPosition: image.objectPosition }}
                 />
               </div>
               <div className="p-7">
@@ -122,6 +129,25 @@ export default function DoorsPage() {
               <p>{copy.assessment.text}</p>
               <p>{copy.assessment.supporting}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading title={copy.workGallery.title} />
+          <div className="mt-10">
+            <ProjectGallery
+              projects={getDoorsDisplayProjects(dictionary.projects)}
+              labels={{
+                viewImage: common.viewImage,
+                close: common.close,
+                previousImage: common.previousImage,
+                nextImage: common.nextImage,
+                imageOf: common.imageOf,
+              }}
+              compact
+            />
           </div>
         </div>
       </section>

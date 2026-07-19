@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ProjectGallery } from "@/components/project-gallery";
 import { PageHero, SectionHeading } from "@/components/shared";
-import { siteImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 import { getDisplayProjects } from "@/lib/project-display";
@@ -19,7 +19,12 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <PageHero {...copy.hero} image={siteImages.hero} imageAlt="" priority />
+      <PageHero
+        {...copy.hero}
+        image={workImages.casalGlazing.src}
+        imagePosition={workImages.casalGlazing.objectPosition}
+        priority
+      />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -29,7 +34,7 @@ export default function ProjectsPage() {
           />
           <div className="mt-10">
             <ProjectGallery
-              projects={getDisplayProjects(copy.items)}
+              projects={getDisplayProjects(copy)}
               labels={{
                 viewImage: common.viewImage,
                 close: common.close,

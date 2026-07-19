@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { productGalleryItems, projects } from "../../src/content/projects";
 
 const publicRoutes = [
   "/",
@@ -19,12 +20,11 @@ test("home and every public route load", async ({ page }) => {
   }
 });
 
-test("pages without product imagery display the shared hero banner", async ({
+test("Home and non-product pages keep the shared hero banner", async ({
   page,
 }) => {
   for (const route of [
     "/",
-    "/projetos/",
     "/sobre-nos/",
     "/contactos/",
     "/politica-de-privacidade/",
@@ -37,6 +37,49 @@ test("pages without product imagery display the shared hero banner", async ({
       ),
     ).toBeVisible();
   }
+});
+
+test("real-work hero assignments retain compact priority image cards", async ({
+  page,
+}) => {
+  const assignments = [
+    ["/janelas/", "/images/works/windows/diogo-velasques-janelas-pvc.webp"],
+    ["/portas/", "/images/works/doors/porta-correr-aluminio-terraco.webp"],
+    [
+      "/projetos/",
+      "/images/works/windows/casal-do-paul-envidracado-aluminio.webp",
+    ],
+  ] as const;
+
+  for (const [route, src] of assignments) {
+    await page.goto(route);
+    const hero = page.locator("main > section:first-child img");
+    await expect(hero).toHaveAttribute("src", src);
+    await expect(hero).not.toHaveAttribute("loading", "lazy");
+    await expect
+      .poll(() =>
+        hero.evaluate((image) => {
+          const container = image.parentElement;
+          return container ? container.clientWidth / container.clientHeight : 0;
+        }),
+      )
+      .toBeCloseTo(1.5, 1);
+  }
+});
+
+test("Home shows exactly the three approved real-work previews", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const cards = page.getByTestId("project-grid").getByRole("button");
+  await expect(cards).toHaveCount(3);
+  await expect(cards.nth(0)).toContainText("Alegria");
+  await expect(cards.nth(0)).toContainText("Porta de entrada em alumínio");
+  await expect(cards.nth(1)).toContainText("Diogo Velasques");
+  await expect(cards.nth(1)).toContainText("Janelas em PVC com portadas");
+  await expect(cards.nth(2)).toContainText("Almoinhas Velhas");
+  await expect(cards.nth(2)).toContainText("Sistema de correr em alumínio");
+  await expect(page.getByText("Macieiras", { exact: true })).toHaveCount(0);
 });
 
 test("navigation and primary contact actions work", async ({
@@ -87,7 +130,7 @@ test("project gallery opens and closes accessibly", async ({ page }) => {
   const cards = page
     .getByTestId("project-grid")
     .getByRole("button", { name: /Ampliar imagem/ });
-  await expect(cards).toHaveCount(6);
+  await expect(cards).toHaveCount(11);
   await expect
     .poll(() =>
       cards.first().evaluate((element) => getComputedStyle(element).cursor),
@@ -113,6 +156,129 @@ test("project gallery opens and closes accessibly", async ({ page }) => {
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(cards.first()).toBeFocused();
+});
+
+test("Projects render in the approved order and multi-image records navigate", async ({
+  page,
+}) => {
+  await page.goto("/projetos/");
+  const cards = page.getByTestId("project-grid").getByRole("button");
+  const locations = [
+    "Casal do Paúl",
+    "Almoinhas Velhas",
+    "Diogo Velasques",
+    "Alegria",
+    "Misericórdia",
+    "Santa Rita",
+    "Sobreda",
+    "Egas Moniz",
+    "Infante Santo",
+    "Adema do Meio",
+    "Macieiras",
+  ];
+  await expect(cards).toHaveCount(locations.length);
+  for (const [index, location] of locations.entries()) {
+    await expect(cards.nth(index)).toContainText(location);
+  }
+
+  for (const location of ["Almoinhas Velhas", "Diogo Velasques"]) {
+    const card = cards.filter({ hasText: location });
+    await card.click();
+    await expect(page.getByText("Imagem 1 de 2")).toBeVisible();
+    await page
+      .getByRole("dialog")
+      .getByRole("button", { name: "Imagem seguinte" })
+      .click();
+    await expect(page.getByText("Imagem 2 de 2")).toBeVisible();
+    await page.keyboard.press("Escape");
+  }
+
+  await expect(
+    page.getByText("Sistema de correr em alumínio de grande dimensão"),
+  ).toHaveCount(0);
+  await expect(
+    page.getByText("Porta envidraçada em PVC por medida"),
+  ).toHaveCount(0);
+});
+
+test("product galleries use the approved entries and order", async ({
+  page,
+}) => {
+  await page.goto("/janelas/");
+  const windows = page.getByTestId("project-grid").getByRole("button");
+  for (const [index, location] of [
+    "Diogo Velasques",
+    "Sobreda",
+    "Santa Rita",
+    "Egas Moniz",
+    "Almoinhas Velhas",
+    "Casal do Paúl",
+  ].entries()) {
+    await expect(windows.nth(index)).toContainText(location);
+  }
+
+  await page.goto("/portas/");
+  const doors = page.getByTestId("project-grid").getByRole("button");
+  for (const [index, title] of [
+    "Alegria",
+    "Adema do Meio",
+    "Misericórdia",
+    "Infante Santo",
+    "Macieiras",
+    "Sistema de correr em alumínio de grande dimensão",
+    "Porta envidraçada em PVC por medida",
+  ].entries()) {
+    await expect(doors.nth(index)).toContainText(title);
+  }
+  await expect(doors.nth(5)).not.toContainText(" · ");
+  await expect(doors.nth(6)).not.toContainText(" · ");
+});
+
+test("project assumptions and unnamed examples remain centralized", () => {
+  expect(projects).toHaveLength(11);
+  expect(
+    projects.every(
+      (project) =>
+        project.materialNeedsClientConfirmation &&
+        ["PVC", "Alumínio"].includes(project.material),
+    ),
+  ).toBe(true);
+  expect(projects.map(({ id }) => id)).not.toContain("unnamed-sliding-door");
+  expect(projects.map(({ id }) => id)).not.toContain("unnamed-arched-door");
+  expect(productGalleryItems.map(({ id }) => id)).toEqual([
+    "unnamed-sliding-door",
+    "unnamed-arched-door",
+  ]);
+});
+
+test("non-hero images are lazy and all image URLs resolve", async ({
+  page,
+}) => {
+  for (const route of ["/", "/janelas/", "/portas/", "/projetos/"]) {
+    const failures: string[] = [];
+    page.on("response", (response) => {
+      if (
+        response.request().resourceType() === "image" &&
+        response.status() >= 400
+      ) {
+        failures.push(`${response.status()} ${response.url()}`);
+      }
+    });
+    await page.goto(route);
+    const images = page.locator("img");
+    await expect(images.first()).toBeVisible();
+    const missingAlts = await images.evaluateAll(
+      (items) =>
+        items.filter((image) => !image.getAttribute("alt")?.trim()).length,
+    );
+    expect(missingAlts, `Missing alt on ${route}`).toBe(0);
+    const nonHeroLoading = await images.evaluateAll((items) =>
+      items.slice(1).map((image) => image.getAttribute("loading")),
+    );
+    expect(nonHeroLoading.every((loading) => loading === "lazy")).toBe(true);
+    expect(failures, `Broken image on ${route}`).toEqual([]);
+    page.removeAllListeners("response");
+  }
 });
 
 test("navigation exposes current page and mobile Escape behavior", async ({
@@ -286,7 +452,14 @@ test("both confirmed email addresses are published correctly", async ({
 test("site has no removed UI and no horizontal mobile overflow", async ({
   page,
 }) => {
-  for (const route of ["/", "/sobre-nos/", "/contactos/"]) {
+  for (const route of [
+    "/",
+    "/janelas/",
+    "/portas/",
+    "/projetos/",
+    "/sobre-nos/",
+    "/contactos/",
+  ]) {
     await page.goto(route);
     await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
     await expect(

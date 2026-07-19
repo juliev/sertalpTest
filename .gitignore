@@ -23,6 +23,10 @@
 # production
 /build
 
+# owner-supplied source photographs
+/tmp/door/
+/tmp/window/
+
 # misc
 .DS_Store
 *.pem

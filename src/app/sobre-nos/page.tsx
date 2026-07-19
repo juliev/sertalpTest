@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Factory, Globe2, Ruler, Wrench } from "lucide-react";
 import { ContactCta, PageHero, SectionHeading } from "@/components/shared";
-import { siteImages } from "@/content/images";
+import { siteImages, workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -20,7 +20,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHero {...copy.hero} image={siteImages.hero} imageAlt="" priority />
+      <PageHero {...copy.hero} image={siteImages.hero} priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -34,11 +34,14 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
             <Image
-              src={siteImages.projects.aluminiumWindows}
-              alt=""
+              src={workImages.casalGlazing.src}
+              alt={dictionary.projects.items["casal-do-paul"].alts[0]}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
+              style={{
+                objectPosition: workImages.casalGlazing.objectPosition,
+              }}
             />
           </div>
         </div>

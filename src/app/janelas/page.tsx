@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Check, PanelsTopLeft, Ruler, Wrench } from "lucide-react";
+import { ProjectGallery } from "@/components/project-gallery";
 import {
   ContactCta,
   PageHero,
   SectionHeading,
   WarrantySection,
 } from "@/components/shared";
-import { siteImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
+import { getWindowsDisplayProjects } from "@/lib/project-display";
 
 const dictionary = getDictionary();
 
@@ -22,12 +24,14 @@ const benefitIcons = [Ruler, PanelsTopLeft, Wrench];
 
 export default function WindowsPage() {
   const copy = dictionary.windows;
+  const common = dictionary.global.common;
 
   return (
     <>
       <PageHero
         {...copy.hero}
-        image={siteImages.projects.aluminiumWindows}
+        image={workImages.diogoWindows.src}
+        imagePosition={workImages.diogoWindows.objectPosition}
         priority
       />
 
@@ -36,24 +40,27 @@ export default function WindowsPage() {
           {[
             {
               content: copy.pvc,
-              image: siteImages.projects.pvcWindows,
+              image: workImages.diogoWindows,
+              alt: dictionary.projects.items["diogo-velasques"].alts[0],
             },
             {
               content: copy.aluminium,
-              image: siteImages.projects.aluminiumWindows,
+              image: workImages.casalGlazing,
+              alt: dictionary.projects.items["casal-do-paul"].alts[0],
             },
-          ].map(({ content, image }) => (
+          ].map(({ content, image, alt }) => (
             <article
               key={content.title}
               className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
             >
               <div className="relative aspect-[3/2]">
                 <Image
-                  src={image}
-                  alt=""
+                  src={image.src}
+                  alt={alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
+                  style={{ objectPosition: image.objectPosition }}
                 />
               </div>
               <div className="p-7">
@@ -110,6 +117,25 @@ export default function WindowsPage() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading title={copy.workGallery.title} />
+          <div className="mt-10">
+            <ProjectGallery
+              projects={getWindowsDisplayProjects(dictionary.projects)}
+              labels={{
+                viewImage: common.viewImage,
+                close: common.close,
+                previousImage: common.previousImage,
+                nextImage: common.nextImage,
+                imageOf: common.imageOf,
+              }}
+              compact
+            />
           </div>
         </div>
       </section>

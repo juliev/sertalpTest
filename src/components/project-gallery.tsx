@@ -8,14 +8,19 @@ import {
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
 } from "react";
-import type { ProjectId } from "@/content/projects";
-
 export type DisplayProject = {
-  id: ProjectId;
-  city: string;
+  id: string;
+  location?: string;
+  material: string;
   title: string;
   description: string;
-  images: { src: string; alt: string }[];
+  images: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    objectPosition: string;
+  }[];
 };
 
 type Props = {
@@ -27,9 +32,10 @@ type Props = {
     nextImage: string;
     imageOf: string;
   };
+  compact?: boolean;
 };
 
-export function ProjectGallery({ projects, labels }: Props) {
+export function ProjectGallery({ projects, labels, compact = false }: Props) {
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const [activeImage, setActiveImage] = useState(0);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -122,18 +128,21 @@ export function ProjectGallery({ projects, labels }: Props) {
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover transition duration-300 group-hover:scale-[1.02] motion-reduce:transition-none"
+                style={{ objectPosition: item.images[0].objectPosition }}
               />
             </span>
             <span className="block p-6">
               <span className="text-sm font-bold uppercase tracking-wide text-blue-700">
-                {item.city}
+                {[item.location, item.material].filter(Boolean).join(" · ")}
               </span>
               <span className="mt-2 block text-xl font-bold text-gray-950">
                 {item.title}
               </span>
-              <span className="mt-3 block leading-7 text-gray-600">
-                {item.description}
-              </span>
+              {!compact && item.description ? (
+                <span className="mt-3 block leading-7 text-gray-600">
+                  {item.description}
+                </span>
+              ) : null}
             </span>
           </button>
         ))}
@@ -211,7 +220,9 @@ export function ProjectGallery({ projects, labels }: Props) {
 
             <div className="mt-5 pr-12">
               <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
-                {project.city}
+                {[project.location, project.material]
+                  .filter(Boolean)
+                  .join(" · ")}
               </p>
               <h2
                 id="project-dialog-title"
@@ -219,9 +230,11 @@ export function ProjectGallery({ projects, labels }: Props) {
               >
                 {project.title}
               </h2>
-              <p className="mt-2 leading-7 text-gray-600">
-                {project.description}
-              </p>
+              {project.description ? (
+                <p className="mt-2 leading-7 text-gray-600">
+                  {project.description}
+                </p>
+              ) : null}
             </div>
           </div>
         </div>

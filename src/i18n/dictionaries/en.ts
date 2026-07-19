@@ -154,6 +154,26 @@ export const en = {
       intro:
         "A selection of PVC and aluminium solutions for different spaces and types of use.",
       link: "View all projects",
+      items: {
+        alegria: {
+          title: "Aluminium entrance door",
+          description:
+            "A contemporary entrance door with an anthracite finish, vertical handle and glazed side panel.",
+          alt: "Anthracite aluminium entrance door with side glazing",
+        },
+        "diogo-velasques": {
+          title: "PVC windows with shutters",
+          description:
+            "A set of PVC windows with exterior shutters integrated into the existing facade.",
+          alt: "White PVC windows with exterior shutters",
+        },
+        "almoinhas-velhas": {
+          title: "Aluminium sliding system",
+          description:
+            "A large glazed sliding system designed to increase natural light and strengthen the connection to the terrace.",
+          alt: "Aluminium sliding system beside a terrace",
+        },
+      },
     },
     experience: {
       eyebrow: "Experience and production",
@@ -191,7 +211,7 @@ export const en = {
         "Delivery and installation",
       ],
       cta: "Request a quote",
-      imageAlt: "Contemporary facade with aluminium windows",
+      imageAlt: "PVC windows with exterior shutters",
     },
     pvc: {
       title: "PVC windows",
@@ -239,6 +259,9 @@ export const en = {
         },
       ],
     },
+    workGallery: {
+      title: "Completed work",
+    },
     cta: {
       title: "Looking for windows for a new build or renovation?",
       text: "Tell us about the space and we will arrange an assessment.",
@@ -264,7 +287,7 @@ export const en = {
         "Custom dimensions",
       ],
       cta: "Request a quote",
-      imageAlt: "Dark aluminium entrance door",
+      imageAlt: "Aluminium sliding door opening onto a terrace",
     },
     solutions: {
       title: "Solutions for different uses",
@@ -320,6 +343,9 @@ export const en = {
       supporting:
         "After the assessment, we present a proposal and manufacture the solution according to the approved specifications.",
     },
+    workGallery: {
+      title: "Completed work",
+    },
     cta: {
       title: "Let us find the right door for your project",
       text: "Contact us to assess dimensions, use and finish options.",
@@ -338,47 +364,103 @@ export const en = {
       title: "Solutions adapted to different spaces",
       description:
         "A selection of PVC and aluminium windows, doors and systems.",
+      imageAlt: "Large aluminium glazing overlooking the landscape",
     },
     gallery: {
       title: "Featured projects",
       text: "Explore different types of solution and open each image to see the project in more detail.",
     },
+    categories: {
+      windows: "Windows",
+      doors: "Doors",
+      "windows-and-doors": "Windows and doors",
+    },
+    materials: {
+      PVC: "PVC",
+      Alumínio: "Aluminium",
+    },
     items: {
-      "pvc-windows": {
-        title: "PVC windows for a house",
+      "casal-do-paul": {
+        title: "Large aluminium glazing",
         description:
-          "Replacement of existing openings with white PVC windows, using a solution adapted to the facade and everyday use of the home.",
-        alt: "House with white PVC windows",
+          "A large glazed solution designed to create a broad visual connection between the interior and the landscape.",
+        alts: ["Large aluminium glazing overlooking the landscape"],
       },
-      "aluminium-windows": {
-        title: "Contemporary aluminium windows",
+      "almoinhas-velhas": {
+        title: "Aluminium sliding system and glazed opening",
         description:
-          "A set of anthracite aluminium windows integrated into a contemporary facade.",
-        alt: "Facade with anthracite aluminium windows",
+          "A project combining a sliding system with a large glazed opening to enhance natural light and views outside.",
+        alts: [
+          "Aluminium sliding system beside a terrace",
+          "Large aluminium glazed opening beside a staircase",
+        ],
       },
-      "entrance-door": {
+      "diogo-velasques": {
+        title: "PVC openings with exterior shutters",
+        description:
+          "A set of PVC windows and glazed doors integrated with exterior shutters and the existing facade.",
+        alts: [
+          "PVC windows with exterior shutters",
+          "PVC glazed door with exterior shutters",
+        ],
+      },
+      alegria: {
         title: "Aluminium entrance door",
         description:
-          "A made-to-measure entrance door with a dark finish and a glazed side panel.",
-        alt: "Aluminium entrance door with a glazed side panel",
+          "A contemporary entrance door with an anthracite finish, vertical handle and glazed side panel.",
+        alts: ["Anthracite aluminium entrance door with side glazing"],
       },
-      "balcony-doors": {
-        title: "PVC balcony doors",
+      misericordia: {
+        title: "PVC glazed door with an ogival top",
         description:
-          "White PVC glazed doors connecting the interior with the balcony.",
-        alt: "White PVC balcony doors",
+          "A made-to-measure solution for a tall opening, combining two glazed leaves with an ogival fanlight.",
+        alts: ["Two-leaf PVC glazed door with an ogival fanlight"],
       },
-      "sliding-system": {
+      "santa-rita": {
+        title: "Large aluminium glazing",
+        description:
+          "A large glazed opening that increases natural light and the visual connection with the exterior.",
+        alts: ["Large aluminium glazing"],
+      },
+      sobreda: {
+        title: "PVC window with exterior shutters",
+        description:
+          "A two-leaf PVC window integrated with exterior adjustable-louvre shutters.",
+        alts: ["White PVC window with exterior shutters"],
+      },
+      "egas-moniz": {
+        title: "Set of PVC windows",
+        description:
+          "A set of large PVC windows designed to increase natural light in the interior.",
+        alts: ["Set of white PVC windows in a living room"],
+      },
+      "infante-santo": {
         title: "Aluminium sliding system",
         description:
-          "A sliding solution with large glazed areas creating a wide connection between the living room and the exterior.",
-        alt: "Aluminium sliding system between a living room and terrace",
+          "A glazed aluminium sliding solution designed to increase natural light and connection with the exterior.",
+        alts: ["Glazed aluminium sliding system"],
       },
-      "custom-window": {
-        title: "Special-shaped window",
+      "adema-do-meio": {
+        title: "Arched aluminium door",
         description:
-          "A frame manufactured for a non-standard opening, respecting the geometry of the facade.",
-        alt: "Special-shaped window integrated into a facade",
+          "An arched aluminium entrance door with traditional styling and a wood-effect finish.",
+        alts: ["Arched aluminium door with a wood-effect finish"],
+      },
+      macieiras: {
+        title: "Aluminium entrance door with glazed panels",
+        description:
+          "An aluminium entrance door with a wood-effect finish, glazed side panel and fanlight.",
+        alts: ["Aluminium entrance door with side glazing and fanlight"],
+      },
+    },
+    productExamples: {
+      "unnamed-sliding-door": {
+        title: "Large aluminium sliding system",
+        alt: "Aluminium sliding door opening onto a terrace",
+      },
+      "unnamed-arched-door": {
+        title: "Made-to-measure PVC glazed door",
+        alt: "Two-leaf PVC glazed door with an arched top",
       },
     },
   },
@@ -392,6 +474,8 @@ export const en = {
       eyebrow: "About Sertalp",
       title: "Experience, in-house production and tailored solutions",
       description: "Experience in the sector since February 1978",
+      imageAlt:
+        "Modern house with dark aluminium windows, door and sliding system",
     },
     story: {
       title: "An approach built on experience",

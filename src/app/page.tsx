@@ -13,10 +13,10 @@ import {
 } from "lucide-react";
 import { ProjectGallery } from "@/components/project-gallery";
 import { ContactCta, SectionHeading } from "@/components/shared";
-import { siteImages } from "@/content/images";
+import { siteImages, workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
-import { getDisplayProjects } from "@/lib/project-display";
+import { getHomeDisplayProjects } from "@/lib/project-display";
 
 const dictionary = getDictionary();
 
@@ -28,7 +28,7 @@ const processIcons = [Search, ClipboardCheck, Hammer, Truck];
 export default function HomePage() {
   const copy = dictionary.home;
   const common = dictionary.global.common;
-  const projectItems = getDisplayProjects(dictionary.projects.items);
+  const projectItems = getHomeDisplayProjects(dictionary);
 
   return (
     <>
@@ -116,26 +116,29 @@ export default function HomePage() {
             {[
               {
                 href: "/janelas/",
-                image: siteImages.projects.pvcWindows,
+                image: workImages.diogoWindows,
+                alt: dictionary.projects.items["diogo-velasques"].alts[0],
                 item: copy.products.windows,
               },
               {
                 href: "/portas/",
-                image: siteImages.projects.entranceDoor,
+                image: workImages.alegriaDoor,
+                alt: dictionary.projects.items.alegria.alts[0],
                 item: copy.products.doors,
               },
-            ].map(({ href, image, item }) => (
+            ].map(({ href, image, alt, item }) => (
               <article
                 key={href}
                 className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm"
               >
                 <div className="relative aspect-[3/2]">
                   <Image
-                    src={image}
-                    alt=""
+                    src={image.src}
+                    alt={alt}
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
+                    style={{ objectPosition: image.objectPosition }}
                   />
                 </div>
                 <div className="p-7">
@@ -226,11 +229,12 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
             <Image
-              src={siteImages.projects.customWindow}
-              alt=""
+              src={workImages.casalGlazing.src}
+              alt={dictionary.projects.items["casal-do-paul"].alts[0]}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-cover"
+              style={{ objectPosition: workImages.casalGlazing.objectPosition }}
             />
           </div>
           <div>

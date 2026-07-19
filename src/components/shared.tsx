@@ -39,6 +39,7 @@ export function PageHero({
   cta,
   image,
   imageAlt,
+  imagePosition = "center",
   priority = false,
 }: {
   eyebrow: string;
@@ -48,6 +49,7 @@ export function PageHero({
   cta?: string;
   image: string;
   imageAlt: string;
+  imagePosition?: string;
   priority?: boolean;
 }) {
   return (
@@ -96,6 +98,7 @@ export function PageHero({
             priority={priority}
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-cover"
+            style={{ objectPosition: imagePosition }}
           />
         </div>
       </div>
