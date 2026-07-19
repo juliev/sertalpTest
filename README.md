@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sertalp website
 
-## Getting Started
+Static company website for Sertalp, a Portuguese manufacturer and installer of
+PVC and aluminium windows and doors.
 
-First, run the development server:
+## Stack
+
+- Next.js App Router
+- React and TypeScript
+- Tailwind CSS and Lucide icons
+- Static export for Cloudflare Pages
+- Playwright Chromium E2E
+
+## Requirements
+
+- Node.js 22
+- npm
+
+## Development
 
 ```bash
+nvm use
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The public site defaults to European Portuguese. Review the English development
+dictionary at the same URLs with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev:en
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+English is a build-time content-review mode, not a public locale.
 
-## Learn More
+## Quality
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+npm run format
+npm run format:check
+npm run typecheck
+npm run build
+npm run test:e2e
+npm run check:fast
+npm run check
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install the local Chromium binary once before E2E work:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npx playwright install chromium
+```
 
-## Deploy on Vercel
+## Content and images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Protected company facts: `src/content/`
+- Typed Portuguese and English copy: `src/i18n/dictionaries/`
+- Preserved project sources: `assets/source-images/projects/`
+- Public optimized images: `public/images/projects/`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optimize source images with:
+
+```bash
+npm run images:optimize -- assets/source-images/projects public/images/projects
+```
+
+See `docs/CONTENT_AND_I18N.md` and `docs/IMAGE_GUIDELINES.md` before changing
+content or imagery.
+
+## Deployment
+
+The production build is a static export in `out`:
+
+```bash
+npm run build
+```
+
+Cloudflare Pages uses `main` as the production branch, `npm run build` as the
+build command, and `out` as the output directory. GitHub Actions performs
+quality checks only and does not deploy.
+
+Setup and release documentation:
+
+- `docs/CLOUDFLARE_SETUP.md`
+- `docs/DEVELOPMENT_AND_DEPLOYMENT.md`
+- `docs/RELEASE_CHECKLIST.md`
+- `docs/OWNER_NEXT_STEPS.md`
