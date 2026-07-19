@@ -15,6 +15,7 @@ import {
   SupplierSection,
   WarrantySection,
 } from "@/components/shared";
+import { siteImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -41,7 +42,7 @@ export default function DoorsPage() {
     <>
       <PageHero
         {...copy.hero}
-        image="/images/projects/project-entrance-door.webp"
+        image={siteImages.projects.entranceDoor}
         priority
       />
 
@@ -80,11 +81,11 @@ export default function DoorsPage() {
           {[
             {
               content: copy.materials.pvc,
-              image: "/images/projects/project-balcony-doors.webp",
+              image: siteImages.projects.balconyDoors,
             },
             {
               content: copy.materials.aluminium,
-              image: "/images/projects/project-sliding-system.webp",
+              image: siteImages.projects.slidingSystem,
             },
           ].map(({ content, image }) => (
             <article

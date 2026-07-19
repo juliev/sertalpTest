@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Factory, Globe2, Ruler, Wrench } from "lucide-react";
 import { ContactCta, SectionHeading } from "@/components/shared";
+import { siteImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -45,7 +46,7 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
             <Image
-              src="/window_hero.jpg"
+              src={siteImages.hero}
               alt=""
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"

@@ -1,3 +1,5 @@
+import { siteImages } from "@/content/images";
+
 export type ProjectId =
   | "pvc-windows"
   | "aluminium-windows"
@@ -21,31 +23,31 @@ export const projects: readonly Project[] = [
   {
     id: "pvc-windows",
     city: "Sintra",
-    mainImage: { src: "/images/projects/project-pvc-windows.webp" },
+    mainImage: { src: siteImages.projects.pvcWindows },
   },
   {
     id: "aluminium-windows",
     city: "Cascais",
-    mainImage: { src: "/images/projects/project-aluminium-windows.webp" },
+    mainImage: { src: siteImages.projects.aluminiumWindows },
   },
   {
     id: "entrance-door",
     city: "Lisboa",
-    mainImage: { src: "/images/projects/project-entrance-door.webp" },
+    mainImage: { src: siteImages.projects.entranceDoor },
   },
   {
     id: "balcony-doors",
     city: "Oeiras",
-    mainImage: { src: "/images/projects/project-balcony-doors.webp" },
+    mainImage: { src: siteImages.projects.balconyDoors },
   },
   {
     id: "sliding-system",
     city: "Setúbal",
-    mainImage: { src: "/images/projects/project-sliding-system.webp" },
+    mainImage: { src: siteImages.projects.slidingSystem },
   },
   {
     id: "custom-window",
     city: "Leiria",
-    mainImage: { src: "/images/projects/project-custom-window.webp" },
+    mainImage: { src: siteImages.projects.customWindow },
   },
 ];

@@ -556,7 +556,7 @@ export const pt = {
         title: "7. Direitos do titular",
         paragraphs: [
           "Nos termos da legislação aplicável, o titular pode solicitar, quando aplicável:",
-          "Para exercer direitos ou colocar uma questão, contacte sertalplda@gmail.com.",
+          "Para exercer direitos ou colocar uma questão, contacte",
           "A Sertalp pode pedir informação necessária para confirmar a identidade do requerente e proteger os dados contra acesso indevido.",
         ],
         bullets: [

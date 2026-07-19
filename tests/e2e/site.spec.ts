@@ -25,8 +25,9 @@ test("navigation and primary contact actions work", async ({
   await page.goto("/");
 
   if (testInfo.project.name === "Mobile Chromium") {
-    const menu = page.getByRole("button", { name: "Abrir menu" });
+    const menu = page.locator('button[aria-controls="mobile-navigation"]');
     await expect(menu).toBeVisible();
+    await expect(menu).toHaveAccessibleName("Abrir menu");
     await menu.click();
     await expect(menu).toHaveAttribute("aria-expanded", "true");
     await page
@@ -45,9 +46,13 @@ test("navigation and primary contact actions work", async ({
   await page.getByRole("link", { name: "Pedir orçamento" }).first().click();
   await expect(page).toHaveURL(/\/contactos\/$/);
 
-  await expect(page.locator('a[href^="tel:"]').first()).toBeVisible();
-  await expect(page.locator('a[href^="mailto:"]').first()).toBeVisible();
-  await expect(page.locator('a[href^="https://wa.me/"]').first()).toBeVisible();
+  await expect(page.locator('a[href^="tel:"]:visible').first()).toBeVisible();
+  await expect(
+    page.locator('a[href^="mailto:"]:visible').first(),
+  ).toBeVisible();
+  await expect(
+    page.locator('a[href^="https://wa.me/"]:visible').first(),
+  ).toBeVisible();
   await expect(page.locator("iframe[title]")).toHaveAttribute(
     "loading",
     "lazy",
@@ -76,6 +81,22 @@ test("unknown routes return home", async ({ page }) => {
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "Janelas e portas",
   );
+});
+
+test("legal pages show approved external URLs", async ({ page }) => {
+  for (const route of ["/politica-de-privacidade/", "/politica-de-cookies/"]) {
+    await page.goto(route);
+    await expect(
+      page.getByRole("link", {
+        name: "https://policies.google.com/privacy?hl=pt_PT",
+      }),
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", {
+        name: "https://www.google.com/intl/pt_pt/help/terms_maps/",
+      }),
+    ).toBeVisible();
+  }
 });
 
 test("site has no removed UI and no horizontal mobile overflow", async ({

@@ -563,7 +563,7 @@ export const en = {
         title: "7. Data-subject rights",
         paragraphs: [
           "Under applicable law, a person may request, where relevant:",
-          "To exercise rights or ask a question, contact sertalplda@gmail.com.",
+          "To exercise rights or ask a question, contact",
           "Sertalp may request information needed to verify the requester's identity and protect data from unauthorised access.",
         ],
         bullets: [

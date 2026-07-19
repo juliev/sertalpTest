@@ -8,6 +8,7 @@ import {
   SupplierSection,
   WarrantySection,
 } from "@/components/shared";
+import { siteImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -27,7 +28,7 @@ export default function WindowsPage() {
     <>
       <PageHero
         {...copy.hero}
-        image="/images/projects/project-aluminium-windows.webp"
+        image={siteImages.projects.aluminiumWindows}
         priority
       />
 
@@ -36,11 +37,11 @@ export default function WindowsPage() {
           {[
             {
               content: copy.pvc,
-              image: "/images/projects/project-pvc-windows.webp",
+              image: siteImages.projects.pvcWindows,
             },
             {
               content: copy.aluminium,
-              image: "/images/projects/project-aluminium-windows.webp",
+              image: siteImages.projects.aluminiumWindows,
             },
           ].map(({ content, image }) => (
             <article

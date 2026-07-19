@@ -61,23 +61,25 @@ export function LegalPage({
             section.kind === "external" || section.kind === "maps" ? (
               <ul className="space-y-2">
                 <li>
+                  {section.linkLabels[0]}:{" "}
                   <a
                     className="font-semibold text-blue-700 underline"
                     href={externalUrls.googlePrivacy}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {section.linkLabels[0]}
+                    {externalUrls.googlePrivacy}
                   </a>
                 </li>
                 <li>
+                  {section.linkLabels[1]}:{" "}
                   <a
                     className="font-semibold text-blue-700 underline"
                     href={externalUrls.mapsTerms}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {section.linkLabels[1]}
+                    {externalUrls.mapsTerms}
                   </a>
                 </li>
               </ul>
@@ -121,9 +123,22 @@ export function LegalPage({
 
                 {linksBeforeAfter ? links : null}
 
-                {after.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                {after.map((paragraph, index) =>
+                  section.kind === "rights" && index === 0 ? (
+                    <p key={paragraph}>
+                      {paragraph}{" "}
+                      <a
+                        className="font-semibold text-blue-700 underline"
+                        href={`mailto:${company.primaryEmail}`}
+                      >
+                        {company.primaryEmail}
+                      </a>
+                      .
+                    </p>
+                  ) : (
+                    <p key={paragraph}>{paragraph}</p>
+                  ),
+                )}
 
                 {section.kind === "complaint" ? (
                   <p>

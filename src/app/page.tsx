@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { ProjectGallery } from "@/components/project-gallery";
 import { ContactCta, SectionHeading } from "@/components/shared";
+import { siteImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { createPageMetadata } from "@/lib/metadata";
 import { getDisplayProjects } from "@/lib/project-display";
@@ -64,7 +65,7 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl shadow-xl">
             <Image
-              src="/window_hero.jpg"
+              src={siteImages.hero}
               alt={copy.hero.imageAlt}
               fill
               priority
@@ -115,12 +116,12 @@ export default function HomePage() {
             {[
               {
                 href: "/janelas/",
-                image: "/images/projects/project-pvc-windows.webp",
+                image: siteImages.projects.pvcWindows,
                 item: copy.products.windows,
               },
               {
                 href: "/portas/",
-                image: "/images/projects/project-entrance-door.webp",
+                image: siteImages.projects.entranceDoor,
                 item: copy.products.doors,
               },
             ].map(({ href, image, item }) => (
@@ -225,7 +226,7 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
             <Image
-              src="/images/projects/project-custom-window.webp"
+              src={siteImages.projects.customWindow}
               alt=""
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
