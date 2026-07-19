@@ -2,29 +2,43 @@
   "name": "sertalp",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "22.x",
+    "npm": ">=10"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:en": "SITE_LOCALE=en next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "build:en": "SITE_LOCALE=en next build",
+    "lint": "eslint .",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"*.config.{ts,mjs}\" \"scripts/**/*.mjs\" \"package.json\" \".github/**/*.yml\" \"*.md\" \"docs/**/*.md\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"*.config.{ts,mjs}\" \"scripts/**/*.mjs\" \"package.json\" \".github/**/*.yml\" \"*.md\" \"docs/**/*.md\"",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test",
+    "images:verify": "node scripts/verify-images.mjs",
+    "check:fast": "npm run lint && npm run format:check && npm run typecheck",
+    "check": "npm run check:fast && npm run build && npm run images:verify && npm run test:e2e",
+    "images:optimize": "node scripts/optimize-images.mjs",
     "clean": "rm -rf .next out"
   },
   "dependencies": {
     "lucide-react": "^0.541.0",
     "next": "15.4.7",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "react-hook-form": "^7.62.0",
-    "server-only": "^0.0.1"
+    "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.7",
+    "prettier": "^3.9.5",
+    "sharp": "^0.35.3",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

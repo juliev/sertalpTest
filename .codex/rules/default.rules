@@ -1,0 +1,93 @@
+# Project command rules are an additional safeguard.
+# AGENTS.md remains the authoritative behavior policy.
+
+prefix_rule(
+    pattern = ["git", "push", "origin", "main"],
+    decision = "forbidden",
+    justification = "Push only a feature branch and open a pull request.",
+    match = ["git push origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "-u", "origin", "main"],
+    decision = "forbidden",
+    justification = "Push only a feature branch and open a pull request.",
+    match = ["git push -u origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "--set-upstream", "origin", "main"],
+    decision = "forbidden",
+    justification = "Push only a feature branch and open a pull request.",
+    match = ["git push --set-upstream origin main"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "--force"],
+    decision = "forbidden",
+    justification = "Force-pushing is not allowed.",
+    match = ["git push --force", "git push --force origin feature/site-rebuild"],
+)
+
+prefix_rule(
+    pattern = ["git", "push", "-f"],
+    decision = "forbidden",
+    justification = "Force-pushing is not allowed.",
+    match = ["git push -f", "git push -f origin feature/site-rebuild"],
+)
+
+prefix_rule(
+    pattern = ["git", "merge"],
+    decision = "forbidden",
+    justification = "Open a pull request and let the repository owner merge it.",
+    match = ["git merge main", "git merge feature/site-rebuild"],
+)
+
+prefix_rule(
+    pattern = ["git", "rebase"],
+    decision = "forbidden",
+    justification = "Do not rewrite branch history; open a pull request for owner review.",
+    match = ["git rebase main", "git rebase --onto main HEAD~2"],
+)
+
+prefix_rule(
+    pattern = ["gh", "pr", "merge"],
+    decision = "forbidden",
+    justification = "The repository owner performs the final squash merge.",
+    match = ["gh pr merge 12", "gh pr merge --squash"],
+)
+
+prefix_rule(
+    pattern = ["wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Do not deploy manually. Cloudflare Pages deployment is controlled by Git integration.",
+    match = ["wrangler deploy"],
+)
+
+prefix_rule(
+    pattern = ["wrangler", "pages", "deploy"],
+    decision = "forbidden",
+    justification = "Do not deploy manually. Cloudflare Pages deployment is controlled by Git integration.",
+    match = ["wrangler pages deploy out"],
+)
+
+prefix_rule(
+    pattern = ["npx", "wrangler", "deploy"],
+    decision = "forbidden",
+    justification = "Do not deploy manually. Cloudflare Pages deployment is controlled by Git integration.",
+    match = ["npx wrangler deploy"],
+)
+
+prefix_rule(
+    pattern = ["npx", "wrangler", "pages", "deploy"],
+    decision = "forbidden",
+    justification = "Do not deploy manually. Cloudflare Pages deployment is controlled by Git integration.",
+    match = ["npx wrangler pages deploy out"],
+)
+
+prefix_rule(
+    pattern = ["npm", "publish"],
+    decision = "forbidden",
+    justification = "This repository is a private application, not an npm package.",
+    match = ["npm publish"],
+)
