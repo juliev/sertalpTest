@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  ExternalLink,
-  Facebook,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { Facebook } from "lucide-react";
 import { PageHero } from "@/components/shared";
 import { company } from "@/content/company";
 import { workImages } from "@/content/images";
@@ -29,128 +22,139 @@ export default function ContactsPage() {
       <PageHero {...copy.hero} image={workImages.duqueDoCadaval} priority />
 
       <section className="py-14 sm:py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold">{copy.information.title}</h2>
           <p className="mt-4 text-lg leading-8 text-gray-600">
             {copy.information.intro}
           </p>
 
-          <dl className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <dt className="flex items-center gap-3 font-bold">
-                <Phone aria-hidden="true" className="size-5 text-blue-700" />
-                {common.phone}
-              </dt>
-              <dd className="mt-3">
-                <a
-                  className="font-semibold text-blue-700 underline"
-                  href={company.telephoneHref}
-                >
-                  {company.telephone}
-                </a>
-              </dd>
-            </div>
+          <div
+            className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-16"
+            data-testid="contact-layout"
+          >
+            <section aria-labelledby="contact-details-heading">
+              <h3
+                id="contact-details-heading"
+                className="text-xl font-bold text-gray-950"
+              >
+                {copy.information.heading}
+              </h3>
 
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <dt className="flex items-center gap-3 font-bold">
-                <MessageCircle
-                  aria-hidden="true"
-                  className="size-5 text-blue-700"
-                />
-                {common.mobileWhatsapp}
-              </dt>
-              <dd className="mt-3">
-                <a
-                  className="font-semibold text-blue-700 underline"
-                  href={company.whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {company.mobile}
-                </a>
-              </dd>
-            </div>
+              <dl
+                className="mt-5 divide-y divide-gray-200"
+                data-testid="contact-list"
+              >
+                <div className="py-4 first:pt-0">
+                  <dt className="text-sm font-semibold text-gray-600">
+                    {common.phone}
+                  </dt>
+                  <dd className="mt-1">
+                    <a
+                      className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline"
+                      href={company.telephoneHref}
+                    >
+                      {company.telephone}
+                    </a>
+                  </dd>
+                </div>
 
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <dt className="flex items-center gap-3 font-bold">
-                <Mail aria-hidden="true" className="size-5 text-blue-700" />
-                {common.email}
-              </dt>
-              <dd className="mt-3 break-all">
-                <a
-                  className="font-semibold text-blue-700 underline"
-                  href={`mailto:${company.primaryEmail}`}
-                >
-                  {company.primaryEmail}
-                </a>
-              </dd>
-            </div>
+                <div className="py-4">
+                  <dt className="text-sm font-semibold text-gray-600">
+                    {copy.information.mobileLabel}
+                  </dt>
+                  <dd className="mt-1">
+                    <a
+                      className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline"
+                      href={company.whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {company.mobile}
+                    </a>
+                  </dd>
+                </div>
 
-            <div className="rounded-2xl border border-gray-200 p-6">
-              <dt className="flex items-center gap-3 font-bold">
-                <MapPin aria-hidden="true" className="size-5 text-blue-700" />
-                {common.factoryAddress}
-              </dt>
-              <dd className="mt-3 text-gray-600">{company.factoryAddress}</dd>
-            </div>
+                <div className="py-4">
+                  <dt className="text-sm font-semibold text-gray-600">
+                    {common.email}
+                  </dt>
+                  <dd className="mt-1 min-w-0">
+                    <a
+                      className="inline-flex min-h-11 max-w-full items-center break-words font-semibold text-blue-700 underline"
+                      href={`mailto:${company.primaryEmail}`}
+                    >
+                      {company.primaryEmail}
+                    </a>
+                  </dd>
+                </div>
 
-            <div className="rounded-2xl border border-gray-200 p-6 sm:col-span-2">
-              <dt className="font-bold">{common.legacyEmail}</dt>
-              <dd className="mt-2">
-                <a
-                  className="font-semibold text-blue-700 underline"
-                  href={`mailto:${company.legacyEmail}`}
-                >
-                  {company.legacyEmail}
-                </a>
-              </dd>
-            </div>
+                <div className="py-4">
+                  <dt className="text-sm font-semibold text-gray-600">
+                    {common.legacyEmail}
+                  </dt>
+                  <dd className="mt-1 min-w-0">
+                    <a
+                      className="inline-flex min-h-11 max-w-full items-center break-words font-semibold text-blue-700 underline"
+                      href={`mailto:${company.legacyEmail}`}
+                    >
+                      {company.legacyEmail}
+                    </a>
+                  </dd>
+                </div>
+              </dl>
 
-            <div className="rounded-2xl border border-gray-200 p-6 sm:col-span-2">
-              <dt className="flex items-center gap-3 font-bold">
-                <Facebook aria-hidden="true" className="size-5 text-blue-700" />
-                {common.facebook}
-              </dt>
-              <dd className="mt-3">
+              <div className="mt-8">
+                <p className="text-sm font-semibold text-gray-600">
+                  {copy.information.socialTitle}
+                </p>
                 <a
-                  className="inline-flex items-center gap-2 font-semibold text-blue-700 underline"
+                  className="mt-2 inline-flex size-11 items-center justify-center text-blue-700 transition hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                   href={company.facebookUrl}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
+                  aria-label={copy.information.facebookAriaLabel}
                 >
-                  {common.facebook}
-                  <ExternalLink aria-hidden="true" className="size-4" />
+                  <Facebook aria-hidden="true" className="size-6" />
                 </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
+              </div>
+            </section>
 
-      <section className="bg-gray-50 py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold">{copy.map.title}</h2>
-          <p className="mt-4 max-w-3xl text-lg text-gray-600">
-            {copy.map.text}
-          </p>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-            <iframe
-              src={company.mapsEmbedUrl}
-              title={copy.map.iframeTitle}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-[28rem] w-full border-0"
-            />
+            <section
+              aria-labelledby="location-heading"
+              className="lg:border-l lg:border-gray-200 lg:pl-16"
+            >
+              <h3
+                id="location-heading"
+                className="text-xl font-bold text-gray-950"
+              >
+                {copy.map.title}
+              </h3>
+              <p className="mt-5 text-sm font-semibold text-gray-600">
+                {copy.map.factoryLabel}
+              </p>
+              <address className="mt-2 max-w-lg not-italic leading-7 text-gray-700">
+                {company.factoryAddress}
+              </address>
+
+              <div className="mt-6 overflow-hidden rounded-2xl border border-gray-200">
+                <iframe
+                  src={company.mapsEmbedUrl}
+                  title={copy.map.iframeTitle}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-64 w-full border-0 sm:h-80"
+                />
+              </div>
+              <a
+                href={company.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex min-h-11 items-center font-semibold text-blue-700 underline hover:text-blue-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+              >
+                {copy.map.link}
+              </a>
+            </section>
           </div>
-          <a
-            href={company.mapsUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-blue-600 px-6 py-3 font-bold text-white hover:bg-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-          >
-            {copy.map.link}
-            <ExternalLink aria-hidden="true" className="size-5" />
-          </a>
         </div>
       </section>
     </>

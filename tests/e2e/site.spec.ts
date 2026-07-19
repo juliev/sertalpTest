@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import { company } from "../../src/content/company";
 import { workImages } from "../../src/content/images";
 import { productGalleryItems, projects } from "../../src/content/projects";
 import { en } from "../../src/i18n/dictionaries/en";
@@ -133,6 +134,75 @@ test("navigation and primary contact actions work", async ({
   await expect(
     page.locator('a[href="https://maps.app.goo.gl/5UhdfnTUioboDMtQ7?g_st=ic"]'),
   ).toBeVisible();
+});
+
+test("Contacts uses a compact list and responsive location column", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/contactos/");
+
+  await expect(
+    page.getByText(
+      "Escolha a forma mais conveniente de entrar em contacto connosco.",
+      { exact: true },
+    ),
+  ).toBeVisible();
+
+  const layout = page.getByTestId("contact-layout");
+  const list = page.getByTestId("contact-list");
+  await expect(list.locator(":scope > div")).toHaveCount(4);
+  await expect(
+    list.locator(`a[href="${company.telephoneHref}"]`),
+  ).toContainText(company.telephone);
+  await expect(list.locator(`a[href="${company.whatsappUrl}"]`)).toContainText(
+    company.mobile,
+  );
+  await expect(
+    list.locator(`a[href="mailto:${company.primaryEmail}"]`),
+  ).toContainText(company.primaryEmail);
+  await expect(
+    list.locator(`a[href="mailto:${company.legacyEmail}"]`),
+  ).toContainText(company.legacyEmail);
+
+  const facebook = layout.getByRole("link", { name: "Sertalp no Facebook" });
+  await expect(facebook).toHaveAttribute("href", company.facebookUrl);
+  await expect(facebook).toHaveAttribute("target", "_blank");
+  await expect(facebook).toHaveAttribute("rel", "noopener noreferrer");
+  await expect(facebook.locator("svg")).toHaveCount(1);
+  await expect(facebook).toHaveText("");
+
+  const map = layout.locator("iframe");
+  await expect(map).toHaveAttribute(
+    "title",
+    "Localização da fábrica Sertalp na Terrugem",
+  );
+  await expect(map).toHaveAttribute("loading", "lazy");
+  await expect(map).toHaveAttribute("src", company.mapsEmbedUrl);
+  const mapHeight = await map.evaluate(
+    (element) => element.getBoundingClientRect().height,
+  );
+  const [minimum, maximum] =
+    testInfo.project.name === "Mobile Chromium" ? [240, 280] : [300, 340];
+  expect(mapHeight).toBeGreaterThanOrEqual(minimum);
+  expect(mapHeight).toBeLessThanOrEqual(maximum);
+
+  const mapLink = layout.getByRole("link", { name: "Abrir no Google Maps" });
+  await expect(mapLink).toHaveAttribute("href", company.mapsUrl);
+  await expect(layout.getByRole("button")).toHaveCount(0);
+  await expect(layout.locator("form")).toHaveCount(0);
+
+  expect(en.contacts.information).toMatchObject({
+    intro: "Choose the most convenient way to contact us.",
+    heading: "Contacts",
+    mobileLabel: "Mobile and WhatsApp",
+    socialTitle: "Social networks",
+    facebookAriaLabel: "Sertalp on Facebook",
+  });
+  expect(en.contacts.map).toMatchObject({
+    title: "Location",
+    factoryLabel: "Factory",
+    link: "Open in Google Maps",
+  });
 });
 
 test("project gallery opens and closes accessibly", async ({ page }) => {

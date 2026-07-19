@@ -633,12 +633,15 @@ export const pt = {
     },
     information: {
       title: "Informações de contacto",
-      intro:
-        "Escolha o contacto mais conveniente. Não utilizamos formulários online neste website.",
+      intro: "Escolha a forma mais conveniente de entrar em contacto connosco.",
+      heading: "Contactos",
+      mobileLabel: "Mobile e WhatsApp",
+      socialTitle: "Redes sociais",
+      facebookAriaLabel: "Sertalp no Facebook",
     },
     map: {
-      title: "Como chegar",
-      text: "Encontre a fábrica na Terrugem ou abra a localização diretamente no Google Maps.",
+      title: "Localização",
+      factoryLabel: "Fábrica",
       iframeTitle: "Localização da fábrica Sertalp na Terrugem",
       link: "Abrir no Google Maps",
     },

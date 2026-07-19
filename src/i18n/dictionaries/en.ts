@@ -627,12 +627,15 @@ export const en = {
     },
     information: {
       title: "Contact information",
-      intro:
-        "Choose the most convenient contact method. This website does not use online forms.",
+      intro: "Choose the most convenient way to contact us.",
+      heading: "Contacts",
+      mobileLabel: "Mobile and WhatsApp",
+      socialTitle: "Social networks",
+      facebookAriaLabel: "Sertalp on Facebook",
     },
     map: {
-      title: "How to find us",
-      text: "Find the factory in Terrugem or open the location directly in Google Maps.",
+      title: "Location",
+      factoryLabel: "Factory",
       iframeTitle: "Location of the Sertalp factory in Terrugem",
       link: "Open in Google Maps",
     },
