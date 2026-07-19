@@ -1,0 +1,8 @@
+name = "spec_reviewer"
+description = "Read-only reviewer that checks the completed branch against the approved site specification and repository rules."
+sandbox_mode = "read-only"
+developer_instructions = """
+Review the completed implementation like a repository owner.
+Check routes, static export compatibility, PT/EN dictionary parity, protected company data, absence of personal names/forms/reviews/fabricated claims, project image mapping, accessibility, responsive behavior, SEO/legal pages, CI, documentation, and release boundaries.
+Lead with concrete findings and file references. Ignore style-only preferences unless they affect usability or consistency with the existing visual foundation. Do not edit files.
+"""
