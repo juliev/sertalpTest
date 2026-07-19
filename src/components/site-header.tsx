@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, MessageCircle, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { company } from "@/content/company";
 import type { Dictionary } from "@/i18n/types";
 
@@ -12,6 +13,9 @@ type Props = {
 
 export function SiteHeader({ copy }: Props) {
   const [isOpen, setIsOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
+  const currentPath = pathname.endsWith("/") ? pathname : `${pathname}/`;
   const navigation = [
     { href: "/", label: copy.navigation.home },
     { href: "/janelas/", label: copy.navigation.windows },
@@ -22,6 +26,23 @@ export function SiteHeader({ copy }: Props) {
   ];
 
   const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeMenu();
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-40 border-b border-gray-200 bg-white/95 backdrop-blur">
@@ -38,15 +59,23 @@ export function SiteHeader({ copy }: Props) {
           className="hidden items-center gap-5 lg:flex"
           aria-label={copy.common.navigationLabel}
         >
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded py-3 text-sm font-semibold text-gray-700 transition hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            const isCurrent = currentPath === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isCurrent ? "page" : undefined}
+                className={`rounded py-3 text-sm font-semibold transition hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 ${
+                  isCurrent
+                    ? "text-blue-700 underline decoration-2 underline-offset-8"
+                    : "text-gray-700"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -68,8 +97,9 @@ export function SiteHeader({ copy }: Props) {
         </div>
 
         <button
+          ref={menuButtonRef}
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-xl border border-gray-200 text-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 lg:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-xl border border-gray-200 text-gray-800 transition hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 lg:hidden"
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"
           aria-label={isOpen ? copy.common.menuClose : copy.common.menuOpen}
@@ -90,16 +120,22 @@ export function SiteHeader({ copy }: Props) {
         className="border-t border-gray-200 bg-white px-4 pb-6 pt-3 lg:hidden"
       >
         <div className="mx-auto flex max-w-7xl flex-col">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={closeMenu}
-              className="rounded-lg px-3 py-3 font-semibold text-gray-800 hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-blue-600"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navigation.map((item) => {
+            const isCurrent = currentPath === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isCurrent ? "page" : undefined}
+                onClick={closeMenu}
+                className={`rounded-lg px-3 py-3 font-semibold hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-blue-600 ${
+                  isCurrent ? "bg-blue-50 text-blue-700" : "text-gray-800"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
           <div className="mt-3 grid gap-3 sm:grid-cols-2">
             <a
               href={company.whatsappUrl}

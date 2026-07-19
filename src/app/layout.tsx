@@ -35,7 +35,9 @@ export default function RootLayout({
           {dictionary.global.common.skipToContent}
         </a>
         <SiteHeader copy={dictionary.global} />
-        <main id="main-content">{children}</main>
+        <main id="main-content" tabIndex={-1} className="focus:outline-none">
+          {children}
+        </main>
         <SiteFooter copy={dictionary.global} />
       </body>
     </html>

@@ -29,6 +29,15 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+a[href],
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

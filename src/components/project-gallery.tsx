@@ -159,7 +159,7 @@ export function ProjectGallery({ projects, labels }: Props) {
               ref={closeButtonRef}
               type="button"
               onClick={close}
-              className="absolute right-3 top-3 z-10 inline-flex size-11 items-center justify-center rounded-full bg-white text-gray-900 shadow focus-visible:outline-2 focus-visible:outline-blue-600"
+              className="absolute right-3 top-3 z-10 inline-flex size-11 items-center justify-center rounded-full bg-white text-gray-900 shadow transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-blue-600"
               aria-label={labels.close}
             >
               <X aria-hidden="true" className="size-6" />
@@ -184,7 +184,7 @@ export function ProjectGallery({ projects, labels }: Props) {
                       index === 0 ? project.images.length - 1 : index - 1,
                     )
                   }
-                  className="absolute left-7 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-900 shadow focus-visible:outline-2 focus-visible:outline-blue-600"
+                  className="absolute left-7 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-900 shadow transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-blue-600"
                   aria-label={labels.previousImage}
                 >
                   <ChevronLeft aria-hidden="true" className="size-6" />
@@ -196,7 +196,7 @@ export function ProjectGallery({ projects, labels }: Props) {
                       (index) => (index + 1) % project.images.length,
                     )
                   }
-                  className="absolute right-7 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-900 shadow focus-visible:outline-2 focus-visible:outline-blue-600"
+                  className="absolute right-7 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-gray-900 shadow transition hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-blue-600"
                   aria-label={labels.nextImage}
                 >
                   <ChevronRight aria-hidden="true" className="size-6" />

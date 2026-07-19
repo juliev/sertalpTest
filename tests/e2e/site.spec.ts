@@ -68,11 +68,93 @@ test("project gallery opens and closes accessibly", async ({ page }) => {
     .getByTestId("project-grid")
     .getByRole("button", { name: /Ampliar imagem/ });
   await expect(cards).toHaveCount(6);
+  await expect
+    .poll(() =>
+      cards.first().evaluate((element) => getComputedStyle(element).cursor),
+    )
+    .toBe("pointer");
   await cards.first().click();
-  await expect(page.getByRole("dialog")).toBeVisible();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  const closeButton = dialog.getByRole("button", { name: "Fechar" });
+  await expect
+    .poll(() =>
+      closeButton.evaluate((element) => getComputedStyle(element).cursor),
+    )
+    .toBe("pointer");
+  await expect
+    .poll(() =>
+      closeButton.evaluate((element) => {
+        const { width, height } = element.getBoundingClientRect();
+        return { width, height };
+      }),
+    )
+    .toEqual({ width: 44, height: 44 });
   await page.keyboard.press("Escape");
   await expect(page.getByRole("dialog")).toHaveCount(0);
   await expect(cards.first()).toBeFocused();
+});
+
+test("navigation exposes current page and mobile Escape behavior", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/projetos/");
+
+  if (testInfo.project.name === "Mobile Chromium") {
+    const menu = page.locator('button[aria-controls="mobile-navigation"]');
+    await expect
+      .poll(() => menu.evaluate((element) => getComputedStyle(element).cursor))
+      .toBe("pointer");
+    await menu.click();
+
+    const currentLink = page
+      .locator("#mobile-navigation")
+      .getByRole("link", { name: "Projetos", exact: true });
+    await expect(currentLink).toHaveAttribute("aria-current", "page");
+    await currentLink.focus();
+    await page.keyboard.press("Escape");
+    await expect(menu).toHaveAttribute("aria-expanded", "false");
+    await expect(menu).toBeFocused();
+  } else {
+    const currentLink = page
+      .getByRole("navigation", { name: "Navegação principal" })
+      .getByRole("link", { name: "Projetos", exact: true });
+    await expect(currentLink).toHaveAttribute("aria-current", "page");
+  }
+});
+
+test("skip link transfers focus to the main content", async ({ page }) => {
+  await page.goto("/");
+  await page.keyboard.press("Tab");
+  const skipLink = page.getByRole("link", { name: "Saltar para o conteúdo" });
+  await expect(skipLink).toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.locator("#main-content")).toBeFocused();
+});
+
+test("all visible actions use the pointer cursor", async ({ page }) => {
+  for (const route of publicRoutes) {
+    await page.goto(route);
+    const invalidActions = await page
+      .locator("a[href], button:not(:disabled)")
+      .evaluateAll((elements) =>
+        elements
+          .filter((element) => {
+            const htmlElement = element as HTMLElement;
+            return (
+              (htmlElement.offsetWidth > 0 || htmlElement.offsetHeight > 0) &&
+              getComputedStyle(htmlElement).cursor !== "pointer"
+            );
+          })
+          .map((element) => ({
+            tag: element.tagName,
+            label:
+              element.getAttribute("aria-label") ??
+              element.textContent?.trim().slice(0, 60),
+          })),
+      );
+    expect(invalidActions, `Unexpected cursor on ${route}`).toEqual([]);
+  }
 });
 
 test("unknown routes return home", async ({ page }) => {
