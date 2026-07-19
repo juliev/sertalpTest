@@ -23,30 +23,25 @@ The Portuguese version is public. English is used only for development review.
 
 ## Common actions and labels
 
-| Key            | Portuguese                              | English                                  |
-| -------------- | --------------------------------------- | ---------------------------------------- |
-| learnMore      | Saber mais                              | Learn more                               |
-| viewProjects   | Ver projetos                            | View projects                            |
-| contactUs      | Contactar                               | Contact us                               |
-| openMap        | Abrir no Google Maps                    | Open in Google Maps                      |
-| viewImage      | Ampliar imagem                          | Enlarge image                            |
-| close          | Fechar                                  | Close                                    |
-| previous       | Anterior                                | Previous                                 |
-| next           | Seguinte                                | Next                                     |
-| previousImage  | Imagem anterior                         | Previous image                           |
-| nextImage      | Imagem seguinte                         | Next image                               |
-| imageOf        | Imagem {current} de {total}             | Image {current} of {total}               |
-| phone          | Telefone                                | Phone                                    |
-| mobileWhatsapp | Telemóvel e WhatsApp                    | Mobile and WhatsApp                      |
-| email          | Email                                   | Email                                    |
-| legacyEmail    | Email alternativo para clientes antigos | Alternative email for existing customers |
-| factoryAddress | Morada da fábrica                       | Factory address                          |
-| openingHours   | Horário de funcionamento                | Opening hours                            |
-| mondayFriday   | Segunda a sexta                         | Monday to Friday                         |
-| saturday       | Sábado                                  | Saturday                                 |
-| sunday         | Domingo                                 | Sunday                                   |
-| closed         | Encerrado                               | Closed                                   |
-| facebook       | Facebook                                | Facebook                                 |
+| Key            | Portuguese                  | English                    |
+| -------------- | --------------------------- | -------------------------- |
+| learnMore      | Saber mais                  | Learn more                 |
+| viewProjects   | Ver projetos                | View projects              |
+| contactUs      | Contactar                   | Contact us                 |
+| openMap        | Abrir no Google Maps        | Open in Google Maps        |
+| viewImage      | Ampliar imagem              | Enlarge image              |
+| close          | Fechar                      | Close                      |
+| previous       | Anterior                    | Previous                   |
+| next           | Seguinte                    | Next                       |
+| previousImage  | Imagem anterior             | Previous image             |
+| nextImage      | Imagem seguinte             | Next image                 |
+| imageOf        | Imagem {current} de {total} | Image {current} of {total} |
+| phone          | Telefone                    | Phone                      |
+| mobileWhatsapp | Telemóvel e WhatsApp        | Mobile and WhatsApp        |
+| email          | Email principal             | Primary email              |
+| legacyEmail    | Email alternativo           | Alternative email          |
+| factoryAddress | Morada da fábrica           | Factory address            |
+| facebook       | Facebook                    | Facebook                   |
 
 ## 404 redirect fallback
 
@@ -97,7 +92,7 @@ Portuguese:
 - Description: `A Sertalp fabrica soluções em PVC e alumínio na sua própria unidade de produção e acompanha cada projeto desde a avaliação do local até à instalação.`
 - Primary CTA: `Pedir orçamento`
 - Secondary CTA: `Conhecer soluções`
-- Trust line: `Mais de 30 anos de experiência no setor`
+- Trust line: `Experiência no setor desde fevereiro de 1978`
 
 English:
 
@@ -106,7 +101,7 @@ English:
 - Description: `Sertalp manufactures PVC and aluminium solutions in its own production facility and supports each project from the site assessment through to installation.`
 - Primary CTA: `Request a quote`
 - Secondary CTA: `Explore solutions`
-- Trust line: `More than 30 years of industry experience`
+- Trust line: `Experience in the sector since February 1978`
 
 ## Benefits
 
@@ -237,15 +232,15 @@ English:
 Portuguese:
 
 - Eyebrow: `Experiência e produção`
-- Title: `Mais de 30 anos de experiência no setor`
-- Text: `A Sertalp combina conhecimento técnico acumulado com produção própria e uma abordagem próxima. Trabalhamos em Portugal e noutros mercados, sempre com soluções adaptadas ao edifício e às necessidades do cliente.`
+- Title: `Experiência no setor desde fevereiro de 1978`
+- Text: `Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação. A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.`
 - Link: `Conhecer a Sertalp`
 
 English:
 
 - Eyebrow: `Experience and production`
-- Title: `More than 30 years of industry experience`
-- Text: `Sertalp combines accumulated technical knowledge with in-house production and a close, practical approach. We work in Portugal and other markets, always with solutions adapted to the building and the client's needs.`
+- Title: `Experience in the sector since February 1978`
+- Text: `With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation. Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.`
 - Link: `About Sertalp`
 
 ## Warranty teaser
@@ -426,20 +421,6 @@ English:
   - `White PVC — 5 years`
   - `Coloured PVC — 3 years`
 
-## Supplier block
-
-Render only when supplier data exists.
-
-Portuguese:
-
-- Title: `Marcas e fornecedores`
-- Text: `Trabalhamos com fornecedores selecionados para os perfis, vidro e ferragens utilizados em cada solução.`
-
-English:
-
-- Title: `Brands and suppliers`
-- Text: `We work with selected suppliers for the profiles, glazing and hardware used in each solution.`
-
 ## Final CTA
 
 Portuguese:
@@ -589,10 +570,6 @@ English:
 ## Warranties
 
 Use the same exact warranty title, intro and items as the Windows page.
-
-## Supplier block
-
-Use the same conditional supplier block as the Windows page.
 
 ## Final CTA
 
@@ -775,12 +752,12 @@ English:
 Portuguese:
 
 - Title: `Sobre a Sertalp | Experiência e Produção Própria`
-- Description: `Mais de 30 anos de experiência no fabrico e montagem de janelas e portas em PVC e alumínio.`
+- Description: `Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação.`
 
 English:
 
 - Title: `About Sertalp | Experience and In-house Production`
-- Description: `More than 30 years of experience manufacturing and installing PVC and aluminium windows and doors.`
+- Description: `With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation.`
 
 ## Hero
 
@@ -788,13 +765,13 @@ Portuguese:
 
 - Eyebrow: `Sobre a Sertalp`
 - Title: `Experiência, produção própria e soluções à medida`
-- Description: `Mais de 30 anos de trabalho no setor da caixilharia, com acompanhamento próximo e foco nas necessidades de cada projeto.`
+- Description: `Experiência no setor desde fevereiro de 1978`
 
 English:
 
 - Eyebrow: `About Sertalp`
 - Title: `Experience, in-house production and tailored solutions`
-- Description: `More than 30 years working in the window and door sector, with close support and a focus on the needs of each project.`
+- Description: `Experience in the sector since February 1978`
 
 ## Story
 
@@ -802,15 +779,15 @@ Portuguese:
 
 - Title: `Uma abordagem construída com experiência`
 - Paragraph 1: `A Sertalp dedica-se ao fabrico e montagem de caixilharia em PVC e alumínio para habitação, renovação e outros projetos.`
-- Paragraph 2: `Com mais de 30 anos de experiência no setor, combinamos conhecimento técnico, produção própria e uma relação direta com cada cliente.`
-- Paragraph 3: `Os elementos de caixilharia são produzidos nas instalações da empresa. O vidro é fornecido por parceiros especializados e integrado na solução definida para cada obra.`
+- Paragraph 2: `Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação.`
+- Paragraph 3: `Os elementos de caixilharia são produzidos nas instalações da empresa, de acordo com as medidas e especificações definidas para cada projeto.`
 
 English:
 
 - Title: `An approach built on experience`
 - Paragraph 1: `Sertalp manufactures and installs PVC and aluminium frames for homes, renovation and other projects.`
-- Paragraph 2: `With more than 30 years of industry experience, we combine technical knowledge, in-house production and a direct relationship with each client.`
-- Paragraph 3: `Frame components are manufactured in the company's facility. Glass is supplied by specialist partners and integrated into the solution defined for each project.`
+- Paragraph 2: `With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation.`
+- Paragraph 3: `Frame components are manufactured in the company's facility according to the dimensions and specifications defined for each project.`
 
 ## Capabilities
 
@@ -827,8 +804,8 @@ Portuguese:
 3. Title: `Serviço completo`
    Description: `Acompanhamos a avaliação, a proposta, o fabrico, a entrega e a montagem.`
 
-4. Title: `Portugal e outros mercados`
-   Description: `Trabalhamos em Portugal e também desenvolvemos projetos para outros países.`
+4. Title: `Projetos e fornecimentos`
+   Description: `A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.`
 
 English:
 
@@ -843,8 +820,8 @@ English:
 3. Title: `Complete service`
    Description: `We support the assessment, proposal, manufacture, delivery and installation.`
 
-4. Title: `Portugal and other markets`
-   Description: `We work in Portugal and also develop projects for other countries.`
+4. Title: `Projects and deliveries`
+   Description: `Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.`
 
 ## Markets
 
@@ -852,13 +829,33 @@ Portuguese:
 
 - Eyebrow: `Área de atuação`
 - Title: `Projetos em Portugal e no estrangeiro`
-- Text: `Trabalhamos em Portugal, Espanha, noutros países europeus, em Israel e em Angola, ajustando cada solução às condições e necessidades do projeto.`
+- Text: `A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.`
 
 English:
 
 - Eyebrow: `Where we work`
 - Title: `Projects in Portugal and abroad`
-- Text: `We work in Portugal, Spain, other European countries, Israel and Angola, adapting each solution to the conditions and needs of the project.`
+- Text: `Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.`
+
+## Certifications
+
+Portuguese:
+
+- Section title: `Certificações`
+- Card 1 title: `Empresa aderente ao sistema CLASSE+`
+- Card 1 body: `A Sertalp é uma empresa aderente ao sistema CLASSE+ da ADENE, dedicado à etiquetagem energética de produtos e à promoção da eficiência energética.`
+- Card 2 title: `Certificado IMPIC`
+- Card 2 body: `Certificado de empreiteiro de obras particulares n.º 136169-PAR, com inscrição em 02/07/2021.`
+
+English:
+
+- Section title: `Certifications`
+- Card 1 title: `Participating company in the CLASSE+ system`
+- Card 1 body: `Sertalp is a participating company in ADENE's CLASSE+ system, dedicated to product energy labelling and the promotion of energy efficiency.`
+- Card 2 title: `IMPIC certificate`
+- Card 2 body: `Private works contractor certificate no. 136169-PAR, registered on 2 July 2021.`
+
+Keep this section text-only. Do not publish certificate images, PDFs, download links, previews, or logos.
 
 ## CTA
 
@@ -918,33 +915,7 @@ English:
 - Title: `Contact information`
 - Intro: `Choose the most convenient contact method. This website does not use online forms.`
 
-Contact labels use the global labels.
-
-Legacy email helper:
-
-Portuguese:
-
-`Mantido como contacto alternativo para clientes antigos.`
-
-English:
-
-`Kept as an alternative contact for existing customers.`
-
-## Hours
-
-Portuguese:
-
-- Title: `Horário`
-- Monday–Friday: `09:00–18:00`
-- Saturday: `10:00–15:00`
-- Sunday: `Encerrado`
-
-English:
-
-- Title: `Opening hours`
-- Monday–Friday: `09:00–18:00`
-- Saturday: `10:00–15:00`
-- Sunday: `Closed`
+Contact labels use the global labels. Show `sertalplda@gmail.com` as the primary email and `sertalp@sapo.pt` as the alternative email.
 
 ## Map
 
@@ -961,16 +932,6 @@ English:
 - Text: `Find the factory in Terrugem or open the location directly in Google Maps.`
 - Iframe title: `Location of the Sertalp factory in Terrugem`
 - Link: `Open in Google Maps`
-
-## CTA helper
-
-Portuguese:
-
-`Para uma resposta mais direta, contacte-nos por telefone ou WhatsApp durante o horário de funcionamento.`
-
-English:
-
-`For a more direct response, contact us by telephone or WhatsApp during opening hours.`
 
 ---
 

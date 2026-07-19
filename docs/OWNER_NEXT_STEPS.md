@@ -87,5 +87,4 @@ Keep these separate from the first release:
 - GA4;
 - cookie-consent implementation;
 - replacement of temporary project content with client-supplied real projects;
-- confirmed supplier/brand list;
 - any legal-text update requested by a qualified adviser or current company certificate.

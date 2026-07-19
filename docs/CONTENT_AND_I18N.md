@@ -36,7 +36,6 @@ src/
   content/
     company.ts
     projects.ts
-    suppliers.ts
     warranties.ts
   i18n/
     config.ts
@@ -59,10 +58,10 @@ Keep invariant values:
 - phone numbers and normalized links;
 - emails;
 - addresses;
-- hours data;
 - Facebook;
 - Google Maps URLs;
 - markets/countries where appropriate;
+- experience start date and confirmed certification facts;
 - canonical domain.
 
 ### `projects.ts`
@@ -104,10 +103,6 @@ export type Project = {
 
 Keep invariant warranty duration values and a stable material key.
 
-### `suppliers.ts`
-
-Start with an empty array. Do not invent names. The UI must not render the section when the array is empty.
-
 ## 5. Dictionary boundaries
 
 Keep all visible translated UI copy in the typed dictionary:
@@ -119,7 +114,6 @@ Keep all visible translated UI copy in the typed dictionary:
 - cards;
 - project title/description/alt;
 - accessibility labels;
-- opening-hours labels;
 - privacy/cookies copy;
 - SEO metadata;
 - 404 redirect fallback.
@@ -131,7 +125,6 @@ Do not translate:
 - URLs;
 - legal identifiers;
 - company legal name;
-- supplier/brand names;
 - image file paths;
 - cities unless a language-specific spelling is intentionally required.
 

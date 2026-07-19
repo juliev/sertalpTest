@@ -201,18 +201,102 @@ test("legal pages show approved external URLs", async ({ page }) => {
   }
 });
 
-test("site has no removed UI and no horizontal mobile overflow", async ({
+test("confirmed experience, geography and certifications are published safely", async ({
   page,
 }) => {
   await page.goto("/");
-  await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
   await expect(
-    page.locator('a[href^="/en"], a[href^="/pt"], a[href^="/uk"]'),
-  ).toHaveCount(0);
-  await expect(page.getByText(/testemunhos|testimonials/i)).toHaveCount(0);
+    page.getByRole("heading", {
+      name: "Experiência no setor desde fevereiro de 1978",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/mais de 30 anos/i)).toHaveCount(0);
 
-  const hasOverflow = await page.evaluate(
-    () => document.documentElement.scrollWidth > window.innerWidth + 1,
+  await page.goto("/sobre-nos/");
+  await expect(
+    page
+      .getByText(
+        "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
+        { exact: true },
+      )
+      .first(),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "Empresa aderente ao sistema CLASSE+",
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/136169-PAR/).first()).toBeVisible();
+  await expect(page.getByText(/02\/07\/2021/)).toBeVisible();
+  await expect(
+    page.getByText(/fundador|proprietário|diretor|biografia/i),
+  ).toHaveCount(0);
+  await expect(page.getByText(/outros países da Europa/i)).toHaveCount(0);
+  await expect(
+    page.getByText(/classificação A\+|classe energética A\+|todos.*A\+/i),
+  ).toHaveCount(0);
+  await expect(
+    page.locator(
+      'a[href$=".pdf"], a[href*="certificado"], img[src*="certificado"], img[src*="certificate"]',
+    ),
+  ).toHaveCount(0);
+  await expect(page.getByText("Consultar certificado")).toHaveCount(0);
+});
+
+test("brands, suppliers and opening hours are absent", async ({ page }) => {
+  for (const route of ["/", "/janelas/", "/portas/", "/sobre-nos/"]) {
+    await page.goto(route);
+    await expect(
+      page.getByRole("heading", {
+        name: /marcas|fornecedores|parceiros|brands|suppliers|partners/i,
+      }),
+    ).toHaveCount(0);
+  }
+
+  await page.goto("/contactos/");
+  await expect(page.getByText(/horário|opening hours/i)).toHaveCount(0);
+  const structuredData = await page
+    .locator('script[type="application/ld+json"]')
+    .allTextContents();
+  expect(structuredData.join(" ")).not.toContain("openingHours");
+});
+
+test("both confirmed email addresses are published correctly", async ({
+  page,
+}) => {
+  await page.goto("/contactos/");
+  await expect(
+    page.getByText("Email principal", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Email alternativo", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.locator('a[href="mailto:sertalplda@gmail.com"]').first(),
+  ).toContainText("sertalplda@gmail.com");
+  await expect(page.locator('a[href="mailto:sertalp@sapo.pt"]')).toContainText(
+    "sertalp@sapo.pt",
   );
-  expect(hasOverflow).toBe(false);
+  await expect(
+    page.getByText(/Certificado IMPIC n.º 136169-PAR/),
+  ).toBeVisible();
+});
+
+test("site has no removed UI and no horizontal mobile overflow", async ({
+  page,
+}) => {
+  for (const route of ["/", "/sobre-nos/", "/contactos/"]) {
+    await page.goto(route);
+    await expect(page.locator("form, input, textarea, select")).toHaveCount(0);
+    await expect(
+      page.locator('a[href^="/en"], a[href^="/pt"], a[href^="/uk"]'),
+    ).toHaveCount(0);
+    await expect(page.getByText(/testemunhos|testimonials/i)).toHaveCount(0);
+
+    const hasOverflow = await page.evaluate(
+      () => document.documentElement.scrollWidth > window.innerWidth + 1,
+    );
+    expect(hasOverflow, `Horizontal overflow on ${route}`).toBe(false);
+  }
 });

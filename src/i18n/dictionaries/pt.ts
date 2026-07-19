@@ -24,14 +24,9 @@ export const pt = {
       imageOf: "Imagem {current} de {total}",
       phone: "Telefone",
       mobileWhatsapp: "Telemóvel e WhatsApp",
-      email: "Email",
-      legacyEmail: "Email alternativo para clientes antigos",
+      email: "Email principal",
+      legacyEmail: "Email alternativo",
       factoryAddress: "Morada da fábrica",
-      openingHours: "Horário de funcionamento",
-      mondayFriday: "Segunda a sexta",
-      saturday: "Sábado",
-      sunday: "Domingo",
-      closed: "Encerrado",
       facebook: "Facebook",
       menuOpen: "Abrir menu",
       menuClose: "Fechar menu",
@@ -68,10 +63,6 @@ export const pt = {
         years: "anos",
       },
     },
-    suppliers: {
-      title: "Marcas e fornecedores",
-      text: "Trabalhamos com fornecedores selecionados para os perfis, vidro e ferragens utilizados em cada solução.",
-    },
   },
   home: {
     seo: {
@@ -86,7 +77,7 @@ export const pt = {
         "A Sertalp fabrica soluções em PVC e alumínio na sua própria unidade de produção e acompanha cada projeto desde a avaliação do local até à instalação.",
       primaryCta: "Pedir orçamento",
       secondaryCta: "Conhecer soluções",
-      trustLine: "Mais de 30 anos de experiência no setor",
+      trustLine: "Experiência no setor desde fevereiro de 1978",
       imageAlt:
         "Moradia moderna com janelas, porta e sistema de correr em alumínio escuro",
     },
@@ -164,8 +155,8 @@ export const pt = {
     },
     experience: {
       eyebrow: "Experiência e produção",
-      title: "Mais de 30 anos de experiência no setor",
-      text: "A Sertalp combina conhecimento técnico acumulado com produção própria e uma abordagem próxima. Trabalhamos em Portugal e noutros mercados, sempre com soluções adaptadas ao edifício e às necessidades do cliente.",
+      title: "Experiência no setor desde fevereiro de 1978",
+      text: "Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação. A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
       link: "Conhecer a Sertalp",
     },
     warranty: {
@@ -388,20 +379,19 @@ export const pt = {
     seo: {
       title: "Sobre a Sertalp | Experiência e Produção Própria",
       description:
-        "Mais de 30 anos de experiência no fabrico e montagem de janelas e portas em PVC e alumínio.",
+        "Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação.",
     },
     hero: {
       eyebrow: "Sobre a Sertalp",
       title: "Experiência, produção própria e soluções à medida",
-      description:
-        "Mais de 30 anos de trabalho no setor da caixilharia, com acompanhamento próximo e foco nas necessidades de cada projeto.",
+      description: "Experiência no setor desde fevereiro de 1978",
     },
     story: {
       title: "Uma abordagem construída com experiência",
       paragraphs: [
         "A Sertalp dedica-se ao fabrico e montagem de caixilharia em PVC e alumínio para habitação, renovação e outros projetos.",
-        "Com mais de 30 anos de experiência no setor, combinamos conhecimento técnico, produção própria e uma relação direta com cada cliente.",
-        "Os elementos de caixilharia são produzidos nas instalações da empresa. O vidro é fornecido por parceiros especializados e integrado na solução definida para cada obra.",
+        "Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação.",
+        "Os elementos de caixilharia são produzidos nas instalações da empresa, de acordo com as medidas e especificações definidas para cada projeto.",
       ],
     },
     capabilities: {
@@ -423,16 +413,29 @@ export const pt = {
             "Acompanhamos a avaliação, a proposta, o fabrico, a entrega e a montagem.",
         },
         {
-          title: "Portugal e outros mercados",
+          title: "Projetos e fornecimentos",
           description:
-            "Trabalhamos em Portugal e também desenvolvemos projetos para outros países.",
+            "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
         },
       ],
     },
     markets: {
       eyebrow: "Área de atuação",
       title: "Projetos em Portugal e no estrangeiro",
-      text: "Trabalhamos em Portugal, Espanha, noutros países europeus, em Israel e em Angola, ajustando cada solução às condições e necessidades do projeto.",
+      text: "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
+    },
+    certifications: {
+      title: "Certificações",
+      items: [
+        {
+          title: "Empresa aderente ao sistema CLASSE+",
+          body: "A Sertalp é uma empresa aderente ao sistema CLASSE+ da ADENE, dedicado à etiquetagem energética de produtos e à promoção da eficiência energética.",
+        },
+        {
+          title: "Certificado IMPIC",
+          body: "Certificado de empreiteiro de obras particulares n.º 136169-PAR, com inscrição em 02/07/2021.",
+        },
+      ],
     },
     cta: {
       title: "Fale connosco sobre o seu projeto",
@@ -457,10 +460,6 @@ export const pt = {
       title: "Informações de contacto",
       intro:
         "Escolha o contacto mais conveniente. Não utilizamos formulários online neste website.",
-      legacyHelper: "Mantido como contacto alternativo para clientes antigos.",
-    },
-    hours: {
-      title: "Horário",
     },
     map: {
       title: "Como chegar",
@@ -468,8 +467,6 @@ export const pt = {
       iframeTitle: "Localização da fábrica Sertalp na Terrugem",
       link: "Abrir no Google Maps",
     },
-    helper:
-      "Para uma resposta mais direta, contacte-nos por telefone ou WhatsApp durante o horário de funcionamento.",
   },
   privacy: {
     seo: {

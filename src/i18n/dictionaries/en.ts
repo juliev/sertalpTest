@@ -26,14 +26,9 @@ export const en = {
       imageOf: "Image {current} of {total}",
       phone: "Phone",
       mobileWhatsapp: "Mobile and WhatsApp",
-      email: "Email",
-      legacyEmail: "Alternative email for existing customers",
+      email: "Primary email",
+      legacyEmail: "Alternative email",
       factoryAddress: "Factory address",
-      openingHours: "Opening hours",
-      mondayFriday: "Monday to Friday",
-      saturday: "Saturday",
-      sunday: "Sunday",
-      closed: "Closed",
       facebook: "Facebook",
       menuOpen: "Open menu",
       menuClose: "Close menu",
@@ -70,10 +65,6 @@ export const en = {
         years: "years",
       },
     },
-    suppliers: {
-      title: "Brands and suppliers",
-      text: "We work with selected suppliers for the profiles, glazing and hardware used in each solution.",
-    },
   },
   home: {
     seo: {
@@ -88,7 +79,7 @@ export const en = {
         "Sertalp manufactures PVC and aluminium solutions in its own production facility and supports each project from the site assessment through to installation.",
       primaryCta: "Request a quote",
       secondaryCta: "Explore solutions",
-      trustLine: "More than 30 years of industry experience",
+      trustLine: "Experience in the sector since February 1978",
       imageAlt:
         "Modern house with dark aluminium windows, door and sliding system",
     },
@@ -166,8 +157,8 @@ export const en = {
     },
     experience: {
       eyebrow: "Experience and production",
-      title: "More than 30 years of industry experience",
-      text: "Sertalp combines accumulated technical knowledge with in-house production and a close, practical approach. We work in Portugal and other markets, always with solutions adapted to the building and the client's needs.",
+      title: "Experience in the sector since February 1978",
+      text: "With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation. Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.",
       link: "About Sertalp",
     },
     warranty: {
@@ -395,20 +386,19 @@ export const en = {
     seo: {
       title: "About Sertalp | Experience and In-house Production",
       description:
-        "More than 30 years of experience manufacturing and installing PVC and aluminium windows and doors.",
+        "With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation.",
     },
     hero: {
       eyebrow: "About Sertalp",
       title: "Experience, in-house production and tailored solutions",
-      description:
-        "More than 30 years working in the window and door sector, with close support and a focus on the needs of each project.",
+      description: "Experience in the sector since February 1978",
     },
     story: {
       title: "An approach built on experience",
       paragraphs: [
         "Sertalp manufactures and installs PVC and aluminium frames for homes, renovation and other projects.",
-        "With more than 30 years of industry experience, we combine technical knowledge, in-house production and a direct relationship with each client.",
-        "Frame components are manufactured in the company's facility. Glass is supplied by specialist partners and integrated into the solution defined for each project.",
+        "With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation.",
+        "Frame components are manufactured in the company's facility according to the dimensions and specifications defined for each project.",
       ],
     },
     capabilities: {
@@ -430,16 +420,29 @@ export const en = {
             "We support the assessment, proposal, manufacture, delivery and installation.",
         },
         {
-          title: "Portugal and other markets",
+          title: "Projects and deliveries",
           description:
-            "We work in Portugal and also develop projects for other countries.",
+            "Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.",
         },
       ],
     },
     markets: {
       eyebrow: "Where we work",
       title: "Projects in Portugal and abroad",
-      text: "We work in Portugal, Spain, other European countries, Israel and Angola, adapting each solution to the conditions and needs of the project.",
+      text: "Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.",
+    },
+    certifications: {
+      title: "Certifications",
+      items: [
+        {
+          title: "Participating company in the CLASSE+ system",
+          body: "Sertalp is a participating company in ADENE's CLASSE+ system, dedicated to product energy labelling and the promotion of energy efficiency.",
+        },
+        {
+          title: "IMPIC certificate",
+          body: "Private works contractor certificate no. 136169-PAR, registered on 2 July 2021.",
+        },
+      ],
     },
     cta: {
       title: "Talk to us about your project",
@@ -464,10 +467,6 @@ export const en = {
       title: "Contact information",
       intro:
         "Choose the most convenient contact method. This website does not use online forms.",
-      legacyHelper: "Kept as an alternative contact for existing customers.",
-    },
-    hours: {
-      title: "Opening hours",
     },
     map: {
       title: "How to find us",
@@ -475,8 +474,6 @@ export const en = {
       iframeTitle: "Location of the Sertalp factory in Terrugem",
       link: "Open in Google Maps",
     },
-    helper:
-      "For a more direct response, contact us by telephone or WhatsApp during opening hours.",
   },
   privacy: {
     seo: {

@@ -1,12 +1,5 @@
 import Link from "next/link";
-import {
-  Clock,
-  Facebook,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-} from "lucide-react";
+import { Facebook, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { company } from "@/content/company";
 import type { Dictionary } from "@/i18n/types";
 
@@ -88,12 +81,6 @@ export function SiteFooter({ copy }: Props) {
             <li className="flex items-start gap-3">
               <MapPin aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
               {company.factoryAddress}
-            </li>
-            <li className="flex items-start gap-3">
-              <Clock aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
-              {copy.common.mondayFriday}: {company.hours.mondayFriday}
-              <br />
-              {copy.common.saturday}: {company.hours.saturday}
             </li>
             <li>
               <a

@@ -43,10 +43,11 @@
 - [ ] No contact or quotation form exists.
 - [ ] No Other Products navigation/page exists.
 - [ ] No fake customer counts, ratings, savings, response time, acoustic values, U-values, security classes, or unsupported performance data remain.
-- [ ] No unconfirmed supplier/brand name is visible.
-- [ ] Supplier sections hide when data is empty.
-- [ ] More-than-30-years statement is present.
+- [ ] No brand, supplier, manufacturer, partner, or related logo section is present.
+- [ ] Experience in the sector since February 1978 is present without personal attribution.
 - [ ] Markets copy matches the approved list.
+- [ ] Sobre Nós includes the approved text-only CLASSE+ and IMPIC information.
+- [ ] No certificate image, PDF, download, preview, logo, or unsupported A+ claim exists.
 - [ ] Warranty periods match the specification.
 - [ ] Temporary project content is approved for the current review.
 - [ ] Exactly six source PNGs from the original `public/mockimages/` set were mapped to six unique projects.
@@ -63,7 +64,7 @@
 - [ ] Primary email is correct and uses `mailto:`.
 - [ ] Legacy email is shown as secondary.
 - [ ] Factory address is correct.
-- [ ] Opening hours are correct.
+- [ ] No opening hours or schedule labels are shown.
 - [ ] Facebook link is correct.
 - [ ] Google Maps iframe loads lazily.
 - [ ] Google Maps external link is correct.

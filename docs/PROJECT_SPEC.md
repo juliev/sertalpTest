@@ -152,7 +152,6 @@ src/
     company.ts
     projects.ts
     warranties.ts
-    suppliers.ts
 ```
 
 Use TypeScript dictionaries with a shared `Dictionary` type or `satisfies Dictionary`. Do not use `any`.
@@ -197,6 +196,18 @@ IMPIC certificate:
 
 ```text
 136169-PAR
+```
+
+IMPIC registration date:
+
+```text
+02/07/2021
+```
+
+CLASSE+:
+
+```text
+Participating company in the ADENE CLASSE+ system
 ```
 
 ### Contacts
@@ -255,25 +266,29 @@ Suggested no-key map embed:
 https://www.google.com/maps?q=Rua%20Fonte%20da%20Pedrinha%2C%20Fra%C3%A7%C3%A3o%20D%2C%20Quinta%20das%20Portelas%2C%202705-863%20Terrugem%2C%20Portugal&output=embed
 ```
 
-Opening hours:
-
-- Monday–Friday: 09:00–18:00
-- Saturday: 10:00–15:00
-- Sunday: closed
-
 ### Experience and operations
 
 Approved statements:
 
-- More than 30 years of experience.
+- Experience in the sector since February 1978.
 - PVC and aluminium window and door solutions.
-- Company-owned production of frames and products; glass is supplied by specialist partners.
+- Company-owned production of frames and products.
 - Individual/custom solutions.
 - Supply and installation as a complete service.
-- Work in Portugal and abroad.
-- Approved countries/markets: Portugal, Spain, other European countries, Israel, and Angola.
+- Work throughout mainland Portugal, from north to south.
+- Projects and deliveries to Madeira, the Azores, Spain, Israel, and Angola.
 
-Do not publish any owner, director, employee, client, or partner personal name.
+Do not attribute the February 1978 date to any individual or describe the current legal company as founded or registered in 1978. Do not publish any owner, director, employee, client, or partner personal name or biography.
+
+Do not publish brand, supplier, manufacturer, partner, or product-system information.
+
+### Certifications
+
+- CLASSE+: Sertalp is a participating company in the ADENE CLASSE+ system.
+- IMPIC: private works contractor certificate no. `136169-PAR`, registered on `02/07/2021`.
+- Keep both items text-only on the About page.
+- Do not publish certificate images, PDFs, downloads, previews, logos, or private reference files.
+- Do not claim an A+ rating, a company energy class, universal product certification, or current certificate validity.
 
 ### Warranties
 
@@ -331,7 +346,6 @@ Include:
 - WhatsApp;
 - primary email;
 - factory address;
-- hours summary;
 - Facebook;
 - Privacy Policy and Cookies Policy links;
 - complete approved legal footer;
@@ -351,7 +365,7 @@ Exact copy is in `docs/PAGE_COPY.md`.
 4. Windows and doors cards
 5. Four-step work process
 6. Project preview using the same six projects
-7. More than 30 years of experience section
+7. Experience in the sector since February 1978 section
 8. Compact warranty teaser
 9. Contact CTA
 10. Footer
@@ -365,8 +379,7 @@ Exact copy is in `docs/PAGE_COPY.md`.
 5. Compact benefits
 6. Project images/gallery where suitable
 7. Detailed warranties
-8. Supplier/brand block only when supplier data exists
-9. CTA
+8. CTA
 
 Do not add long technical tables, unsupported U-values, acoustic values, opening-type catalogs, or certifications.
 
@@ -383,8 +396,7 @@ Do not add long technical tables, unsupported U-values, acoustic values, opening
 3. PVC and aluminium material sections
 4. Custom assessment section
 5. Detailed warranties
-6. Supplier/brand block only when supplier data exists
-7. CTA
+6. CTA
 
 ### Projects
 
@@ -399,12 +411,13 @@ Do not add long technical tables, unsupported U-values, acoustic values, opening
 
 ### About
 
-- More than 30 years of experience.
+- Experience in the sector since February 1978, without personal attribution.
 - PVC and aluminium.
 - Own production.
 - Custom solutions.
 - Complete installation service.
-- Portugal and approved international markets.
+- Work throughout mainland Portugal and projects/deliveries to Madeira, the Azores, Spain, Israel, and Angola.
+- Text-only CLASSE+ participating-company and IMPIC certificate information.
 - No personal names, age, biographies, or founder portrait.
 
 ### Contacts
@@ -412,9 +425,9 @@ Do not add long technical tables, unsupported U-values, acoustic values, opening
 - No form.
 - Telephone.
 - WhatsApp.
-- Main email.
+- Primary email `sertalplda@gmail.com`.
+- Alternative email `sertalp@sapo.pt`.
 - Factory address.
-- Hours.
 - Embedded Google Maps iframe with `loading="lazy"`.
 - `Abrir no Google Maps` link.
 - Legacy email shown as a smaller secondary line for existing customers.
@@ -712,6 +725,11 @@ Core smoke coverage:
 - no horizontal overflow at mobile viewport;
 - no form fields or testimonial section;
 - no language switcher or `/en` navigation.
+- experience since February 1978 with no personal attribution;
+- approved geographical statement and no unspecified European markets;
+- no brand/supplier section or opening hours;
+- both email addresses and correct `mailto:` links;
+- text-only CLASSE+ and IMPIC information with no certificate assets or unsupported A+ claims.
 
 The static build must succeed independently from E2E. Playwright may run against the Next development server for simplicity.
 

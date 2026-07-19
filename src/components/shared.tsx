@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import { company } from "@/content/company";
-import { suppliers } from "@/content/suppliers";
 import { warranties } from "@/content/warranties";
 import type { Dictionary } from "@/i18n/types";
 
@@ -174,34 +173,6 @@ export function WarrantySection({
             </div>
           ))}
         </dl>
-      </div>
-    </section>
-  );
-}
-
-export function SupplierSection({
-  copy,
-}: {
-  copy: Dictionary["shared"]["suppliers"];
-}) {
-  if (suppliers.length === 0) {
-    return null;
-  }
-
-  return (
-    <section className="py-14 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading title={copy.title} intro={copy.text} />
-        <ul className="mt-8 flex flex-wrap gap-3">
-          {suppliers.map((supplier) => (
-            <li
-              key={supplier}
-              className="rounded-full bg-blue-50 px-4 py-2 font-semibold text-blue-800"
-            >
-              {supplier}
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

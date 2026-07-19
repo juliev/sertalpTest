@@ -83,6 +83,25 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="bg-gray-50 py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading title={copy.certifications.title} />
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {copy.certifications.items.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-gray-200 bg-white p-7 shadow-sm"
+              >
+                <h2 className="text-xl font-bold text-gray-950">
+                  {item.title}
+                </h2>
+                <p className="mt-3 leading-7 text-gray-600">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ContactCta
         title={copy.cta.title}
         text={copy.cta.text}

@@ -38,7 +38,7 @@
 - Do not add testimonials, reviews, newsletter forms, quote forms, contact forms, account features, or online support.
 - Do not include personal names of owners, employees, clients, or partners anywhere in this public repository unless the repository owner explicitly approves publication.
 - The six project entries in `docs/PAGE_COPY.md` are approved temporary content. Six generated PNG source images already exist under `public/mockimages/`. Map each unique source to one project, preserve sources outside `public/`, publish optimized WebP outputs, and do not create mock modes, flags, or visible disclaimers.
-- Supplier and brand sections must remain hidden when the supplier list is empty.
+- Do not publish brand, supplier, manufacturer, partner, or product-system information.
 - Do not change protected company data unless explicitly instructed.
 
 ## Protected company data
@@ -47,12 +47,14 @@
 - NIPC: `506 845 206`
 - Share capital: `5 000 €`
 - IMPIC certificate: `136169-PAR`
+- IMPIC registration date: `02/07/2021`
+- CLASSE+ status: participating company in the ADENE CLASSE+ system
 - Main email: `sertalplda@gmail.com`
 - Legacy email: `sertalp@sapo.pt`
 - Telephone: `+351 219 172 712`
 - Mobile and WhatsApp: `+351 917 556 253`
 - Factory address: `Rua Fonte da Pedrinha, Fração D, Quinta das Portelas, 2705-863 Terrugem`
-- Experience statement: `more than 30 years of experience`
+- Experience statement: `experience in the sector since February 1978`
 - Warranty periods: glass 10 years; aluminium 5 years; white PVC 5 years; coloured PVC 3 years
 - The complete approved legal footer is defined in `docs/PROJECT_SPEC.md`.
 
@@ -64,7 +66,7 @@
 - English exists only as a build-time development dictionary for content review.
 - Portuguese and English dictionaries must share one typed structure and be updated together.
 - Keep visible UI copy in dictionaries, not scattered through JSX.
-- Keep invariant facts such as telephone numbers, emails, addresses, legal identifiers, image paths, and supplier names in typed content/data files.
+- Keep invariant facts such as telephone numbers, emails, addresses, legal identifiers, certification dates, markets, and image paths in typed content/data files.
 
 ## Architecture
 

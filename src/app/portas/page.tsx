@@ -12,7 +12,6 @@ import {
   ContactCta,
   PageHero,
   SectionHeading,
-  SupplierSection,
   WarrantySection,
 } from "@/components/shared";
 import { siteImages } from "@/content/images";
@@ -128,7 +127,6 @@ export default function DoorsPage() {
       </section>
 
       <WarrantySection copy={dictionary.shared.warranties} />
-      <SupplierSection copy={dictionary.shared.suppliers} />
       <ContactCta
         title={copy.cta.title}
         text={copy.cta.text}
