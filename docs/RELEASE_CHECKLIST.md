@@ -83,7 +83,7 @@
 ## Design and accessibility
 
 - [ ] Existing blue/white technical visual direction is preserved.
-- [ ] Existing hero image is reused.
+- [ ] Approved real-work hero images are used.
 - [ ] Header works on desktop and mobile.
 - [ ] WhatsApp is visible in header, footer and Contacts.
 - [ ] One `h1` per page.

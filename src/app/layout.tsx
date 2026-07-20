@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { company } from "@/content/company";
 import { htmlLanguage } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { isPreviewDeployment } from "@/lib/deployment";
 import { createPageMetadata } from "@/lib/metadata";
 import "./globals.css";
 
@@ -18,6 +19,9 @@ const dictionary = getDictionary();
 export const metadata: Metadata = {
   metadataBase: new URL(company.canonicalUrl),
   ...createPageMetadata(dictionary.home.seo, "/"),
+  robots: isPreviewDeployment()
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
 };
 
 export default function RootLayout({

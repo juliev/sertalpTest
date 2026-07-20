@@ -142,7 +142,6 @@ export default function DoorsPage() {
                 nextImage: common.nextImage,
                 imageOf: common.imageOf,
               }}
-              compact
             />
           </div>
         </div>

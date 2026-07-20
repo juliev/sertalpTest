@@ -37,7 +37,10 @@
 - Do not invent company claims, statistics, technical performance values, brands, suppliers, certificates, reviews, awards, response times, or customer identities.
 - Do not add testimonials, reviews, newsletter forms, quote forms, contact forms, account features, or online support.
 - Do not include personal names of owners, employees, clients, or partners anywhere in this public repository unless the repository owner explicitly approves publication.
-- The six project entries in `docs/PAGE_COPY.md` are approved temporary content. Six generated PNG source images already exist under `public/mockimages/`. Map each unique source to one project, preserve sources outside `public/`, publish optimized WebP outputs, and do not create mock modes, flags, or visible disclaimers.
+- Preserve the 23 real-work project entries, descriptions, and owner-supplied
+  WebP images centralized in the typed project data and dictionaries. Keep
+  non-rendered owner-confirmation flags until the repository owner verifies the
+  associated facts, and do not create mock modes or visible disclaimers.
 - Do not publish brand, supplier, manufacturer, partner, or product-system information.
 - Do not change protected company data unless explicitly instructed.
 

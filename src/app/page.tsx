@@ -53,7 +53,7 @@ export default function HomePage() {
                 <ArrowRight aria-hidden="true" className="size-5" />
               </Link>
               <Link
-                href="/janelas/"
+                href="/projetos/"
                 className="inline-flex min-h-11 items-center justify-center rounded-xl border border-blue-200 bg-white px-6 py-3 font-bold text-blue-800 transition hover:bg-blue-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
               >
                 {copy.hero.secondaryCta}
@@ -226,36 +226,6 @@ export default function HomePage() {
                 imageOf: common.imageOf,
               }}
             />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-14 sm:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
-            <Image
-              src={workImages.casalGlazing.src}
-              alt={dictionary.projects.items["casal-do-paul"].alts[0]}
-              width={workImages.casalGlazing.width}
-              height={workImages.casalGlazing.height}
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="h-full w-full object-cover"
-              style={{ objectPosition: workImages.casalGlazing.objectPosition }}
-            />
-          </div>
-          <div>
-            <SectionHeading
-              eyebrow={copy.experience.eyebrow}
-              title={copy.experience.title}
-              intro={copy.experience.text}
-            />
-            <Link
-              href="/sobre-nos/"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-lg font-bold text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              {copy.experience.link}
-              <ArrowRight aria-hidden="true" className="size-5" />
-            </Link>
           </div>
         </div>
       </section>

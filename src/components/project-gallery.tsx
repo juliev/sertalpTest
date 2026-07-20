@@ -32,10 +32,9 @@ type Props = {
     nextImage: string;
     imageOf: string;
   };
-  compact?: boolean;
 };
 
-export function ProjectGallery({ projects, labels, compact = false }: Props) {
+export function ProjectGallery({ projects, labels }: Props) {
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const [activeImage, setActiveImage] = useState(0);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -119,7 +118,7 @@ export function ProjectGallery({ projects, labels, compact = false }: Props) {
             type="button"
             onClick={(event) => open(index, event)}
             className="group overflow-hidden rounded-2xl border border-gray-200 bg-white text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 motion-reduce:transform-none"
-            aria-label={`${labels.viewImage}: ${item.title}`}
+            aria-label={`${labels.viewImage}: ${[item.location, item.title].filter(Boolean).join(" — ")}`}
           >
             <span className="relative block aspect-[3/2] overflow-hidden bg-gray-100">
               <Image
@@ -139,8 +138,11 @@ export function ProjectGallery({ projects, labels, compact = false }: Props) {
               <span className="mt-2 block text-xl font-bold text-gray-950">
                 {item.title}
               </span>
-              {!compact && item.description ? (
-                <span className="mt-3 block leading-7 text-gray-600">
+              {item.description ? (
+                <span
+                  className="mt-3 block leading-7 text-gray-600"
+                  data-testid="project-description"
+                >
                   {item.description}
                 </span>
               ) : null}

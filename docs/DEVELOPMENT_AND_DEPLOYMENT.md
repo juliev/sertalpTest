@@ -6,7 +6,7 @@ Before creating commits or changing application files, the main Codex thread mus
 
 1. Spawn `tooling_auditor` and `repo_explorer` in parallel.
 2. Wait for both reports.
-3. Inspect Git status, branch, remotes, Node/npm, GitHub authentication/integration, current dependencies, Playwright/Chromium availability, and the six PNG files in `public/mockimages/`.
+3. Inspect Git status, branch, remotes, Node/npm, GitHub authentication/integration, current dependencies, Playwright/Chromium availability, and the owner-supplied project images in `public/images/works/`.
 4. Create and switch to the feature branch while preserving the approved uncommitted bootstrap/specification files and image assets.
 5. Activate Node.js 22 using an already available version manager when necessary.
 6. Install only project-scoped dependencies approved by the specification.

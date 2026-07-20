@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Factory, Globe2, Ruler, Wrench } from "lucide-react";
+import { Factory, Ruler, Wrench } from "lucide-react";
 import { ContactCta, PageHero, SectionHeading } from "@/components/shared";
 import { workImages } from "@/content/images";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -13,7 +13,7 @@ export const metadata: Metadata = createPageMetadata(
   "/sobre-nos/",
 );
 
-const capabilityIcons = [Factory, Ruler, Wrench, Globe2];
+const capabilityIcons = [Factory, Ruler, Wrench];
 
 export default function AboutPage() {
   const copy = dictionary.about;
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading title={copy.capabilities.title} />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {copy.capabilities.items.map((item, index) => {
               const Icon = capabilityIcons[index];
               return (

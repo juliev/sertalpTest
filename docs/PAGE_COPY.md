@@ -29,7 +29,7 @@ The Portuguese version is public. English is used only for development review.
 | viewProjects   | Ver projetos                | View projects              |
 | contactUs      | Contactar                   | Contact us                 |
 | openMap        | Abrir no Google Maps        | Open in Google Maps        |
-| viewImage      | Ampliar imagem              | Enlarge image              |
+| viewImage      | Ver projeto                 | View project               |
 | close          | Fechar                      | Close                      |
 | previous       | Anterior                    | Previous                   |
 | next           | Seguinte                    | Next                       |
@@ -226,22 +226,6 @@ English:
 - Section title: `Projects`
 - Section intro: `A selection of PVC and aluminium solutions for different spaces and types of use.`
 - Link: `View all projects`
-
-## Experience section
-
-Portuguese:
-
-- Eyebrow: `Experiência e produção`
-- Title: `Experiência no setor desde fevereiro de 1978`
-- Text: `Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação. A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.`
-- Link: `Conhecer a Sertalp`
-
-English:
-
-- Eyebrow: `Experience and production`
-- Title: `Experience in the sector since February 1978`
-- Text: `With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation. Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.`
-- Link: `About Sertalp`
 
 ## Warranty teaser
 
@@ -629,113 +613,17 @@ English:
 - Title: `Featured projects`
 - Text: `Explore different types of solution and open each image to see the project in more detail.`
 
-## Project 1 — `pvc-windows`
+## Project cards
 
-Invariant:
+The live portfolio contains 23 real-work projects. Invariant IDs, locations,
+materials, display order, and image assignments are centralized in
+`src/content/projects.ts` and `src/content/images.ts`. The synchronized
+Portuguese and English dictionaries are the source of truth for every project
+title, description, and alt text.
 
-- City: `Sintra`
-
-Portuguese:
-
-- Title: `Janelas em PVC para moradia`
-- Description: `Substituição de vãos por janelas em PVC branco, com uma solução adaptada à fachada e à utilização diária da habitação.`
-- Alt: `Moradia com janelas em PVC branco`
-
-English:
-
-- Title: `PVC windows for a house`
-- Description: `Replacement of existing openings with white PVC windows, using a solution adapted to the facade and everyday use of the home.`
-- Alt: `House with white PVC windows`
-
-## Project 2 — `aluminium-windows`
-
-Invariant:
-
-- City: `Cascais`
-
-Portuguese:
-
-- Title: `Janelas em alumínio de linhas contemporâneas`
-- Description: `Conjunto de janelas em alumínio antracite integrado numa fachada de linguagem atual.`
-- Alt: `Fachada com janelas em alumínio antracite`
-
-English:
-
-- Title: `Contemporary aluminium windows`
-- Description: `A set of anthracite aluminium windows integrated into a contemporary facade.`
-- Alt: `Facade with anthracite aluminium windows`
-
-## Project 3 — `entrance-door`
-
-Invariant:
-
-- City: `Lisboa`
-
-Portuguese:
-
-- Title: `Porta de entrada em alumínio`
-- Description: `Porta de entrada feita à medida, com acabamento escuro e painel lateral envidraçado.`
-- Alt: `Porta de entrada em alumínio com painel lateral em vidro`
-
-English:
-
-- Title: `Aluminium entrance door`
-- Description: `A made-to-measure entrance door with a dark finish and a glazed side panel.`
-- Alt: `Aluminium entrance door with a glazed side panel`
-
-## Project 4 — `balcony-doors`
-
-Invariant:
-
-- City: `Oeiras`
-
-Portuguese:
-
-- Title: `Portas de varanda em PVC`
-- Description: `Portas envidraçadas em PVC branco para ligação entre o interior e a varanda.`
-- Alt: `Portas de varanda em PVC branco`
-
-English:
-
-- Title: `PVC balcony doors`
-- Description: `White PVC glazed doors connecting the interior with the balcony.`
-- Alt: `White PVC balcony doors`
-
-## Project 5 — `sliding-system`
-
-Invariant:
-
-- City: `Setúbal`
-
-Portuguese:
-
-- Title: `Sistema de correr em alumínio`
-- Description: `Solução de correr com grandes áreas envidraçadas para criar uma ligação ampla entre a sala e o exterior.`
-- Alt: `Sistema de correr em alumínio entre a sala e o terraço`
-
-English:
-
-- Title: `Aluminium sliding system`
-- Description: `A sliding solution with large glazed areas creating a wide connection between the living room and the exterior.`
-- Alt: `Aluminium sliding system between a living room and terrace`
-
-## Project 6 — `custom-window`
-
-Invariant:
-
-- City: `Leiria`
-
-Portuguese:
-
-- Title: `Janela de formato especial`
-- Description: `Caixilharia produzida para um vão de geometria não convencional, respeitando a forma da fachada.`
-- Alt: `Janela de formato especial integrada na fachada`
-
-English:
-
-- Title: `Special-shaped window`
-- Description: `A frame manufactured for a non-standard opening, respecting the geometry of the facade.`
-- Alt: `Special-shaped window integrated into a facade`
+Preserve all 23 projects and their complete descriptions. Keep the non-rendered
+material and location confirmation flags until the repository owner verifies
+those facts.
 
 ---
 
@@ -798,9 +686,6 @@ Portuguese:
 3. Title: `Serviço completo`
    Description: `Acompanhamos a avaliação, a proposta, o fabrico, a entrega e a montagem.`
 
-4. Title: `Projetos e fornecimentos`
-   Description: `A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.`
-
 English:
 
 - Section title: `What guides our work`
@@ -813,9 +698,6 @@ English:
 
 3. Title: `Complete service`
    Description: `We support the assessment, proposal, manufacture, delivery and installation.`
-
-4. Title: `Projects and deliveries`
-   Description: `Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.`
 
 ## Markets
 
@@ -902,12 +784,20 @@ English:
 Portuguese:
 
 - Title: `Informações de contacto`
-- Intro: `Escolha o contacto mais conveniente. Não utilizamos formulários online neste website.`
+- Intro: `Escolha a forma mais conveniente de entrar em contacto connosco.`
+- Heading: `Contactos`
+- Mobile label: `Telemóvel e WhatsApp`
+- Social label: `Redes sociais`
+- Facebook accessible label: `Sertalp no Facebook`
 
 English:
 
 - Title: `Contact information`
-- Intro: `Choose the most convenient contact method. This website does not use online forms.`
+- Intro: `Choose the most convenient way to contact us.`
+- Heading: `Contacts`
+- Mobile label: `Mobile and WhatsApp`
+- Social label: `Social networks`
+- Facebook accessible label: `Sertalp on Facebook`
 
 Contact labels use the global labels. Show `sertalplda@gmail.com` as the primary email and `sertalp@sapo.pt` as the alternative email.
 
@@ -915,15 +805,15 @@ Contact labels use the global labels. Show `sertalplda@gmail.com` as the primary
 
 Portuguese:
 
-- Title: `Como chegar`
-- Text: `Encontre a fábrica na Terrugem ou abra a localização diretamente no Google Maps.`
+- Title: `Localização`
+- Factory label: `Fábrica`
 - Iframe title: `Localização da fábrica Sertalp na Terrugem`
 - Link: `Abrir no Google Maps`
 
 English:
 
-- Title: `How to find us`
-- Text: `Find the factory in Terrugem or open the location directly in Google Maps.`
+- Title: `Location`
+- Factory label: `Factory`
 - Iframe title: `Location of the Sertalp factory in Terrugem`
 - Link: `Open in Google Maps`
 

@@ -130,7 +130,6 @@ export default function WindowsPage() {
                 nextImage: common.nextImage,
                 imageOf: common.imageOf,
               }}
-              compact
             />
           </div>
         </div>

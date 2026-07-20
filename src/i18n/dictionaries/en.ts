@@ -17,7 +17,7 @@ export const en = {
       viewProjects: "View projects",
       contactUs: "Contact us",
       openMap: "Open in Google Maps",
-      viewImage: "Enlarge image",
+      viewImage: "View project",
       close: "Close",
       previous: "Previous",
       next: "Next",
@@ -171,12 +171,6 @@ export const en = {
           alt: "Glazed aluminium doors made for arched interior openings",
         },
       },
-    },
-    experience: {
-      eyebrow: "Experience and production",
-      title: "Experience in the sector since February 1978",
-      text: "With experience in the sector since February 1978, Sertalp develops made-to-measure PVC and aluminium frame solutions, from technical assessment through manufacture and installation. Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.",
-      link: "About Sertalp",
     },
     warranty: {
       title: "Warranty periods suited to each material",
@@ -577,11 +571,6 @@ export const en = {
           title: "Complete service",
           description:
             "We support the assessment, proposal, manufacture, delivery and installation.",
-        },
-        {
-          title: "Projects and deliveries",
-          description:
-            "Sertalp carries out work throughout mainland Portugal, from north to south, and also has experience with projects and deliveries to Madeira, the Azores, Spain, Israel and Angola.",
         },
       ],
     },

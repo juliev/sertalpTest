@@ -1,20 +1,10 @@
 import { expect, test } from "@playwright/test";
-import { company } from "../../src/content/company";
+import { company, publicRoutes } from "../../src/content/company";
 import { workImages } from "../../src/content/images";
 import { productGalleryItems, projects } from "../../src/content/projects";
 import { en } from "../../src/i18n/dictionaries/en";
 import { pt } from "../../src/i18n/dictionaries/pt";
-
-const publicRoutes = [
-  "/",
-  "/janelas/",
-  "/portas/",
-  "/projetos/",
-  "/sobre-nos/",
-  "/contactos/",
-  "/politica-de-privacidade/",
-  "/politica-de-cookies/",
-];
+import { isPreviewDeployment } from "../../src/lib/deployment";
 
 test("home and every public route load", async ({ page }) => {
   for (const route of publicRoutes) {
@@ -86,6 +76,9 @@ test("Home shows exactly the three approved real-work previews", async ({
   page,
 }) => {
   await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: pt.home.hero.secondaryCta }),
+  ).toHaveAttribute("href", "/projetos/");
   const cards = page.getByTestId("project-grid").getByRole("button");
   await expect(cards).toHaveCount(3);
   await expect(cards.nth(0)).toContainText("Almoinhas Velhas");
@@ -155,6 +148,9 @@ test("Contacts uses a compact list and responsive location column", async ({
       { exact: true },
     ),
   ).toBeVisible();
+  await expect(
+    page.getByText("Telemóvel e WhatsApp", { exact: true }),
+  ).toBeVisible();
 
   const layout = page.getByTestId("contact-layout");
   const list = page.getByTestId("contact-list");
@@ -162,9 +158,12 @@ test("Contacts uses a compact list and responsive location column", async ({
   await expect(
     list.locator(`a[href="${company.telephoneHref}"]`),
   ).toContainText(company.telephone);
-  await expect(list.locator(`a[href="${company.whatsappUrl}"]`)).toContainText(
+  await expect(list.locator(`a[href="${company.mobileHref}"]`)).toContainText(
     company.mobile,
   );
+  await expect(
+    page.locator(`a[href="${company.whatsappUrl}"]:visible`).first(),
+  ).toBeVisible();
   await expect(
     list.locator(`a[href="mailto:${company.primaryEmail}"]`),
   ).toContainText(company.primaryEmail);
@@ -217,8 +216,11 @@ test("project gallery opens and closes accessibly", async ({ page }) => {
   await page.goto("/projetos/");
   const cards = page
     .getByTestId("project-grid")
-    .getByRole("button", { name: /Ampliar imagem/ });
+    .getByRole("button", { name: /Ver projeto/ });
   await expect(cards).toHaveCount(23);
+  await expect(cards.first()).toHaveAccessibleName(
+    /Ver projeto: Almoinhas Velhas — Soluções em alumínio e PVC/,
+  );
   await expect
     .poll(() =>
       cards.first().evaluate((element) => getComputedStyle(element).cursor),
@@ -250,7 +252,8 @@ test("Projects render in the approved order and multi-image records navigate", a
   page,
 }) => {
   await page.goto("/projetos/");
-  const cards = page.getByTestId("project-grid").getByRole("button");
+  const grid = page.getByTestId("project-grid");
+  const cards = grid.getByRole("button");
   const locations = [
     "Almoinhas Velhas",
     "Linda-a-Velha",
@@ -277,6 +280,7 @@ test("Projects render in the approved order and multi-image records navigate", a
     "Macieiras",
   ];
   await expect(cards).toHaveCount(locations.length);
+  await expect(grid.getByTestId("project-description")).toHaveCount(23);
   for (const [index, location] of locations.entries()) {
     await expect(cards.nth(index)).toContainText(location);
   }
@@ -308,7 +312,10 @@ test("product galleries use the approved entries and order", async ({
   page,
 }) => {
   await page.goto("/janelas/");
-  const windows = page.getByTestId("project-grid").getByRole("button");
+  const windowGrid = page.getByTestId("project-grid");
+  const windows = windowGrid.getByRole("button");
+  await expect(windows).toHaveCount(12);
+  await expect(windowGrid.getByTestId("project-description")).toHaveCount(12);
   for (const [index, location] of [
     "Diogo Velasques",
     "Fernando Ferreira",
@@ -327,7 +334,10 @@ test("product galleries use the approved entries and order", async ({
   }
 
   await page.goto("/portas/");
-  const doors = page.getByTestId("project-grid").getByRole("button");
+  const doorGrid = page.getByTestId("project-grid");
+  const doors = doorGrid.getByRole("button");
+  await expect(doors).toHaveCount(13);
+  await expect(doorGrid.getByTestId("project-description")).toHaveCount(11);
   for (const [index, title] of [
     "Linda-a-Velha",
     "Alegria",
@@ -554,6 +564,16 @@ test("navigation exposes current page and mobile Escape behavior", async ({
       .getByRole("navigation", { name: "Navegação principal" })
       .getByRole("link", { name: "Projetos", exact: true });
     await expect(currentLink).toHaveAttribute("aria-current", "page");
+    await expect(currentLink).toHaveClass(/underline/);
+    await expect(currentLink).not.toBeFocused();
+    await expect
+      .poll(() =>
+        currentLink.evaluate((element) => ({
+          focusVisible: element.matches(":focus-visible"),
+          outline: getComputedStyle(element).outlineStyle,
+        })),
+      )
+      .toEqual({ focusVisible: false, outline: "none" });
   }
 });
 
@@ -620,22 +640,36 @@ test("confirmed experience, geography and certifications are published safely", 
 }) => {
   await page.goto("/");
   await expect(
+    page.getByText("Experiência no setor desde fevereiro de 1978", {
+      exact: true,
+    }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("heading", {
       name: "Experiência no setor desde fevereiro de 1978",
       exact: true,
     }),
-  ).toBeVisible();
+  ).toHaveCount(0);
   await expect(page.getByText(/mais de 30 anos/i)).toHaveCount(0);
 
   await page.goto("/sobre-nos/");
+  const geography =
+    "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.";
+  await expect(page.getByText(geography, { exact: true })).toBeVisible();
+  await expect(page.getByText(geography, { exact: true })).toHaveCount(1);
   await expect(
-    page
-      .getByText(
-        "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
-        { exact: true },
-      )
-      .first(),
-  ).toBeVisible();
+    page.getByRole("heading", {
+      name: "Projetos e fornecimentos",
+      exact: true,
+    }),
+  ).toHaveCount(0);
+  const capabilities = page
+    .getByRole("heading", {
+      name: "O que orienta o nosso trabalho",
+      exact: true,
+    })
+    .locator("xpath=ancestor::section");
+  await expect(capabilities.locator("article")).toHaveCount(3);
   await expect(
     page.getByRole("heading", {
       name: "Empresa aderente ao sistema CLASSE+",
@@ -695,6 +729,96 @@ test("both confirmed email addresses are published correctly", async ({
   await expect(
     page.getByText(/Certificado IMPIC n.º 136169-PAR/),
   ).toBeVisible();
+});
+
+test("footer retains the complete approved legal line", async ({ page }) => {
+  await page.goto("/");
+  await expect(
+    page
+      .getByRole("contentinfo")
+      .getByText(company.legalFooter, { exact: true }),
+  ).toBeVisible();
+});
+
+test("production metadata, sitemap and robots cover every public page", async ({
+  page,
+  request,
+}) => {
+  const seoByRoute = [
+    ["/", pt.home.seo],
+    ["/janelas/", pt.windows.seo],
+    ["/portas/", pt.doors.seo],
+    ["/projetos/", pt.projects.seo],
+    ["/sobre-nos/", pt.about.seo],
+    ["/contactos/", pt.contacts.seo],
+    ["/politica-de-privacidade/", pt.privacy.seo],
+    ["/politica-de-cookies/", pt.cookies.seo],
+  ] as const;
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
+
+  for (const [route, seo] of seoByRoute) {
+    await page.goto(route);
+    await expect(page).toHaveTitle(seo.title);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute(
+      "content",
+      seo.description,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      new URL(route, company.canonicalUrl).toString(),
+    );
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+      "content",
+      /index, follow/,
+    );
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      "content",
+      new RegExp(`^${company.canonicalUrl}/images/works/`),
+    );
+    expect(await page.content()).not.toContain("pages.dev");
+    titles.add(seo.title);
+    descriptions.add(seo.description);
+  }
+
+  expect(titles.size).toBe(publicRoutes.length);
+  expect(descriptions.size).toBe(publicRoutes.length);
+
+  const robots = await request.get("/robots.txt");
+  expect(robots.ok()).toBe(true);
+  expect(await robots.text()).toContain("Allow: /");
+  expect(await robots.text()).toContain(
+    `Sitemap: ${company.canonicalUrl}/sitemap.xml`,
+  );
+
+  const sitemap = await request.get("/sitemap.xml");
+  expect(sitemap.ok()).toBe(true);
+  const sitemapXml = await sitemap.text();
+  for (const route of publicRoutes) {
+    expect(sitemapXml).toContain(
+      new URL(route, company.canonicalUrl).toString(),
+    );
+  }
+
+  expect((await request.get("/favicon.ico")).ok()).toBe(true);
+});
+
+test("Cloudflare preview detection is build-time and branch-based", () => {
+  expect(
+    isPreviewDeployment({
+      CF_PAGES: "1",
+      CF_PAGES_BRANCH: "feature/website-review",
+    }),
+  ).toBe(true);
+  expect(isPreviewDeployment({ CF_PAGES: "1", CF_PAGES_BRANCH: "main" })).toBe(
+    false,
+  );
+  expect(
+    isPreviewDeployment({ CF_PAGES: undefined, CF_PAGES_BRANCH: undefined }),
+  ).toBe(false);
+  expect(
+    isPreviewDeployment({ CF_PAGES: "1", CF_PAGES_BRANCH: undefined }),
+  ).toBe(false);
 });
 
 test("site has no removed UI and no horizontal mobile overflow", async ({

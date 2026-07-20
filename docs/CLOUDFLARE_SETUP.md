@@ -48,7 +48,8 @@ With Git integration enabled:
 - pushes to non-production branches create Preview deployments;
 - pull requests from the same repository receive a unique Preview URL;
 - new commits update the branch preview;
-- Cloudflare adds `X-Robots-Tag: noindex` to Preview deployments by default.
+- builds with `CF_PAGES=1` and a `CF_PAGES_BRANCH` other than `main` emit
+  `noindex, nofollow` metadata and disallow crawling in `robots.txt`.
 
 Review the preview before merging.
 

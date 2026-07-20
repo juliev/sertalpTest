@@ -15,7 +15,7 @@ export const pt = {
       viewProjects: "Ver projetos",
       contactUs: "Contactar",
       openMap: "Abrir no Google Maps",
-      viewImage: "Ampliar imagem",
+      viewImage: "Ver projeto",
       close: "Fechar",
       previous: "Anterior",
       next: "Seguinte",
@@ -172,12 +172,6 @@ export const pt = {
           alt: "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
         },
       },
-    },
-    experience: {
-      eyebrow: "Experiência e produção",
-      title: "Experiência no setor desde fevereiro de 1978",
-      text: "Com experiência no setor desde fevereiro de 1978, a Sertalp desenvolve soluções por medida em caixilharia de PVC e alumínio, desde a avaliação técnica ao fabrico e à instalação. A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
-      link: "Conhecer a Sertalp",
     },
     warranty: {
       title: "Garantias adequadas a cada material",
@@ -585,11 +579,6 @@ export const pt = {
           description:
             "Acompanhamos a avaliação, a proposta, o fabrico, a entrega e a montagem.",
         },
-        {
-          title: "Projetos e fornecimentos",
-          description:
-            "A Sertalp realiza trabalhos em Portugal Continental, de norte a sul, e conta também com projetos e fornecimentos para a Madeira, os Açores, Espanha, Israel e Angola.",
-        },
       ],
     },
     markets: {
@@ -635,7 +624,7 @@ export const pt = {
       title: "Informações de contacto",
       intro: "Escolha a forma mais conveniente de entrar em contacto connosco.",
       heading: "Contactos",
-      mobileLabel: "Mobile e WhatsApp",
+      mobileLabel: "Telemóvel e WhatsApp",
       socialTitle: "Redes sociais",
       facebookAriaLabel: "Sertalp no Facebook",
     },

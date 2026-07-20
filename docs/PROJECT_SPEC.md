@@ -364,11 +364,10 @@ Exact copy is in `docs/PAGE_COPY.md`.
 3. Three benefits: own production, custom solutions, complete service
 4. Windows and doors cards
 5. Four-step work process
-6. Project preview using the same six projects
-7. Experience in the sector since February 1978 section
-8. Compact warranty teaser
-9. Contact CTA
-10. Footer
+6. Project preview using three approved projects
+7. Compact warranty teaser
+8. Contact CTA
+9. Footer
 
 ### Windows
 
@@ -402,7 +401,7 @@ Do not add long technical tables, unsupported U-values, acoustic values, opening
 
 - One simple gallery page.
 - No visible category filters.
-- Six projects.
+- Twenty-three projects.
 - Three-column desktop grid, two-column tablet grid, one-column mobile grid.
 - Card shows image, title, city, and one-sentence description.
 - Clicking an image/card opens an accessible lightbox.
@@ -441,9 +440,13 @@ GA4 and cookie consent remain deferred.
 
 The embedded Google Maps iframe is allowed in this phase. The policies must accurately disclose the third-party embed. Do not claim that the website is legally certified or that the text replaces professional legal advice.
 
-## 8. Temporary project content
+## 8. Project content
 
-Use the six project entries and cities from `docs/PAGE_COPY.md`.
+Preserve the 23 real-work project entries, descriptions, order, and image
+assignments centralized in `src/content/projects.ts`,
+`src/content/images.ts`, and the synchronized Portuguese and English
+dictionaries. Keep the non-rendered owner-confirmation flags until the
+associated material and location facts are verified.
 
 Do not create:
 
@@ -452,8 +455,6 @@ Do not create:
 - environment-based content modes;
 - preview-only content;
 - visible “mock”, “demo”, or “illustrative” labels.
-
-The content is temporary and must be easy to replace later.
 
 ### Project image sources
 
@@ -790,7 +791,7 @@ The task is complete only when:
 - no personal names exist in repository content;
 - no forms, reviews, newsletter, Other Products, or fake claims remain;
 - project gallery and lightbox work;
-- all six supplied PNG sources are mapped, preserved outside `public/`, and converted to unique final WebP files;
+- all approved owner-supplied project images remain mapped to optimized WebP files;
 - Google Maps is embedded;
 - privacy and cookies pages exist;
 - static export succeeds;

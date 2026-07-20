@@ -65,9 +65,7 @@ export default function ContactsPage() {
                   <dd className="mt-1">
                     <a
                       className="inline-flex min-h-11 items-center font-semibold text-blue-700 underline"
-                      href={company.whatsappUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href={company.mobileHref}
                     >
                       {company.mobile}
                     </a>
