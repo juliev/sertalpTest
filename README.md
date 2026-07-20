@@ -56,14 +56,10 @@ npx playwright install chromium
 
 - Protected company facts: `src/content/`
 - Typed Portuguese and English copy: `src/i18n/dictionaries/`
-- Preserved project sources: `assets/source-images/projects/`
-- Public optimized images: `public/images/projects/`
+- Archived generated sources: `assets/source-images/`
+- Published owner-supplied work images: `public/images/works/`
 
-Optimize source images with:
-
-```bash
-npm run images:optimize -- assets/source-images/projects public/images/projects
-```
+Verify published images with `npm run images:verify`.
 
 See `docs/CONTENT_AND_I18N.md` and `docs/IMAGE_GUIDELINES.md` before changing
 content or imagery.

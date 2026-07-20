@@ -84,8 +84,8 @@ export default function DoorsPage() {
             },
             {
               content: copy.materials.aluminium,
-              image: workImages.almoinhasSliding,
-              alt: dictionary.projects.items["almoinhas-velhas"].alts[2],
+              image: workImages.bernardimRibeiro,
+              alt: dictionary.projects.items["bernardim-ribeiro"].alts[0],
             },
           ].map(({ content, image, alt }) => (
             <article

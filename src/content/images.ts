@@ -1,7 +1,3 @@
-export const siteImages = {
-  hero: "/images/hero/hero-banner.webp",
-} as const;
-
 export type WorkImage = {
   src: string;
   width: number;

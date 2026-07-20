@@ -457,24 +457,10 @@ The content is temporary and must be easy to replace later.
 
 ### Project image sources
 
-Six generated PNG source images already exist under:
-
-```text
-public/mockimages/
-```
-
-The agent must inspect and map the six unique PNG files to the six approved projects, preserve the original sources under `assets/source-images/projects/`, convert them with `sharp`, and publish these final files:
-
-```text
-/public/images/projects/project-pvc-windows.webp
-/public/images/projects/project-aluminium-windows.webp
-/public/images/projects/project-entrance-door.webp
-/public/images/projects/project-balcony-doors.webp
-/public/images/projects/project-sliding-system.webp
-/public/images/projects/project-custom-window.webp
-```
-
-Do not generate replacements, use hero-image fallbacks, duplicate one source across projects, add mock flags, or expose `public/mockimages` in final project data. The exact workflow is in `docs/IMAGE_GUIDELINES.md`.
+Published project imagery uses the owner-supplied work photographs mapped in
+`docs/IMAGE_GUIDELINES.md`. Earlier generated sources may remain archived
+outside `public/`, but their generated outputs must not be published or
+referenced by application code, metadata, or project data.
 
 ## 9. Design specification
 
@@ -603,7 +589,7 @@ https://sertalp.com
 - page-specific Portuguese titles and descriptions from `docs/PAGE_COPY.md`;
 - canonical URL for every page;
 - Open Graph metadata;
-- optimized `public/images/hero/hero-banner.webp` as the Open Graph image;
+- an owner-supplied image from `public/images/works/` as the Open Graph image;
 - `openGraph.locale = "pt_PT"` in production;
 - no English alternate URLs or `hreflang`;
 - `app/sitemap.ts`;

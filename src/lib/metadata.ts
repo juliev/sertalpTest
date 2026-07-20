@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { company } from "@/content/company";
-import { siteImages } from "@/content/images";
+import { workImages } from "@/content/images";
 import { openGraphLocale } from "@/i18n/config";
 
 type SeoContent = {
@@ -26,9 +26,9 @@ export const createPageMetadata = (
     locale: openGraphLocale,
     images: [
       {
-        url: siteImages.hero,
-        width: 1600,
-        height: 821,
+        url: workImages.fernandoFerreira.src,
+        width: workImages.fernandoFerreira.width,
+        height: workImages.fernandoFerreira.height,
         alt: company.commercialName,
       },
     ],

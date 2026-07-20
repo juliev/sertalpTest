@@ -634,7 +634,6 @@ English:
 Invariant:
 
 - City: `Sintra`
-- Preferred image: `/images/projects/project-pvc-windows.webp`
 
 Portuguese:
 
@@ -653,7 +652,6 @@ English:
 Invariant:
 
 - City: `Cascais`
-- Preferred image: `/images/projects/project-aluminium-windows.webp`
 
 Portuguese:
 
@@ -672,7 +670,6 @@ English:
 Invariant:
 
 - City: `Lisboa`
-- Preferred image: `/images/projects/project-entrance-door.webp`
 
 Portuguese:
 
@@ -691,7 +688,6 @@ English:
 Invariant:
 
 - City: `Oeiras`
-- Preferred image: `/images/projects/project-balcony-doors.webp`
 
 Portuguese:
 
@@ -710,7 +706,6 @@ English:
 Invariant:
 
 - City: `Setúbal`
-- Preferred image: `/images/projects/project-sliding-system.webp`
 
 Portuguese:
 
@@ -729,7 +724,6 @@ English:
 Invariant:
 
 - City: `Leiria`
-- Preferred image: `/images/projects/project-custom-window.webp`
 
 Portuguese:
 

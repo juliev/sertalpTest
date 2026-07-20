@@ -50,11 +50,9 @@
 - [ ] No certificate image, PDF, download, preview, logo, or unsupported A+ claim exists.
 - [ ] Warranty periods match the specification.
 - [ ] Temporary project content is approved for the current review.
-- [ ] Exactly six source PNGs from the original `public/mockimages/` set were mapped to six unique projects.
-- [ ] Original PNG sources are preserved under `assets/source-images/projects/`.
-- [ ] Six optimized WebP files exist under `public/images/projects/`.
-- [ ] Project data no longer references `public/mockimages/`.
-- [ ] The PR documents the source-to-output mapping.
+- [ ] Archived generated PNG sources remain outside `public/`.
+- [ ] No page, metadata, or project data references generated imagery.
+- [ ] Published imagery comes from the owner-supplied files under `public/images/works/`.
 
 ## Contacts
 

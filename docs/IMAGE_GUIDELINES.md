@@ -16,10 +16,10 @@ ignored by Git. They are source input only: application code must never
 reference them, the original JPG files must not be committed or copied to
 `public/`, and the owner's files must not be deleted.
 
-The earlier generated project sources remain preserved outside `public/` under
-`assets/source-images/projects/`. Their optimized WebP outputs may remain in
-`public/images/projects/` for repository history, but current pages and project
-data use the real-work images.
+The earlier generated project sources remain archived outside `public/` under
+`assets/source-images/projects/`. Their generated WebP outputs are not
+published. Current pages, metadata, and project data use only the real-work
+images under `public/images/works/`.
 
 ## Processing requirements
 

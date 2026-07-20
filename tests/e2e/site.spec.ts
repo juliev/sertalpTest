@@ -349,6 +349,24 @@ test("product galleries use the approved entries and order", async ({
   await expect(doors.nth(12)).not.toContainText(" · ");
 });
 
+test("door material cards use actual door photographs", async ({ page }) => {
+  await page.goto("/portas/");
+  const aluminiumCard = page.locator("article").filter({
+    has: page.getByRole("heading", {
+      name: "Portas em alumínio",
+      exact: true,
+    }),
+  });
+  await expect(aluminiumCard.locator("img")).toHaveAttribute(
+    "src",
+    workImages.bernardimRibeiro.src,
+  );
+  await expect(aluminiumCard.locator("img")).toHaveAttribute(
+    "alt",
+    pt.projects.items["bernardim-ribeiro"].alts[0],
+  );
+});
+
 test("project assumptions and unnamed examples remain centralized", () => {
   const previousIds = [
     "casal-do-paul",
