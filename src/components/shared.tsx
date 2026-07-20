@@ -98,7 +98,12 @@ export function PageHero({
             priority={priority}
             sizes="(min-width: 1024px) 50vw, 100vw"
             className="h-full w-full object-cover"
-            style={{ objectPosition: image.objectPosition }}
+            style={{
+              objectPosition: image.objectPosition,
+              transform: image.heroScale
+                ? `scale(${image.heroScale})`
+                : undefined,
+            }}
           />
         </div>
       </div>

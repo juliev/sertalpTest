@@ -284,8 +284,7 @@ export const en = {
         "Custom dimensions",
       ],
       cta: "Request a quote",
-      imageAlt:
-        "Aluminium sliding doors opening onto a balcony with a sea view",
+      imageAlt: "Glazed aluminium doors made for arched interior openings",
     },
     solutions: {
       title: "Solutions for different uses",
@@ -362,7 +361,7 @@ export const en = {
       title: "Solutions adapted to different spaces",
       description:
         "A selection of PVC and aluminium windows, doors and systems.",
-      imageAlt: "Glazed aluminium doors made for arched interior openings",
+      imageAlt: "Contemporary house with dark aluminium windows and doors",
     },
     gallery: {
       title: "Featured projects",

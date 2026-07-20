@@ -32,11 +32,13 @@ test("page hero assignments retain compact priority image cards", async ({
     ["/janelas/", "/images/works/windows/diogo-velasques-janelas-pvc.webp"],
     [
       "/portas/",
-      "/images/works/projects/linda-a-velha-portas-correr-aluminio.webp",
+      "/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp",
+      pt.doors.hero.imageAlt,
     ],
     [
       "/projetos/",
-      "/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp",
+      "/images/works/projects/almoinhas-velhas-fachada-aluminio.webp",
+      pt.projects.hero.imageAlt,
     ],
     ["/sobre-nos/", "/images/works/projects/lisboa-fachada-janelas-pvc.webp"],
     [
@@ -45,11 +47,17 @@ test("page hero assignments retain compact priority image cards", async ({
     ],
   ] as const;
 
-  for (const [route, src] of assignments) {
+  for (const [route, src, alt] of assignments) {
     await page.goto(route);
     const hero = page.locator("main > section:first-child img");
     await expect(hero).toHaveAttribute("src", src);
+    if (alt) {
+      await expect(hero).toHaveAttribute("alt", alt);
+    }
     await expect(hero).not.toHaveAttribute("loading", "lazy");
+    await expect
+      .poll(() => hero.evaluate((image) => getComputedStyle(image).objectFit))
+      .toBe("cover");
     await expect
       .poll(() =>
         hero.evaluate((image) => {
@@ -421,6 +429,12 @@ test("Portuguese and English project dictionaries remain synchronized", () => {
   );
   expect(Object.keys(en.home.projects.items)).toEqual(
     Object.keys(pt.home.projects.items),
+  );
+  expect(en.doors.hero.imageAlt).toBe(
+    "Glazed aluminium doors made for arched interior openings",
+  );
+  expect(en.projects.hero.imageAlt).toBe(
+    "Contemporary house with dark aluminium windows and doors",
   );
 });
 

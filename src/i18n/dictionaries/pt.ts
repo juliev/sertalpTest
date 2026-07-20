@@ -280,7 +280,8 @@ export const pt = {
         "Dimensões personalizadas",
       ],
       cta: "Pedir orçamento",
-      imageAlt: "Portas de correr em alumínio com varanda e vista para o mar",
+      imageAlt:
+        "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
     },
     solutions: {
       title: "Soluções para diferentes utilizações",
@@ -357,8 +358,7 @@ export const pt = {
       title: "Soluções adaptadas a diferentes espaços",
       description:
         "Uma seleção de janelas, portas e sistemas em PVC e alumínio.",
-      imageAlt:
-        "Portas envidraçadas em alumínio adaptadas a vãos interiores arqueados",
+      imageAlt: "Moradia contemporânea com janelas e portas em alumínio escuro",
     },
     gallery: {
       title: "Projetos em destaque",

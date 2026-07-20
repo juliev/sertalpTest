@@ -42,7 +42,7 @@ export default function DoorsPage() {
 
   return (
     <>
-      <PageHero {...copy.hero} image={workImages.lindaAVelha} priority />
+      <PageHero {...copy.hero} image={workImages.bernardimRibeiro} priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

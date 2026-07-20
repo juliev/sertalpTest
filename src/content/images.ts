@@ -7,6 +7,7 @@ export type WorkImage = {
   width: number;
   height: number;
   objectPosition: string;
+  heroScale?: number;
   installationPhoto?: true;
 };
 
@@ -117,7 +118,8 @@ export const workImages = {
     src: "/images/works/projects/bernardim-ribeiro-portas-arqueadas-aluminio.webp",
     width: 1374,
     height: 916,
-    objectPosition: "center",
+    objectPosition: "center 51%",
+    heroScale: 1.12,
   },
   lisboaFacade: {
     src: "/images/works/projects/lisboa-fachada-janelas-pvc.webp",

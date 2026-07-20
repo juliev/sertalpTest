@@ -19,7 +19,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <PageHero {...copy.hero} image={workImages.bernardimRibeiro} priority />
+      <PageHero {...copy.hero} image={workImages.almoinhasFacade} priority />
 
       <section className="py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
